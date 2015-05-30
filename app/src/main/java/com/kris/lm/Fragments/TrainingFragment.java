@@ -6,7 +6,6 @@ import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.gc.materialdesign.views.ProgressBarDeterminate;
@@ -15,14 +14,18 @@ import com.kris.lm.R;
 
 public class TrainingFragment extends Fragment {
     com.gc.materialdesign.views.Button buttonStart;
-    ProgressBar progressBar;
+
     ProgressBarDeterminate progressBarDeterminate;
     TextView textCounter;
-    long odliczaj = 100000;
+    long odliczaj = 10000;
     long interval = 1000;
-    private int mDisplaySeconds, mDisplayMinutes;
     CircularProgressView progressView;
     MyCountDownTimer myCountDownTimer;
+    private long totalTimeCountInMilliseconds; // total count down time in
+    // milliseconds
+    private long timeBlinkInMilliseconds; // start time of start blinking
+    private boolean blink; // controls the blinking .. on and off
+
 
     public TrainingFragment() {
     }
@@ -34,18 +37,20 @@ public class TrainingFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_training, container, false);
 
         buttonStart = (com.gc.materialdesign.views.Button) rootView.findViewById(R.id.start);
-        progressBar = (ProgressBar) rootView.findViewById(R.id.progressbar);
         progressBarDeterminate = (ProgressBarDeterminate) rootView.findViewById(R.id.progressDeterminate);
         progressView = (CircularProgressView) rootView.findViewById(R.id.progress_view);
+
+ //ustaw prgoresbary na 100 i dostosuj do do odliczanego czasu skalê
+        progressView.setProgress(100);
+        progressView.setMaxProgress(odliczaj / 1000);
+        progressBarDeterminate.setMax((int) (odliczaj / 1000));
         textCounter = (TextView) rootView.findViewById(R.id.counter);
 
         buttonStart.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                progressBar.setProgress(100);
-                progressBarDeterminate.setProgress(100);
-                progressView.setProgress(100);
+
                 myCountDownTimer = new MyCountDownTimer(odliczaj, interval);
                 myCountDownTimer.start();
 
@@ -63,23 +68,22 @@ public class TrainingFragment extends Fragment {
 
         @Override
         public void onTick(long millisUntilFinished) {
-            mDisplayMinutes = (int) ((millisUntilFinished / 1000) / 60);
-            mDisplaySeconds = (int) ((millisUntilFinished / 1000) % 60);
             int progress = (int) (millisUntilFinished / 1000);
-            progressBar.setProgress(progress);
             progressBarDeterminate.setProgress(progress);
             progressView.setProgress(progress);
-            textCounter.setText(String.valueOf(mDisplayMinutes) + ":" + String.valueOf(mDisplaySeconds) + "\nProgres: " + String.valueOf(progress));
 
+            textCounter.setText(String.format("%02d", (millisUntilFinished / 1000) / 60)
+                    + ":" + String.format("%02d", (millisUntilFinished / 1000) % 60));
         }
 
         @Override
         public void onFinish() {
             textCounter.setText("Finished");
-            progressBar.setProgress(0);
             progressBarDeterminate.setProgress(0);
+            progressView.setProgress(0);
         }
 
     }
+
 
 }

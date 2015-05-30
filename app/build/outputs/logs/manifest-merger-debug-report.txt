@@ -15,10 +15,13 @@ ADDED from AndroidManifest.xml:2:1
 		ADDED from AndroidManifest.xml:2:11
 application
 ADDED from AndroidManifest.xml:7:5
-MERGED from com.android.support:appcompat-v7:21.0.3:16:5
+MERGED from com.android.support:appcompat-v7:22.1.0:22:5
+MERGED from com.android.support:support-v4:22.1.1:22:5
 MERGED from com.android.support:cardview-v7:21.0.3:16:5
 MERGED from com.android.support:recyclerview-v7:21.0.3:17:5
 MERGED from com.github.navasmdc:MaterialDesign:1.4:11:5
+MERGED from com.android.support:appcompat-v7:22.1.0:22:5
+MERGED from com.android.support:support-v4:22.1.1:22:5
 MERGED from com.android.support:support-v4:22.1.1:22:5
 	android:label
 		ADDED from AndroidManifest.xml:10:9
@@ -92,10 +95,14 @@ ADDED from AndroidManifest.xml:53:9
 		ADDED from AndroidManifest.xml:54:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
-MERGED from com.android.support:appcompat-v7:21.0.3:15:5
+MERGED from com.android.support:appcompat-v7:22.1.0:20:5
+MERGED from com.android.support:support-v4:22.1.1:20:5
 MERGED from com.android.support:cardview-v7:21.0.3:15:5
 MERGED from com.android.support:recyclerview-v7:21.0.3:15:5
 MERGED from com.github.navasmdc:MaterialDesign:1.4:7:5
+MERGED from com.rengwuxian.materialedittext:library:2.1.3:6:5
+MERGED from com.android.support:appcompat-v7:22.1.0:20:5
+MERGED from com.android.support:support-v4:22.1.1:20:5
 MERGED from com.android.support:support-v4:22.1.1:20:5
 MERGED from com.github.rahatarmanahmed:circularprogressview:2.3.0:7:5
 	android:targetSdkVersion

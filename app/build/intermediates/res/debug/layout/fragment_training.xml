@@ -7,16 +7,6 @@
     android:orientation="vertical">
 
 
-
-    <ProgressBar
-        android:paddingTop="40dp"
-        android:id="@+id/progressbar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="100"
-        android:progress="100" />
-
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/start"
         android:layout_width="wrap_content"
@@ -32,26 +22,33 @@
         android:layout_height="wrap_content"
         android:background="#1E88E5" />
 
-    <com.github.rahatarmanahmed.cpv.CircularProgressView
-        android:id="@+id/progress_view"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_gravity="center"
-        android:progress="100"
-        app:cpv_animAutostart="false"
-        app:cpv_indeterminate="false"
-        app:cpv_maxProgress="100"
-        app:cpv_color="@color/colorAccent"
-        app:cpv_progress="100"
-        app:cpv_thickness="14dp" />
-
-    <TextView
-        android:id="@+id/counter"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Licznik"
-        android:textSize="23sp"
-        android:textStyle="bold" />
+        android:layout_gravity="center_horizontal">
 
+        <com.github.rahatarmanahmed.cpv.CircularProgressView
+            android:id="@+id/progress_view"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_gravity="center"
+            android:progress="100"
+            app:cpv_animAutostart="false"
+            app:cpv_color="@color/colorAccent"
+            app:cpv_indeterminate="false"
+
+            app:cpv_progress="100"
+            app:cpv_thickness="14dp" />
+
+        <TextView
+            android:id="@+id/counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Licznik"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
 </LinearLayout><!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/layout/fragment_training.xml -->
