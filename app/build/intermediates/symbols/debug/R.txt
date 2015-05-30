@@ -493,7 +493,7 @@ int id action_menu_presenter 0x7f090003
 int id action_mode_bar 0x7f09002e
 int id action_mode_bar_stub 0x7f09002d
 int id action_mode_close_button 0x7f090020
-int id action_settings 0x7f090083
+int id action_settings 0x7f090085
 int id activity_chooser_view_content 0x7f090021
 int id always 0x7f090016
 int id beginning 0x7f090013
@@ -507,7 +507,7 @@ int id collapseActionView 0x7f090017
 int id counter 0x7f090068
 int id cwDesc 0x7f090067
 int id cwIcon 0x7f090062
-int id cwiczenia 0x7f090081
+int id cwiczenia 0x7f090083
 int id decor_content_parent 0x7f09002f
 int id default_activity_button 0x7f090024
 int id dialog 0x7f09001b
@@ -555,13 +555,14 @@ int id listMode 0x7f090009
 int id listText 0x7f090060
 int id list_item 0x7f090025
 int id list_slidermenu 0x7f09004e
-int id load_DB 0x7f090084
+int id load_DB 0x7f090086
 int id middle 0x7f090015
 int id never 0x7f090019
 int id none 0x7f09000e
 int id normal 0x7f09000a
 int id progress_circular 0x7f090005
 int id progress_horizontal 0x7f090006
+int id progressbar 0x7f090080
 int id radio 0x7f09002b
 int id radioActivity 0x7f09005a
 int id radioFemale 0x7f090055
@@ -586,6 +587,7 @@ int id showCustom 0x7f09000f
 int id showHome 0x7f090010
 int id showTitle 0x7f090011
 int id split_action_bar 0x7f090007
+int id start 0x7f090081
 int id submit_area 0x7f09003c
 int id tabMode 0x7f09000b
 int id tableLayout 0x7f09004f
@@ -609,8 +611,8 @@ int id txtTopHome 0x7f090073
 int id txtWarmup 0x7f090075
 int id up 0x7f090008
 int id useLogo 0x7f090012
-int id user_body 0x7f090082
-int id user_data 0x7f090080
+int id user_body 0x7f090084
+int id user_data 0x7f090082
 int id withText 0x7f09001a
 int id wrap_content 0x7f09001d
 int integer abc_max_action_buttons 0x7f0a0000
