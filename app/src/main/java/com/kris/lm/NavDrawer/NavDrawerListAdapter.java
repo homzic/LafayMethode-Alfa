@@ -14,7 +14,7 @@ import com.kris.lm.R;
 import java.util.ArrayList;
 
 public class NavDrawerListAdapter extends BaseAdapter {
-	
+
 	private Context context;
 	private ArrayList<NavDrawerItem> navDrawerItems;
 	
@@ -52,7 +52,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
          
         imgIcon.setImageResource(navDrawerItems.get(position).getIcon());        
         txtTitle.setText(navDrawerItems.get(position).getTitle());
-        
+
         // displaying count
         // check whether it set visible or not
         if(navDrawerItems.get(position).getCounterVisibility()){

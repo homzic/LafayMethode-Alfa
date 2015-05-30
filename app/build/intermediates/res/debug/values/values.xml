@@ -62,6 +62,12 @@
     <bool name="abc_config_actionMenuItemAllCaps">true</bool>
     <bool name="abc_config_allowActionMenuItemTextWithIcon">false</bool>
     <bool name="abc_config_showMenuShortcutsWhenKeyboardPresent">false</bool>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.github.rahatarmanahmed/circularprogressview/2.3.0/res/values/values.xml -->
+    <eat-comment/>
+    <bool name="cpv_default_anim_autostart">false</bool>
+    <bool name="cpv_default_is_indeterminate">false</bool>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <eat-comment/>
     <color name="abc_input_method_navigation_guard">@android:color/black</color>
     <color name="abc_search_url_text_normal">#7fa87f</color>
     <color name="abc_search_url_text_pressed">@android:color/black</color>
@@ -91,12 +97,18 @@
     <color name="colorAccent">#FF93FF1C</color>
     <color name="counter_text_bg">#626262</color>
     <color name="counter_text_color">#c5c4c4</color>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.github.rahatarmanahmed/circularprogressview/2.3.0/res/values/values.xml -->
+    <eat-comment/>
+    <color name="cpv_default_color">#2196F3</color>
     <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.github.navasmdc/MaterialDesign/1.4/res/values/values.xml -->
+    <eat-comment/>
+    <color name="green">#00FF00</color>
     <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="grey">#00B0FF</color>
@@ -148,6 +160,9 @@
     <color name="textColorInput">#6B6666</color>
     <color name="textColorPrimary">#03A9F4</color>
     <color name="textColorPrimaryLight">#8EC7FF</color>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.github.navasmdc/MaterialDesign/1.4/res/values/values.xml -->
+    <eat-comment/>
+    <color name="thumbColor">#66aaaaaa</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode"><enum name="normal" value="0"/><enum name="listMode" value="1"/><enum name="tabMode" value="2"/></attr><attr name="displayOptions"><flag name="none" value="0"/><flag name="useLogo" value="0x1"/><flag name="showHome" value="0x2"/><flag name="homeAsUp" value="0x4"/><flag name="showTitle" value="0x8"/><flag name="showCustom" value="0x10"/><flag name="disableHome" value="0x20"/></attr><attr name="title"/><attr format="string" name="subtitle"/><attr format="reference" name="titleTextStyle"/><attr format="reference" name="subtitleTextStyle"/><attr format="reference" name="icon"/><attr format="reference" name="logo"/><attr format="reference" name="divider"/><attr format="reference" name="background"/><attr format="reference|color" name="backgroundStacked"/><attr format="reference|color" name="backgroundSplit"/><attr format="reference" name="customNavigationLayout"/><attr name="height"/><attr format="reference" name="homeLayout"/><attr format="reference" name="progressBarStyle"/><attr format="reference" name="indeterminateProgressStyle"/><attr format="dimension" name="progressBarPadding"/><attr name="homeAsUpIndicator"/><attr format="dimension" name="itemPadding"/><attr format="boolean" name="hideOnContentScroll"/><attr format="dimension" name="contentInsetStart"/><attr format="dimension" name="contentInsetEnd"/><attr format="dimension" name="contentInsetLeft"/><attr format="dimension" name="contentInsetRight"/><attr format="dimension" name="elevation"/><attr format="reference" name="popupTheme"/></declare-styleable>
     <declare-styleable name="ActionBarLayout"><attr name="android:layout_gravity"/></declare-styleable>
     <declare-styleable name="ActionMenuItemView"><attr name="android:minWidth"/></declare-styleable>
@@ -155,7 +170,9 @@
     <declare-styleable name="ActionMode"><attr name="titleTextStyle"/><attr name="subtitleTextStyle"/><attr name="background"/><attr name="backgroundSplit"/><attr name="height"/><attr format="reference" name="closeItemLayout"/></declare-styleable>
     <declare-styleable name="ActivityChooserView"><attr format="string" name="initialActivityCount"/><attr format="reference" name="expandActivityOverflowButtonDrawable"/></declare-styleable>
     <declare-styleable name="CardView"><attr format="color" name="cardBackgroundColor"/><attr format="dimension" name="cardCornerRadius"/><attr format="dimension" name="cardElevation"/><attr format="dimension" name="cardMaxElevation"/><attr format="boolean" name="cardUseCompatPadding"/><attr format="boolean" name="cardPreventCornerOverlap"/><attr format="dimension" name="contentPadding"/><attr format="dimension" name="contentPaddingLeft"/><attr format="dimension" name="contentPaddingRight"/><attr format="dimension" name="contentPaddingTop"/><attr format="dimension" name="contentPaddingBottom"/></declare-styleable>
+    <declare-styleable name="CircularProgressView"><attr format="float" name="cpv_progress"/><attr format="float" name="cpv_maxProgress"/><attr format="integer" name="cpv_animDuration"/><attr format="integer" name="cpv_animSwoopDuration"/><attr format="integer" name="cpv_animSyncDuration"/><attr format="color" name="cpv_color"/><attr format="dimension" name="cpv_thickness"/><attr format="boolean" name="cpv_indeterminate"/><attr format="boolean" name="cpv_animAutostart"/><attr format="integer" name="cpv_animSteps"/></declare-styleable>
     <declare-styleable name="CompatTextView"><attr format="reference|boolean" name="textAllCaps"/></declare-styleable>
+    <declare-styleable name="CustomAttributes"><attr format="color|reference" name="rippleColor"/><attr format="float" name="rippleSpeed"/><attr format="boolean" name="showNumberIndicator"/><attr format="integer" name="max"/><attr format="integer" name="min"/><attr format="integer" name="value"/><attr format="integer" name="progress"/><attr format="dimension" name="ringWidth"/><attr format="boolean" name="check"/><attr format="dimension" name="checkBoxSize"/><attr format="dimension" name="thumbSize"/><attr format="integer" name="iconDrawable"/><attr format="dimension" name="iconSize"/><attr format="boolean" name="animate"/><attr format="float" name="rippleBorderRadius"/><attr format="boolean" name="clickAfterRipple"/></declare-styleable>
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="topBottomBarArrowSize"/><attr format="dimension" name="middleBarArrowSize"/><attr format="dimension" name="barSize"/><attr format="dimension" name="thickness"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat"><attr name="android:orientation"/><attr name="android:gravity"/><attr name="android:baselineAligned"/><attr name="android:baselineAlignedChildIndex"/><attr name="android:weightSum"/><attr format="boolean" name="measureWithLargestChild"/><attr name="divider"/><attr name="showDividers"><flag name="none" value="0"/><flag name="beginning" value="1"/><flag name="middle" value="2"/><flag name="end" value="4"/></attr><attr format="dimension" name="dividerPadding"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat_Layout"><attr name="android:layout_width"/><attr name="android:layout_height"/><attr name="android:layout_weight"/><attr name="android:layout_gravity"/></declare-styleable>
@@ -220,6 +237,9 @@
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.github.rahatarmanahmed/circularprogressview/2.3.0/res/values/values.xml -->
+    <eat-comment/>
+    <dimen name="cpv_default_thickness">4dp</dimen>
     <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
@@ -238,6 +258,14 @@
     <item name="split_action_bar" type="id"/>
     <item name="up" type="id"/>
     <integer name="abc_max_action_buttons">2</integer>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.github.rahatarmanahmed/circularprogressview/2.3.0/res/values/values.xml -->
+    <eat-comment/>
+    <integer name="cpv_default_anim_duration">4000</integer>
+    <integer name="cpv_default_anim_steps">3</integer>
+    <integer name="cpv_default_anim_swoop_duration">5000</integer>
+    <integer name="cpv_default_anim_sync_duration">500</integer>
+    <integer name="cpv_default_max_progress">100</integer>
+    <integer name="cpv_default_progress">0</integer>
     <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="Add_New">Add New</string>
