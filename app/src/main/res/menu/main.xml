@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <item
+        android:id="@+id/user_data"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/profile"/>
+    <item
+        android:id="@+id/cwiczenia"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Cwiczenia"/>
+    <item
+        android:id="@+id/user_body"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/user_body"/>
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/user"/>
+    <item
+        android:id="@+id/load_DB"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/loadDB"/>
+
+</menu>

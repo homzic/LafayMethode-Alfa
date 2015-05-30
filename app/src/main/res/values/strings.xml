@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lafay Methode</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="profile">Profile</string>
+    <string name="training">Training</string>
+    <string name="levels">Levels</string>
+    <string name="warmup">Warmup</string>
+    <string name="results">Results</string>
+    <string name="excersises">Excersises</string>
+    <string name="exit">Exit</string>
+    <string name="title_activity_levels">Levels</string>
+    <string name="level1">Level 1</string>
+    <string name="stretch">Stretching</string>
+    <string name="level2">Level 2</string>
+    <string name="level3">Level 3</string>
+    <string name="level4">Level 4</string>
+    <string name="level5">Level 5</string>
+    <string name="level6">Level 6</string>
+    <string name="title_activity_main">Lafay Methode</string>
+    <string name="title_activity_excersises">Excersises</string>
+    <string name="hello_blank_fragment">Hello</string>
+    <string name="title_activity_test">Test</string>
+    <string name="title_activity_training">Training</string>
+    <string name="title_activity_results">Results</string>
+    <string name="name">Name</string>
+    <string name="email">E-mail</string>
+    <string name="birthday">Birthday</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="title_activity_body">Body</string>
+    <string name="body">Body</string>
+    <string name="Neck">Neck [cm]</string>
+    <string name="Biceps">Biceps [cm]</string>
+    <string name="Chest">Chest [cm]</string>
+    <string name="Hip">Hip [cm]</string>
+    <string name="Calf">Calf [cm]</string>
+    <string name="Thigh">Thigh [cm]</string>
+    <string name="body_view">Body View</string>
+    <string name="addimg">Add user</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="drawer_open">Slider Menu Opened</string>
+    <string name="drawer_close">Slider Menu Closed</string>
+
+    <!--Baza danych -->
+    <string name="Add_New">Add New</string>
+    <string name="edit">Edit Contact</string>
+    <string name="title_activity_display_contact">DisplayContact</string>
+    <string name="phone">Phone</string>
+    <string name="street">Street</string>
+    <string name="country">City/State/Zip</string>
+    <string name="deleteContact">Are you sure, you want to delete it.</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item>Home</item>
+        <item>Profile</item>
+        <item>Training</item>
+        <item>Body</item>
+        <item>Results</item>
+        <item>Excercises</item>
+        <item>Levels</item>
+    </string-array>
+
+    <!-- Nav Drawer List Item Icons -->
+    <!-- Keep them in order as the titles are in -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_home</item>
+        <item>@drawable/blue_user</item>
+        <item>@drawable/blue_klata</item>
+        <item>@drawable/blue_cooldown</item>
+        <item>@drawable/blue_puchar</item>
+        <item>@drawable/blue_brzuszki</item>
+        <item>@drawable/blue_levels</item>
+    </array>
+
+
+    <!-- Cwiczenia - List Item Icons -->
+    <array name="cwiczenia_obrazki">
+        <item>@drawable/cw_a</item>
+        <item>@drawable/cw_a1</item>
+        <item>@drawable/cw_c1</item>
+        <item>@drawable/cw_d</item>
+        <item>@drawable/cw_e</item>
+        <item>@drawable/cw_f</item>
+        <item>@drawable/cw_g</item>
+        <item>@drawable/cw_k2</item>
+    </array>
+    <string-array name="cwiczenia_titles">
+        <item>Home</item>
+        <item>Profile</item>
+        <item>Training</item>
+        <item>Body</item>
+        <item>Results</item>
+        <item>Excercises</item>
+        <item>Levels</item>
+        <item>Excercises</item>
+    </string-array>
+    <string-array name="cwiczenia_opis">
+        <item>Home</item>
+        <item>Profile</item>
+        <item>Training</item>
+        <item>Body</item>
+        <item>Results</item>
+        <item>Excercises</item>
+        <item>Levels</item>
+        <item>Excercises</item>
+    </string-array>
+
+
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+    <string name="user_data">Profile</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_user_data">Profile</string>
+    <string name="save">Save</string>
+    <string name="load">Load</string>
+    <string name="hello">Hello</string>
+    <string name="delete">Delete First</string>
+    <string name="add_new">Add New</string>
+    <string name="weight">Weight</string>
+    <string name="low">Low</string>
+    <string name="medium">Medium</string>
+    <string name="high">High</string>
+    <string name="activity">Your activity</string>
+    <string name="db_test">DB test</string>
+    <string name="loadDB">Load DB</string>
+    <string name="excercises">Excercises</string>
+    <string name="title_activity_activity_body">ActivityBody</string>
+    <string name="user">User</string>
+    <string name="user_body">Body</string>
+    <string name="fill_body">Your body data</string>
+    <string name="title_activity_recycler_view">RecyclerView</string>
+    <string name="title_activity_card_view">CardViewActivity</string>
+    <string name="title_activity_test_rv">TestRV</string>
+    <string name="title_activity_list_view">ListView</string>
+    <string name="title_activity_cwiczenia">Cwiczenia</string>
+    <string name="poziom_trudnosci">Poziom trudności</string>
+    <string name="cwiczenie_A">Ćwiczenie A</string>
+    <string name="cw_A_opis">Oprzyj dłonie i stopy na podłodze. Tułów w pozycji wyprostowanej. Odległość między rękoma wynosi około dwóch szerokości barków. Zginając ręce w łokciach, opuść się do momentu w którym klatka piersiowa niemalże dotknie podłogi, następnie powróć do dotknie podłogi, następnie powróć do pozycji wyjściowej z wyprostowanymi rękoma. Opuszczając się weź głęboki wdech, a podnosząc ciało zrób wydech.</string>
+    <string name="cwiczenie">Ćwiczenie</string>
+    <string name="krotki_opis">Krótki opis cwiczenia A1</string>
+    <string name="przeczytaj_opis">Przeczytaj opis</string>
+    <string name="pokaz_opis">Pokaż opis</string>
+    <string name="zwin_opis">Zwiń opis</string>
+    <string name="uzupelnij_profil">Chcesz uzupełnić swój profil?</string>
+    <string name="pierwsze_uruchomienie">Pierwsze uruchomienie</string>
+
+</resources>
