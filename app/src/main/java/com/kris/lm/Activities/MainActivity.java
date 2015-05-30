@@ -1,11 +1,8 @@
 package com.kris.lm.Activities;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -21,7 +18,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.kris.lm.Fragments.HomeFragment;
 import com.kris.lm.Fragments.LevelsFragment;
@@ -38,8 +34,6 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends Activity {
-    public static final String DEFAULT = " ";
-    public String Name;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -61,9 +55,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dataSettings = getSharedPreferences("MyData", Context.MODE_PRIVATE);
-        Name = dataSettings.getString("name", DEFAULT);
-     
+
 
         // load slide menu items
         navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
@@ -110,7 +102,7 @@ public class MainActivity extends Activity {
         getActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
 
 
-        FirstStart();
+
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
                 R.drawable.ic_drawer, //nav menu toggle icon
                 R.string.app_name, // nav drawer open - description for accessibility
@@ -138,18 +130,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    private FragmentManager getSupportFragmentManager() {
-        return null;
-    }
 
-    public void FirstStart() {
-        if (!Name.equals(" "))
-            Toast.makeText(this, "Hello " + Name + "!", Toast.LENGTH_LONG).show();
-        else {
-            Toast.makeText(this, "Fill in your profile!", Toast.LENGTH_LONG).show();
-            //  startActivity(new Intent(this, ActivityUserData.class));
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -210,7 +191,7 @@ public class MainActivity extends Activity {
      */
     private void displayView(int position) {
         // update the main content by replacing fragments
-        Toast.makeText(this, "The Item Clicked is: " + position, Toast.LENGTH_SHORT).show();
+   //     Toast.makeText(this, "The Item Clicked is: " + position, Toast.LENGTH_SHORT).show();
         Fragment fragment = null;
         switch (position) {
             case 0:
@@ -258,7 +239,7 @@ public class MainActivity extends Activity {
     @Override
     public void setTitle(CharSequence title) {
 
-        mTitle = title + " " + Name;
+        mTitle = title;
         getActionBar().setTitle(mTitle);
     }
 
@@ -279,34 +260,6 @@ public class MainActivity extends Activity {
         super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggls
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.setTitle(getString(R.string.pierwsze_uruchomienie));
-        builder.setMessage(getString(R.string.uzupelnij_profil));
-        Intent intent = new Intent(this, ActivityDB.class);
-        builder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
-
-            public void onClick(DialogInterface dialog, int which) {
-                // Do nothing but close the dialog
-
-                dialog.dismiss();
-            }
-
-        });
-
-        builder.setNegativeButton("Nie", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // Do nothing
-                dialog.dismiss();
-            }
-        });
-
-        AlertDialog alert = builder.create();
-        alert.show();
-     alert = builder.create();
-        alert.show();
     }
 
     /**

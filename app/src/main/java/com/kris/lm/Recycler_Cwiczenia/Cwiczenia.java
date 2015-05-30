@@ -1,6 +1,8 @@
 package com.kris.lm.Recycler_Cwiczenia;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -26,7 +28,7 @@ public class Cwiczenia extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cwiczenia);
 
-
+        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
         ListaCwiczen();
         int L = cItems.size();
         mItems = new ArrayList<>(L);
@@ -62,8 +64,8 @@ public class Cwiczenia extends Activity {
                             public void onDismissedBySwipeLeft(RecyclerView recyclerView, int[] reverseSortedPositions) {
                                 for (int position : reverseSortedPositions) {
                                     //Toast.makeText(Cwiczenia.this, mItems.get(position) + " swiped left", Toast.LENGTH_SHORT).show();
-                                    mItems.remove(position);
-                                    mAdapter.notifyItemRemoved(position);
+                            //        mItems.remove(position);
+                            //        mAdapter.notifyItemRemoved(position);
                                 }
                                 mAdapter.notifyDataSetChanged();
                             }
@@ -72,8 +74,8 @@ public class Cwiczenia extends Activity {
                             public void onDismissedBySwipeRight(RecyclerView recyclerView, int[] reverseSortedPositions) {
                                 for (int position : reverseSortedPositions) {
 //                                    Toast.makeText(Cwiczenia.this, mItems.get(position) + " swiped right", Toast.LENGTH_SHORT).show();
-                                    mItems.remove(position);
-                                    mAdapter.notifyItemRemoved(position);
+                             //       mItems.remove(position);
+                             //       mAdapter.notifyItemRemoved(position);
                                 }
                                 mAdapter.notifyDataSetChanged();
                             }

@@ -6,6 +6,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
@@ -13,9 +15,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import java.util.Calendar;
-
 import com.kris.lm.R;
+
+import java.util.Calendar;
 
 import static com.kris.lm.R.id.radioMale;
 //Zapisz dane do SharedPreferences
@@ -53,7 +55,7 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
         eMail = (EditText) findViewById(R.id.editEmail);
         etWeight = (EditText) findViewById(R.id.editWeight);
         setDate(); // Pobranie daty urodzenia z Date Picker
-
+        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
         Load(); // załaduj dane jesli dostepne
 
 

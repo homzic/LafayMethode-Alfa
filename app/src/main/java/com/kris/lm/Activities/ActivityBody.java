@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -34,7 +36,7 @@ public class ActivityBody extends Activity {
         etHip = (EditText) findViewById(R.id.editPas);
         etThigh = (EditText) findViewById(R.id.editUda);
         etCalf = (EditText) findViewById(R.id.editLydki);
-
+        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
         loadDB();
 
     }
