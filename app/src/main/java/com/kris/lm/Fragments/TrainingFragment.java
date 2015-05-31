@@ -2,10 +2,10 @@ package com.kris.lm.Fragments;
 
 import android.app.Fragment;
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
+import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -15,23 +15,17 @@ import com.gc.materialdesign.views.Slider;
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.kris.lm.R;
 
-import static com.kris.lm.R.raw.tick;
-
 public class TrainingFragment extends Fragment {
     Context context;
-    com.gc.materialdesign.views.Button buttonStart;
+    com.gc.materialdesign.views.Button buttonStart, buttonStop;
     ProgressBarDeterminate progressBarDeterminate;
-    MediaPlayer mediaPlayer;
+
     TextView textCounter;
     long odliczaj = 10000;
     long interval = 1000;
     CircularProgressView progressView;
     private MyCountDownTimer myCountDownTimer;
     Slider slider;
-    private long totalTimeCountInMilliseconds; // total count down time in
-    // milliseconds
-    private long timeBlinkInMilliseconds; // start time of start blinking
-    private boolean blink; // controls the blinking .. on and off
 
 
     public TrainingFragment() {
@@ -43,9 +37,9 @@ public class TrainingFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_training, container, false);
         context = rootView.getContext();
-        mediaPlayer = MediaPlayer.create(context, tick);
-        mediaPlayer.setLooping(true);
+
         buttonStart = (com.gc.materialdesign.views.Button) rootView.findViewById(R.id.start);
+        buttonStop = (com.gc.materialdesign.views.Button) rootView.findViewById(R.id.stop);
         progressBarDeterminate = (ProgressBarDeterminate) rootView.findViewById(R.id.progressDeterminate);
         progressView = (CircularProgressView) rootView.findViewById(R.id.progress_view);
         slider = (Slider) rootView.findViewById(R.id.slider);
@@ -53,7 +47,8 @@ public class TrainingFragment extends Fragment {
         slider.setShowNumberIndicator(true);
         slider.setMax(200);
 
-        //ustaw prgoresbary na 100 i dostosuj do do odliczanego czasu skalê
+
+        //ustaw prgoresbary na 100 i dostosuj do do odliczanego czasu skal
         progressView.setProgress(100);
         progressView.setMaxProgress(odliczaj / 1000);
         progressBarDeterminate.setMax((int) (odliczaj / 1000));
@@ -72,10 +67,22 @@ public class TrainingFragment extends Fragment {
                 textCounter.setText(String.format("%02d", (odliczaj / 1000) / 60)
                         + ":" + String.format("%02d", (odliczaj / 1000) % 60));
                 myCountDownTimer.cancel();
+
+                buttonStop.setVisibility(View.GONE);
+                buttonStart.setVisibility(View.VISIBLE);
             }
         });
 
+        buttonStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myCountDownTimer.cancel();
 
+                buttonStop.setVisibility(View.GONE);
+                buttonStart.setVisibility(View.VISIBLE);
+                v.playSoundEffect(SoundEffectConstants.CLICK);
+            }
+        });
         buttonStart.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -87,9 +94,10 @@ public class TrainingFragment extends Fragment {
                 if (progressView.getProgress() == 100) {
                     myCountDownTimer = new MyCountDownTimer(odliczaj, interval);
                     myCountDownTimer.start();
-                    mediaPlayer.start();
 
                 }
+                buttonStart.setVisibility(View.GONE);
+                buttonStop.setVisibility(View.VISIBLE);
 
             }
         });
@@ -109,20 +117,27 @@ public class TrainingFragment extends Fragment {
             progressBarDeterminate.setProgress(progress);
             progressView.setProgress(progress);
 
+            if (progress < 5) {
+                progressView.setColor(getResources().getColor(R.color.redItem));
+                progressView.playSoundEffect(SoundEffectConstants.CLICK);
+
+            } else {
+                progressView.setColor(getResources().getColor(R.color.colorAccent));
+
+            }
+
             textCounter.setText(String.format("%02d", (millisUntilFinished / 1000) / 60)
                     + ":" + String.format("%02d", (millisUntilFinished / 1000) % 60));
         }
 
         @Override
         public void onFinish() {
-            mediaPlayer.stop();
             textCounter.setText("Finished");
             progressBarDeterminate.setProgress(0);
             progressView.setProgress(0);
+            buttonStop.setVisibility(View.GONE);
+            buttonStart.setVisibility(View.VISIBLE);
 
         }
-
     }
-
-
 }

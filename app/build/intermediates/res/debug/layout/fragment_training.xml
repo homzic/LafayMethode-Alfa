@@ -23,7 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:soundEffectsEnabled="true">
 
         <com.github.rahatarmanahmed.cpv.CircularProgressView
             android:id="@+id/progress_view"
@@ -72,8 +73,19 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:background="@color/textColorPrimary"
-            android:paddingStart="20dp"
             android:text="Start"
+            app:paddingStart="20dp" />
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/slider"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@color/redItem"
+            android:text="Stop"
+            android:visibility="gone"
             app:paddingStart="20dp" />
 
     </RelativeLayout>

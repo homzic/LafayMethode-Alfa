@@ -12,4 +12,5 @@
     <color name="textColorPrimary">#03A9F4</color>
     <color name="textColorPrimaryLight">#8EC7FF</color>
     <color name="textColorInput">#6B6666</color>
+    <color name="redItem">#FF0101</color>
 </resources>

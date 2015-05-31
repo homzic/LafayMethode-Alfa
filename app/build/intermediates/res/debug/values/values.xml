@@ -148,6 +148,11 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="redItem">#FF0101</color>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.0/res/values/values.xml -->
+    <eat-comment/>
     <color name="ripple_material_dark">#4dffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
