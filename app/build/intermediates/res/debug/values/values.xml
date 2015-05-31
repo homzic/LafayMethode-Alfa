@@ -434,13 +434,18 @@
     <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
-        <!--
+        <item name="colorControlNormal">#c5c5c5</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item> <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         -->
     </style>
     <style name="AppTheme" parent="AppBaseTheme">
+        <item name="colorControlNormal">#c5c5c5</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
     <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.0/res/values/values.xml -->
@@ -1374,9 +1379,15 @@
     <eat-comment/>
     <style name="CustomActionBarTheme" parent="@android:style/Theme.Holo.Light">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="colorControlNormal">#c5c5c5</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
     <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/primaryColorDark</item>
+        <item name="colorControlNormal">#c5c5c5</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
     <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.0/res/values/values.xml -->
     <eat-comment/>
