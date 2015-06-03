@@ -67,7 +67,7 @@
 
         <com.gc.materialdesign.views.ButtonRectangle
             android:id="@+id/start"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/slider"
             android:layout_centerHorizontal="true"
@@ -78,7 +78,7 @@
 
         <com.gc.materialdesign.views.ButtonRectangle
             android:id="@+id/stop"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/slider"
             android:layout_centerHorizontal="true"

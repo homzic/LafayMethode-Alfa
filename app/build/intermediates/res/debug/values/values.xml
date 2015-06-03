@@ -96,6 +96,13 @@
     <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="colorAccent">#FF93FF1C</color>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/net.steamcrafted/load-toast/1.0.6/res/values/values.xml -->
+    <eat-comment/>
+    <color name="color_accent">#7c4dff</color>
+    <color name="color_error">#f44336</color>
+    <color name="color_success">#3CCD88</color>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/color.xml -->
+    <eat-comment/>
     <color name="counter_text_bg">#626262</color>
     <color name="counter_text_color">#c5c4c4</color>
     <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.github.rahatarmanahmed/circularprogressview/2.3.0/res/values/values.xml -->
@@ -363,6 +370,16 @@
     <string name="db_test">DB test</string>
     <string name="delete">Delete First</string>
     <string name="deleteContact">Are you sure, you want to delete it.</string>
+    <string name="demo_date">Date</string>
+    <string name="demo_email">Email</string>
+    <string name="demo_email_hint">E-mail address</string>
+    <string name="demo_menu_live_validation_disable">Disable live validation</string>
+    <string name="demo_menu_live_validation_enable">Enable live validation</string>
+    <string name="demo_name">Name</string>
+    <string name="demo_number_of_participants">Participants</string>
+    <string name="demo_participants_hint"># of participants</string>
+    <string name="demo_pick_date">Pick Date</string>
+    <string name="demo_type">Type</string>
     <string name="desc_list_item_icon">Item Icon</string>
     <string name="drawer_close">Slider Menu Closed</string>
     <string name="drawer_open">Slider Menu Opened</string>
@@ -402,6 +419,11 @@
     <string name="przeczytaj_opis">Przeczytaj opis</string>
     <string name="results">Results</string>
     <string name="save">Save</string>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/strings_cwiczenia.xml -->
+    <eat-comment/>
+    <string name="sending_reply">Sending Reply...</string>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
     <string name="street">Street</string>
     <string name="stretch">Stretching</string>
     <string name="title_activity_activity_body">ActivityBody</string>
@@ -426,6 +448,13 @@
     <string name="user_body">Body</string>
     <string name="user_data">Profile</string>
     <string name="uzupelnij_profil">Chcesz uzupełnić swój profil?</string>
+    <string name="validation_date">Date must be in future</string>
+    <string name="validation_name">Please, enter the name</string>
+    <string name="validation_name_length">Please, enter the name with at least 3 characters</string>
+    <string name="validation_participants">Please, enter the number of participants</string>
+    <string name="validation_success">Validation succeeded! \nThat was easy, wasn\'t it?</string>
+    <string name="validation_type">Please, select type</string>
+    <string name="validation_valid_email">Please, enter valid email address</string>
     <string name="warmup">Warmup</string>
     <string name="weight">Weight</string>
     <string name="yes">Yes</string>

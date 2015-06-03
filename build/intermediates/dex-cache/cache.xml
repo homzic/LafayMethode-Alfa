@@ -44,6 +44,13 @@
         <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\classes-2b646d1bdf676574ecfbc7e453874a0f53a2bcde.jar" />
     </item>
     <item
+        jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\net.steamcrafted\load-toast\1.0.6\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f0b653f07052064570b06767e9b4b0b6a29397af">
+        <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\classes-b2176bbaa70c677c855dd55cdfb0724a4a12b6d2.jar" />
+    </item>
+    <item
         jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-v13\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\classes.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -84,6 +91,13 @@
         revision="22.0.1"
         sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
         <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-v13\app\build\intermediates\pre-dexed\debug\classes-7d2f987e2e12f97d6ea62a05bd619bffa613acf9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kris\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v2.1.0\ec46f9251e1e0ee60e1b6beae8b16f2e0fdee474\MPAndroidChart-v2.1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ec46f9251e1e0ee60e1b6beae8b16f2e0fdee474">
+        <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\MPAndroidChart-v2.1.0-fc1421a9cb082134b61fcb0d803c087b4827baf4.jar" />
     </item>
     <item
         jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\com.rengwuxian.materialedittext\library\2.1.3\classes.jar"

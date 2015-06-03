@@ -24,6 +24,8 @@ import static com.kris.lm.R.id.radioMale;
 
 public class ActivityUserData extends Activity implements View.OnClickListener {
     public static final String DEFAULT = " ";
+
+
     private EditText userName;
     private EditText eMail;
     private EditText etBirthday;
@@ -51,6 +53,7 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_data);
         userName = (EditText) findViewById(R.id.editName);
+
         etBirthday = (EditText) findViewById(R.id.editBirthday);
         eMail = (EditText) findViewById(R.id.editEmail);
         etWeight = (EditText) findViewById(R.id.editWeight);
@@ -81,6 +84,7 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
     }
 
     public void Save(View view) {
+
         dataSettings = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = dataSettings.edit();
         editor.putString("name", userName.getText().toString());

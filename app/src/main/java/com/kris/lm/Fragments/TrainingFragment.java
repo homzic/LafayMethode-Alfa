@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.SoundEffectConstants;
 import android.view.View;
@@ -19,14 +20,15 @@ public class TrainingFragment extends Fragment {
     Context context;
     com.gc.materialdesign.views.Button buttonStart, buttonStop;
     ProgressBarDeterminate progressBarDeterminate;
-
+    Vibrator v;
+    long[] pattern = {0, 1000, 1000, 2000};
+    boolean set = false;
     TextView textCounter;
     long odliczaj = 10000;
     long interval = 1000;
     CircularProgressView progressView;
     private MyCountDownTimer myCountDownTimer;
     Slider slider;
-
 
     public TrainingFragment() {
     }
@@ -37,7 +39,6 @@ public class TrainingFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_training, container, false);
         context = rootView.getContext();
-
         buttonStart = (com.gc.materialdesign.views.Button) rootView.findViewById(R.id.start);
         buttonStop = (com.gc.materialdesign.views.Button) rootView.findViewById(R.id.stop);
         progressBarDeterminate = (ProgressBarDeterminate) rootView.findViewById(R.id.progressDeterminate);
@@ -46,8 +47,7 @@ public class TrainingFragment extends Fragment {
         slider.setValue(10);
         slider.setShowNumberIndicator(true);
         slider.setMax(200);
-
-
+        v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         //ustaw prgoresbary na 100 i dostosuj do do odliczanego czasu skal
         progressView.setProgress(100);
         progressView.setMaxProgress(odliczaj / 1000);
@@ -117,9 +117,14 @@ public class TrainingFragment extends Fragment {
             progressBarDeterminate.setProgress(progress);
             progressView.setProgress(progress);
 
-            if (progress < 5) {
+            if (progress < 3) {
                 progressView.setColor(getResources().getColor(R.color.redItem));
                 progressView.playSoundEffect(SoundEffectConstants.CLICK);
+                set = true;
+                if (set) {
+                    v.vibrate(pattern, -1);
+                    set = false;
+                }
 
             } else {
                 progressView.setColor(getResources().getColor(R.color.colorAccent));
@@ -132,11 +137,13 @@ public class TrainingFragment extends Fragment {
 
         @Override
         public void onFinish() {
+
             textCounter.setText("Finished");
             progressBarDeterminate.setProgress(0);
             progressView.setProgress(0);
             buttonStop.setVisibility(View.GONE);
             buttonStart.setVisibility(View.VISIBLE);
+
 
         }
     }

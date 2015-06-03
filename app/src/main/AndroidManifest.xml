@@ -66,5 +66,5 @@
                 android:value="com.kris.lm.Activities.MainActivity" />
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.VIBRATE"/>
 </manifest>
