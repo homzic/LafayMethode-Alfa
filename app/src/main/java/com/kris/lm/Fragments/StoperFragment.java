@@ -11,15 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.gc.materialdesign.views.ProgressBarDeterminate;
 import com.gc.materialdesign.views.Slider;
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.kris.lm.R;
 
-public class TrainingFragment extends Fragment {
+public class StoperFragment extends Fragment {
     Context context;
     com.gc.materialdesign.views.Button buttonStart, buttonStop;
-    ProgressBarDeterminate progressBarDeterminate;
     Vibrator v;
     long[] pattern = {0, 1000, 1000, 2000};
     boolean set = false;
@@ -30,18 +28,18 @@ public class TrainingFragment extends Fragment {
     private MyCountDownTimer myCountDownTimer;
     Slider slider;
 
-    public TrainingFragment() {
+    public StoperFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_training, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_stoper, container, false);
         context = rootView.getContext();
         buttonStart = (com.gc.materialdesign.views.Button) rootView.findViewById(R.id.start);
         buttonStop = (com.gc.materialdesign.views.Button) rootView.findViewById(R.id.stop);
-        progressBarDeterminate = (ProgressBarDeterminate) rootView.findViewById(R.id.progressDeterminate);
+
         progressView = (CircularProgressView) rootView.findViewById(R.id.progress_view);
         slider = (Slider) rootView.findViewById(R.id.slider);
         slider.setValue(10);
@@ -51,7 +49,6 @@ public class TrainingFragment extends Fragment {
         //ustaw prgoresbary na 100 i dostosuj do do odliczanego czasu skal
         progressView.setProgress(100);
         progressView.setMaxProgress(odliczaj / 1000);
-        progressBarDeterminate.setMax((int) (odliczaj / 1000));
         textCounter = (TextView) rootView.findViewById(R.id.counter);
 
         //ustaw licznik
@@ -114,7 +111,6 @@ public class TrainingFragment extends Fragment {
         @Override
         public void onTick(long millisUntilFinished) {
             int progress = (int) (millisUntilFinished / 1000);
-            progressBarDeterminate.setProgress(progress);
             progressView.setProgress(progress);
 
             if (progress < 3) {
@@ -139,7 +135,6 @@ public class TrainingFragment extends Fragment {
         public void onFinish() {
 
             textCounter.setText("Finished");
-            progressBarDeterminate.setProgress(0);
             progressView.setProgress(0);
             buttonStop.setVisibility(View.GONE);
             buttonStart.setVisibility(View.VISIBLE);

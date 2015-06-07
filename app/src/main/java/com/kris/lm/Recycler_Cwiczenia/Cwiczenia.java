@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,7 @@ import java.util.List;
 public class Cwiczenia extends Activity {
 
     private CardViewAdapter mAdapter;
-    private List<CwiczenieItem> cItems;
+    public List<CwiczenieItem> cItems;
     private ArrayList<String> mItems;
 
     @Override
@@ -31,6 +32,7 @@ public class Cwiczenia extends Activity {
         getActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
         ListaCwiczen();
         int L = cItems.size();
+        Log.e("mItems ", "Lista cwiczen " + L);
         mItems = new ArrayList<>(L);
         for (int i = 0; i < L; i++) {
             mItems.add(String.format("%02d", i));
@@ -184,51 +186,46 @@ public class Cwiczenia extends Activity {
 
         cwiczenie = new CwiczenieItem();
         cwiczenie.setName(getString(R.string.cwiczenie) + " A1");
-        cwiczenie.setDes(getString(R.string.cw_A_opis) + " A1");
+        cwiczenie.setDes(getString(R.string.cw_A1_opis));
         cwiczenie.setThumbnail(R.drawable.cw_a1);
-        cwiczenie.setmDifficulty(R.drawable.skill4);
+        cwiczenie.setmDifficulty(R.drawable.skill1);
+        cItems.add(cwiczenie);
+
+        cwiczenie = new CwiczenieItem();
+        cwiczenie.setName(getString(R.string.cwiczenie) + " B");
+        cwiczenie.setDes(getString(R.string.cw_B_opis));
+        cwiczenie.setThumbnail(R.drawable.cw_b);
+        cwiczenie.setmDifficulty(R.drawable.skill2);
+        cItems.add(cwiczenie);
+
+        cwiczenie = new CwiczenieItem();
+        cwiczenie.setName(getString(R.string.cwiczenie) + " C");
+        cwiczenie.setDes(getString(R.string.cw_C_opis));
+        cwiczenie.setThumbnail(R.drawable.cw_c);
+        cwiczenie.setmDifficulty(R.drawable.skill2);
         cItems.add(cwiczenie);
 
         cwiczenie = new CwiczenieItem();
         cwiczenie.setName(getString(R.string.cwiczenie) + " C1");
-        cwiczenie.setDes(getString(R.string.cw_A_opis) + " C1");
+        cwiczenie.setDes(getString(R.string.cw_C1_opis));
         cwiczenie.setThumbnail(R.drawable.cw_c1);
         cwiczenie.setmDifficulty(R.drawable.skill1);
         cItems.add(cwiczenie);
 
         cwiczenie = new CwiczenieItem();
         cwiczenie.setName(getString(R.string.cwiczenie) + " D");
-        cwiczenie.setDes(getString(R.string.cw_A_opis) + " D");
+        cwiczenie.setDes(getString(R.string.cw_D_opis));
         cwiczenie.setThumbnail(R.drawable.cw_d);
-        cwiczenie.setmDifficulty(R.drawable.skill3);
+        cwiczenie.setmDifficulty(R.drawable.skill1);
         cItems.add(cwiczenie);
 
         cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " D");
-        cwiczenie.setDes(getString(R.string.cw_A_opis) + " D");
-        cwiczenie.setThumbnail(R.drawable.cw_d);
-        cwiczenie.setmDifficulty(R.drawable.skill3);
+        cwiczenie.setName(getString(R.string.cwiczenie) + " E");
+        cwiczenie.setDes(getString(R.string.cw_E_opis));
+        cwiczenie.setThumbnail(R.drawable.cw_e);
+        cwiczenie.setmDifficulty(R.drawable.skill1);
         cItems.add(cwiczenie);
 
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " D");
-        cwiczenie.setDes(getString(R.string.cw_A_opis) + " D");
-        cwiczenie.setThumbnail(R.drawable.cw_d);
-        cwiczenie.setmDifficulty(R.drawable.skill3);
-        cItems.add(cwiczenie);
 
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " D");
-        cwiczenie.setDes(getString(R.string.cw_A_opis) + " D");
-        cwiczenie.setThumbnail(R.drawable.cw_d);
-        cwiczenie.setmDifficulty(R.drawable.skill3);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " D");
-        cwiczenie.setDes(getString(R.string.cw_A_opis) + " D");
-        cwiczenie.setThumbnail(R.drawable.cw_d);
-        cwiczenie.setmDifficulty(R.drawable.skill3);
-        cItems.add(cwiczenie);
     }
 }

@@ -22,7 +22,7 @@ import android.widget.ListView;
 import com.kris.lm.Fragments.HomeFragment;
 import com.kris.lm.Fragments.LevelsFragment;
 import com.kris.lm.Fragments.ResultsFragment;
-import com.kris.lm.Fragments.TrainingFragment;
+import com.kris.lm.Fragments.StoperFragment;
 import com.kris.lm.NavDrawer.NavDrawerItem;
 import com.kris.lm.NavDrawer.NavDrawerListAdapter;
 import com.kris.lm.R;
@@ -202,7 +202,7 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(this, ActivityUserData.class));
                 return;
             case 2:
-                fragment = new TrainingFragment();
+                fragment = new StoperFragment();
                 break;
             case 3:
                 startActivity(new Intent(this, ActivityBody.class));

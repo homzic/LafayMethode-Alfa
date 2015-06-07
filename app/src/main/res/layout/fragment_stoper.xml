@@ -13,12 +13,6 @@
 
     </LinearLayout>
 
-    <com.gc.materialdesign.views.ProgressBarDeterminate
-        android:id="@+id/progressDeterminate"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#1E88E5" />
-
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,7 +47,7 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:paddingTop="60dp">
 
         <com.gc.materialdesign.views.Slider
@@ -61,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/textColorPrimary"
+            android:visibility="visible"
             materialdesign:max="200"
             materialdesign:min="10"
             materialdesign:showNumberIndicator="true" />
@@ -69,24 +64,24 @@
             android:id="@+id/start"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/slider"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             android:background="@color/textColorPrimary"
             android:text="Start"
-            app:paddingStart="20dp" />
+            app:paddingStart="20dp"
+            />
 
         <com.gc.materialdesign.views.ButtonRectangle
             android:id="@+id/stop"
             android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/slider"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"
             android:background="@color/redItem"
             android:text="Stop"
             android:visibility="gone"
-            app:paddingStart="20dp" />
+            app:paddingStart="20dp"
+            android:layout_alignStart="@+id/start" />
 
     </RelativeLayout>
-</LinearLayout><!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/layout/fragment_training.xml -->
+</LinearLayout>

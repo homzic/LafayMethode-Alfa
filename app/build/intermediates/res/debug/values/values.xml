@@ -2,36 +2,6 @@
 <resources>
     <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <array name="cwiczenia_obrazki">
-        <item>@drawable/cw_a</item>
-        <item>@drawable/cw_a1</item>
-        <item>@drawable/cw_c1</item>
-        <item>@drawable/cw_d</item>
-        <item>@drawable/cw_e</item>
-        <item>@drawable/cw_f</item>
-        <item>@drawable/cw_g</item>
-        <item>@drawable/cw_k2</item>
-    </array>
-    <string-array name="cwiczenia_opis">
-        <item>Home</item>
-        <item>Profile</item>
-        <item>Training</item>
-        <item>Body</item>
-        <item>Results</item>
-        <item>Excercises</item>
-        <item>Levels</item>
-        <item>Excercises</item>
-    </string-array>
-    <string-array name="cwiczenia_titles">
-        <item>Home</item>
-        <item>Profile</item>
-        <item>Training</item>
-        <item>Body</item>
-        <item>Results</item>
-        <item>Excercises</item>
-        <item>Levels</item>
-        <item>Excercises</item>
-    </string-array>
     <array name="nav_drawer_icons">
         <item>@drawable/ic_home</item>
         <item>@drawable/blue_user</item>
@@ -44,7 +14,7 @@
     <string-array name="nav_drawer_items">
         <item>Home</item>
         <item>Profile</item>
-        <item>Training</item>
+        <item>Stoper</item>
         <item>Body</item>
         <item>Results</item>
         <item>Excercises</item>
@@ -364,22 +334,21 @@
     <string name="body">Body</string>
     <string name="body_view">Body View</string>
     <string name="country">City/State/Zip</string>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/strings_cwiczenia.xml -->
+    <eat-comment/>
+    <string name="cw_A1_opis">Oprzyj dłonie i stopy na podłodze. Tułów w pozycji wyprostowanej. Odległość między rękoma wynosi około dwóch szerokości barków. Zginając ręce w łokciach, opuść się do momentu w którym klatka piersiowa niemalże dotknie podłogi, następnie powróć do dotknie podłogi, następnie powróć do pozycji wyjściowej z wyprostowanymi rękoma. Opuszczając się weź głęboki wdech, a podnosząc ciało zrób wydech.</string>
     <string name="cw_A_opis">Oprzyj dłonie i stopy na podłodze. Tułów w pozycji wyprostowanej. Odległość między rękoma wynosi około dwóch szerokości barków. Zginając ręce w łokciach, opuść się do momentu w którym klatka piersiowa niemalże dotknie podłogi, następnie powróć do dotknie podłogi, następnie powróć do pozycji wyjściowej z wyprostowanymi rękoma. Opuszczając się weź głęboki wdech, a podnosząc ciało zrób wydech.</string>
+    <string name="cw_B_opis">Oprzyj się na dwóch równoległych drążkach lub podpórkach. Zginając ręce, opuszczaj się, nie dotykając stopami podłogi. Jeśli to konieczne, ugnij nogi w kolanach.</string>
+    <string name="cw_C1_opis">Wdychając powietrze, opuść się do połowy zakresu ruchu (ramiona równolegle do podłoża). Następnie wydyhcając powietrze, podciągnij się.</string>
+    <string name="cw_C_opis">Chwyć drążek, obejmując go całymi dłońmi, rozstawionymi mniej więcej na szerokość barków; palce mają być skierowane w stronę twarzy. Po przyjęciu pozycji wyjściowej (zwis na wyprostowanych rękach) weź głębszy oddech. Następnie, wdychając powietrze, pociągnij się do momentu, aż broda znajdzie się powyżej drążka. Biorąc oddech, opuść się. Podciągając się , rób wydech.</string>
+    <string name="cw_D_opis">Nogi są lekko ugięte. Biorąc wdech, zegnij ręce i opuść się tak nisko, jak tylko możesz. Wydychając powietrze, wyprostuj ręce i powróć do pozycji wyjściowej.</string>
+    <string name="cw_E_opis">Stojąc na jednej nodze zrób niewielki przysiad. Opuszczaj się do momentu, aż udo będzie ustawione prawie równolegle do podłogi. Opuszczając się bierz wdech, a podnosząc wydech.</string>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
     <string name="cwiczenie">Ćwiczenie</string>
-    <string name="cwiczenie_A">Ćwiczenie A</string>
     <string name="db_test">DB test</string>
     <string name="delete">Delete First</string>
     <string name="deleteContact">Are you sure, you want to delete it.</string>
-    <string name="demo_date">Date</string>
-    <string name="demo_email">Email</string>
-    <string name="demo_email_hint">E-mail address</string>
-    <string name="demo_menu_live_validation_disable">Disable live validation</string>
-    <string name="demo_menu_live_validation_enable">Enable live validation</string>
-    <string name="demo_name">Name</string>
-    <string name="demo_number_of_participants">Participants</string>
-    <string name="demo_participants_hint"># of participants</string>
-    <string name="demo_pick_date">Pick Date</string>
-    <string name="demo_type">Type</string>
     <string name="desc_list_item_icon">Item Icon</string>
     <string name="drawer_close">Slider Menu Closed</string>
     <string name="drawer_open">Slider Menu Opened</string>
@@ -395,7 +364,6 @@
     <string name="hello_blank_fragment">Hello</string>
     <string name="hello_world">Hello world!</string>
     <string name="high">High</string>
-    <string name="krotki_opis">Krótki opis cwiczenia A1</string>
     <string name="level1">Level 1</string>
     <string name="level2">Level 2</string>
     <string name="level3">Level 3</string>
@@ -419,11 +387,6 @@
     <string name="przeczytaj_opis">Przeczytaj opis</string>
     <string name="results">Results</string>
     <string name="save">Save</string>
-    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/strings_cwiczenia.xml -->
-    <eat-comment/>
-    <string name="sending_reply">Sending Reply...</string>
-    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/strings.xml -->
-    <eat-comment/>
     <string name="street">Street</string>
     <string name="stretch">Stretching</string>
     <string name="title_activity_activity_body">ActivityBody</string>
@@ -448,13 +411,6 @@
     <string name="user_body">Body</string>
     <string name="user_data">Profile</string>
     <string name="uzupelnij_profil">Chcesz uzupełnić swój profil?</string>
-    <string name="validation_date">Date must be in future</string>
-    <string name="validation_name">Please, enter the name</string>
-    <string name="validation_name_length">Please, enter the name with at least 3 characters</string>
-    <string name="validation_participants">Please, enter the number of participants</string>
-    <string name="validation_success">Validation succeeded! \nThat was easy, wasn\'t it?</string>
-    <string name="validation_type">Please, select type</string>
-    <string name="validation_valid_email">Please, enter valid email address</string>
     <string name="warmup">Warmup</string>
     <string name="weight">Weight</string>
     <string name="yes">Yes</string>

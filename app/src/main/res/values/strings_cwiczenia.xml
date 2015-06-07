@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="sending_reply">Sending Reply...</string>
+
+    <string name="cw_A_opis">Oprzyj dłonie i stopy na podłodze. Tułów w pozycji wyprostowanej. Odległość między rękoma wynosi około dwóch szerokości barków. Zginając ręce w łokciach, opuść się do momentu w którym klatka piersiowa niemalże dotknie podłogi, następnie powróć do dotknie podłogi, następnie powróć do pozycji wyjściowej z wyprostowanymi rękoma. Opuszczając się weź głęboki wdech, a podnosząc ciało zrób wydech.</string>
+
+    <string name="cw_A1_opis">Oprzyj dłonie i stopy na podłodze. Tułów w pozycji wyprostowanej. Odległość między rękoma wynosi około dwóch szerokości barków. Zginając ręce w łokciach, opuść się do momentu w którym klatka piersiowa niemalże dotknie podłogi, następnie powróć do dotknie podłogi, następnie powróć do pozycji wyjściowej z wyprostowanymi rękoma. Opuszczając się weź głęboki wdech, a podnosząc ciało zrób wydech.</string>
+
+    <string name="cw_B_opis">Oprzyj się na dwóch równoległych drążkach lub podpórkach. Zginając ręce, opuszczaj się, nie dotykając stopami podłogi. Jeśli to konieczne, ugnij nogi w kolanach.</string>
+
+    <string name="cw_C_opis">Chwyć drążek, obejmując go całymi dłońmi, rozstawionymi mniej więcej na szerokość barków; palce mają być skierowane w stronę twarzy. Po przyjęciu pozycji wyjściowej (zwis na wyprostowanych rękach) weź głębszy oddech. Następnie, wdychając powietrze, pociągnij się do momentu, aż broda znajdzie się powyżej drążka. Biorąc oddech, opuść się. Podciągając się , rób wydech.</string>
+
+    <string name="cw_C1_opis">Wdychając powietrze, opuść się do połowy zakresu ruchu (ramiona równolegle do podłoża). Następnie wydyhcając powietrze, podciągnij się.</string>
+
+    <string name="cw_D_opis">Nogi są lekko ugięte. Biorąc wdech, zegnij ręce i opuść się tak nisko, jak tylko możesz. Wydychając powietrze, wyprostuj ręce i powróć do pozycji wyjściowej.</string>
+
+    <string name="cw_E_opis">Stojąc na jednej nodze zrób niewielki przysiad. Opuszczaj się do momentu, aż udo będzie ustawione prawie równolegle do podłogi. Opuszczając się bierz wdech, a podnosząc wydech.</string>
 </resources>

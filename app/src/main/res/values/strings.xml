@@ -59,7 +59,7 @@
     <string-array name="nav_drawer_items">
         <item>Home</item>
         <item>Profile</item>
-        <item>Training</item>
+        <item>Stoper</item>
         <item>Body</item>
         <item>Results</item>
         <item>Excercises</item>
@@ -79,37 +79,6 @@
     </array>
 
 
-    <!-- Cwiczenia - List Item Icons -->
-    <array name="cwiczenia_obrazki">
-        <item>@drawable/cw_a</item>
-        <item>@drawable/cw_a1</item>
-        <item>@drawable/cw_c1</item>
-        <item>@drawable/cw_d</item>
-        <item>@drawable/cw_e</item>
-        <item>@drawable/cw_f</item>
-        <item>@drawable/cw_g</item>
-        <item>@drawable/cw_k2</item>
-    </array>
-    <string-array name="cwiczenia_titles">
-        <item>Home</item>
-        <item>Profile</item>
-        <item>Training</item>
-        <item>Body</item>
-        <item>Results</item>
-        <item>Excercises</item>
-        <item>Levels</item>
-        <item>Excercises</item>
-    </string-array>
-    <string-array name="cwiczenia_opis">
-        <item>Home</item>
-        <item>Profile</item>
-        <item>Training</item>
-        <item>Body</item>
-        <item>Results</item>
-        <item>Excercises</item>
-        <item>Levels</item>
-        <item>Excercises</item>
-    </string-array>
 
 
     <!-- Content Description -->
@@ -140,10 +109,7 @@
     <string name="title_activity_list_view">ListView</string>
     <string name="title_activity_cwiczenia">Cwiczenia</string>
     <string name="poziom_trudnosci">Poziom trudności</string>
-    <string name="cwiczenie_A">Ćwiczenie A</string>
-    <string name="cw_A_opis">Oprzyj dłonie i stopy na podłodze. Tułów w pozycji wyprostowanej. Odległość między rękoma wynosi około dwóch szerokości barków. Zginając ręce w łokciach, opuść się do momentu w którym klatka piersiowa niemalże dotknie podłogi, następnie powróć do dotknie podłogi, następnie powróć do pozycji wyjściowej z wyprostowanymi rękoma. Opuszczając się weź głęboki wdech, a podnosząc ciało zrób wydech.</string>
-    <string name="cwiczenie">Ćwiczenie</string>
-    <string name="krotki_opis">Krótki opis cwiczenia A1</string>
+      <string name="cwiczenie">Ćwiczenie</string>
     <string name="przeczytaj_opis">Przeczytaj opis</string>
     <string name="pokaz_opis">Pokaż opis</string>
     <string name="zwin_opis">Zwiń opis</string>
@@ -151,26 +117,6 @@
     <string name="pierwsze_uruchomienie">Pierwsze uruchomienie</string>
     <string name="make_body">Make your body!</string>
 
-
-    <!-- Input validator -->
-    <string name="validation_name">Please, enter the name</string>
-    <string name="validation_name_length">Please, enter the name with at least 3 characters</string>
-    <string name="validation_participants">Please, enter the number of participants</string>
-    <string name="validation_valid_email">Please, enter valid email address</string>
-    <string name="validation_date">Date must be in future</string>
-    <string name="validation_type">Please, select type</string>
-    <string name="validation_success">Validation succeeded! \nThat was easy, wasn\'t it?</string>
-
-    <string name="demo_menu_live_validation_enable">Enable live validation</string>
-    <string name="demo_menu_live_validation_disable">Disable live validation</string>
-    <string name="demo_email_hint">E-mail address</string>
-    <string name="demo_email">Email</string>
-    <string name="demo_type">Type</string>
-    <string name="demo_pick_date">Pick Date</string>
-    <string name="demo_date">Date</string>
-    <string name="demo_participants_hint"># of participants</string>
-    <string name="demo_number_of_participants">Participants</string>
-    <string name="demo_name">Name</string>
 
 
 </resources>

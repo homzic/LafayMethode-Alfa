@@ -27,7 +27,6 @@ public class HomeFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         context = getActivity().getApplicationContext();
-        Toast.makeText(context, "Wywolanie fragment", Toast.LENGTH_LONG).show();
         getSharedPref();
         FirstStart();
         return rootView;
@@ -39,7 +38,7 @@ public class HomeFragment extends Fragment {
     }
 
     public void FirstStart() {
-        if (!Name.equals(" "))
+        if (!Name.equals(""))
             Toast.makeText(context, "Hello " + Name + "!", Toast.LENGTH_LONG).show();
         else {
             Toast.makeText(context, "Fill in your profile!", Toast.LENGTH_LONG).show();
