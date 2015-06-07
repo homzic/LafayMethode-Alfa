@@ -16,17 +16,16 @@ import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.kris.lm.R;
 
 public class StoperFragment extends Fragment {
-    Context context;
-    com.gc.materialdesign.views.Button buttonStart, buttonStop;
-    Vibrator v;
-    long[] pattern = {0, 1000, 1000, 2000};
-    boolean set = false;
-    TextView textCounter;
-    long odliczaj = 10000;
-    long interval = 1000;
-    CircularProgressView progressView;
+    private com.gc.materialdesign.views.Button buttonStart;
+    private com.gc.materialdesign.views.Button buttonStop;
+    private Vibrator v;
+    private final long[] pattern = {0, 1000, 1000, 2000};
+    private TextView textCounter;
+    private long odliczaj = 10000;
+    private final long interval = 1000;
+    private CircularProgressView progressView;
     private MyCountDownTimer myCountDownTimer;
-    Slider slider;
+    private Slider slider;
 
     public StoperFragment() {
     }
@@ -36,7 +35,7 @@ public class StoperFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_stoper, container, false);
-        context = rootView.getContext();
+        Context context = rootView.getContext();
         buttonStart = (com.gc.materialdesign.views.Button) rootView.findViewById(R.id.start);
         buttonStop = (com.gc.materialdesign.views.Button) rootView.findViewById(R.id.stop);
 
@@ -116,7 +115,7 @@ public class StoperFragment extends Fragment {
             if (progress < 3) {
                 progressView.setColor(getResources().getColor(R.color.redItem));
                 progressView.playSoundEffect(SoundEffectConstants.CLICK);
-                set = true;
+                boolean set = true;
                 if (set) {
                     v.vibrate(pattern, -1);
                     set = false;

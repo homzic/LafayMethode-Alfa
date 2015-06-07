@@ -21,8 +21,7 @@ import java.util.List;
 public class Cwiczenia extends Activity {
 
     private CardViewAdapter mAdapter;
-    public List<CwiczenieItem> cItems;
-    private ArrayList<String> mItems;
+    private List<CwiczenieItem> cItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class Cwiczenia extends Activity {
         ListaCwiczen();
         int L = cItems.size();
         Log.e("mItems ", "Lista cwiczen " + L);
-        mItems = new ArrayList<>(L);
+        ArrayList<String> mItems = new ArrayList<>(L);
         for (int i = 0; i < L; i++) {
             mItems.add(String.format("%02d", i));
         }
@@ -97,7 +96,7 @@ public class Cwiczenia extends Activity {
          * @param view     the CardView touched
          * @param position the index of the item touched in the RecyclerView
          */
-        public void onCardViewTap(View view, int position);
+        void onCardViewTap(View view, int position);
 
         /**
          * Callback invoked when the Button1 of an item is touched
@@ -113,8 +112,8 @@ public class Cwiczenia extends Activity {
      * listens to clicks on the Buttons or on the CardView
      */
     public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHolder> {
-        private List<String> cards;
-        private OnItemTouchListener onItemTouchListener;
+        private final List<String> cards;
+        private final OnItemTouchListener onItemTouchListener;
 
         public CardViewAdapter(List<String> cards, OnItemTouchListener onItemTouchListener) {
             this.cards = cards;
@@ -129,12 +128,12 @@ public class Cwiczenia extends Activity {
 
         @Override
         public void onBindViewHolder(ViewHolder viewHolder, int i) {
-            CwiczenieItem nature = cItems.get(i);
+            CwiczenieItem cwiczenieItem = cItems.get(i);
 
-            viewHolder.title.setText(nature.getName());
-            viewHolder.tvDesNature.setText(nature.getDes());
-            viewHolder.imgThumbnail.setImageResource(nature.getThumbnail());
-            viewHolder.imgDifficulty.setImageResource(nature.getmDifficulty());
+            viewHolder.title.setText(cwiczenieItem.getName());
+            viewHolder.tvDesNature.setText(cwiczenieItem.getDes());
+            viewHolder.imgThumbnail.setImageResource(cwiczenieItem.getThumbnail());
+            viewHolder.imgDifficulty.setImageResource(cwiczenieItem.getmDifficulty());
 
         }
 
@@ -144,11 +143,11 @@ public class Cwiczenia extends Activity {
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            private TextView title;
-            public ImageView imgThumbnail;
-            public ImageView imgDifficulty;
-            public TextView tvDesNature;
-            private TextView readOpis;
+            private final TextView title;
+            public final ImageView imgThumbnail;
+            public final ImageView imgDifficulty;
+            public final TextView tvDesNature;
+            private final TextView readOpis;
 
 
             public ViewHolder(View itemView) {
@@ -226,6 +225,26 @@ public class Cwiczenia extends Activity {
         cwiczenie.setmDifficulty(R.drawable.skill1);
         cItems.add(cwiczenie);
 
+        cwiczenie = new CwiczenieItem();
+        cwiczenie.setName(getString(R.string.cwiczenie) + " F");
+        cwiczenie.setDes(getString(R.string.cw_F_opis));
+        cwiczenie.setThumbnail(R.drawable.cw_f);
+        cwiczenie.setmDifficulty(R.drawable.skill1);
+        cItems.add(cwiczenie);
+
+        cwiczenie = new CwiczenieItem();
+        cwiczenie.setName(getString(R.string.cwiczenie) + " G");
+        cwiczenie.setDes(getString(R.string.cw_G_opis));
+        cwiczenie.setThumbnail(R.drawable.cw_g);
+        cwiczenie.setmDifficulty(R.drawable.skill1);
+        cItems.add(cwiczenie);
+
+        cwiczenie = new CwiczenieItem();
+        cwiczenie.setName(getString(R.string.cwiczenie) + " K2");
+        cwiczenie.setDes(getString(R.string.cw_K2_opis));
+        cwiczenie.setThumbnail(R.drawable.cw_k2);
+        cwiczenie.setmDifficulty(R.drawable.skill1);
+        cItems.add(cwiczenie);
 
     }
 }

@@ -21,10 +21,15 @@ import static com.kris.lm.DB.UserBody.addBodyRow;
 
 
 public class ActivityBody extends Activity {
-    EditText etNeck, etBiceps, etChest, etHip, etThigh, etCalf;
-    Context context = this;
-    UserDbHelper userDbHelper;
-    SQLiteDatabase sqLiteDatabase;
+    private EditText etNeck;
+    private EditText etBiceps;
+    private EditText etChest;
+    private EditText etHip;
+    private EditText etThigh;
+    private EditText etCalf;
+    private final Context context = this;
+    private UserDbHelper userDbHelper;
+    private SQLiteDatabase sqLiteDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +60,7 @@ public class ActivityBody extends Activity {
         userDbHelper.close();
 
         //Komunikat ile wpisów jest w bazie
-       Toast toast = Toast.makeText(getBaseContext(), "Data Saved for body "+getToDoCount()+" row!\n\n"+"At date "+userDbHelper.getDateTime()+" !", Toast.LENGTH_LONG);
+       Toast toast = Toast.makeText(getBaseContext(), "Data Saved for body "+getToDoCount()+" row!\n\n"+"At date "+ UserDbHelper.getDateTime()+" !", Toast.LENGTH_LONG);
         TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
         if( v != null) v.setGravity(Gravity.CENTER);
         toast.show();
@@ -87,7 +92,7 @@ public class ActivityBody extends Activity {
     /*
  * getting todo count
  */
-    public int getToDoCount() {
+    private int getToDoCount() {
         String countQuery = "SELECT  * FROM " + UserBody.NewBody.TABLE_NAME;
         SQLiteDatabase db = userDbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);

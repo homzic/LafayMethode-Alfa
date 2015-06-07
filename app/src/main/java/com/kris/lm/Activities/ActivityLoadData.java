@@ -13,10 +13,9 @@ import com.kris.lm.R;
 
 public class ActivityLoadData extends Activity {
 
-    EditText Search_Name, Display_email, Display_Mobile;
-    UserDbHelper userDbHelper;
-    SQLiteDatabase sqLiteDatabase;
-    String search_name;
+    private EditText Search_Name;
+    private EditText Display_email;
+    private EditText Display_Mobile;
 
 
     @Override
@@ -35,9 +34,9 @@ public class ActivityLoadData extends Activity {
     }
 
     public void loadDB(View view) {
-        search_name = Search_Name.getText().toString();
-        userDbHelper = new UserDbHelper(getApplicationContext());
-        sqLiteDatabase = userDbHelper.getReadableDatabase();
+        String search_name = Search_Name.getText().toString();
+        UserDbHelper userDbHelper = new UserDbHelper(getApplicationContext());
+        SQLiteDatabase sqLiteDatabase = userDbHelper.getReadableDatabase();
         Cursor cursor = userDbHelper.getContact(search_name, sqLiteDatabase);
         if (cursor.moveToFirst()) {
             String MOBILE = cursor.getString(0);
@@ -49,4 +48,6 @@ public class ActivityLoadData extends Activity {
     }
 
 
+    public void addContact(View view) {
+    }
 }

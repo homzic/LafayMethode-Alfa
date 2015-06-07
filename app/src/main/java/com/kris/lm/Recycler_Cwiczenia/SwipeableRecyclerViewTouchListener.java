@@ -61,20 +61,20 @@ import java.util.List;
  * <p>This class Requires API level 12 or later due to use of {@link
  * android.view.ViewPropertyAnimator}.</p>
  */
-public class SwipeableRecyclerViewTouchListener implements RecyclerView.OnItemTouchListener {
+class SwipeableRecyclerViewTouchListener implements RecyclerView.OnItemTouchListener {
     // Cached ViewConfiguration and system-wide constant values
-    private int mSlop;
-    private int mMinFlingVelocity;
-    private int mMaxFlingVelocity;
-    private long mAnimationTime;
+    private final int mSlop;
+    private final int mMinFlingVelocity;
+    private final int mMaxFlingVelocity;
+    private final long mAnimationTime;
 
     // Fixed properties
-    private RecyclerView mRecyclerView;
-    private SwipeListener mSwipeListener;
+    private final RecyclerView mRecyclerView;
+    private final SwipeListener mSwipeListener;
     private int mViewWidth = 1; // 1 and not 0 to prevent dividing by zero
 
     // Transient properties
-    private List<PendingDismissData> mPendingDismisses = new ArrayList<>();
+    private final List<PendingDismissData> mPendingDismisses = new ArrayList<>();
     private int mDismissAnimationRefCount = 0;
     private float mAlpha;
     private float mDownX;
@@ -127,7 +127,7 @@ public class SwipeableRecyclerViewTouchListener implements RecyclerView.OnItemTo
      *
      * @param enabled Whether or not to watch for gestures.
      */
-    public void setEnabled(boolean enabled) {
+    private void setEnabled(boolean enabled) {
         mPaused = !enabled;
     }
 
@@ -390,8 +390,8 @@ public class SwipeableRecyclerViewTouchListener implements RecyclerView.OnItemTo
     }
 
     class PendingDismissData implements Comparable<PendingDismissData> {
-        public int position;
-        public View view;
+        public final int position;
+        public final View view;
 
         public PendingDismissData(int position, View view) {
             this.position = position;

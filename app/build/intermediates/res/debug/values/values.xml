@@ -343,6 +343,9 @@
     <string name="cw_C_opis">Chwyć drążek, obejmując go całymi dłońmi, rozstawionymi mniej więcej na szerokość barków; palce mają być skierowane w stronę twarzy. Po przyjęciu pozycji wyjściowej (zwis na wyprostowanych rękach) weź głębszy oddech. Następnie, wdychając powietrze, pociągnij się do momentu, aż broda znajdzie się powyżej drążka. Biorąc oddech, opuść się. Podciągając się , rób wydech.</string>
     <string name="cw_D_opis">Nogi są lekko ugięte. Biorąc wdech, zegnij ręce i opuść się tak nisko, jak tylko możesz. Wydychając powietrze, wyprostuj ręce i powróć do pozycji wyjściowej.</string>
     <string name="cw_E_opis">Stojąc na jednej nodze zrób niewielki przysiad. Opuszczaj się do momentu, aż udo będzie ustawione prawie równolegle do podłogi. Opuszczając się bierz wdech, a podnosząc wydech.</string>
+    <string name="cw_F_opis">Wyskocz do góry możliwie najbardziej pionowo. Wy;ąduj na palcach (na 1/3 stóp) uginając nogi aby zamortyzować skok. Następnie płynnie przejdź do przysiadu, zatrzymując się w momencie gdy uda ustawią się równolegle do podłogi. Bez odpoczynku ponownie wyskocz do góry.</string>
+    <string name="cw_G_opis">Kuląc się, przybliż klatkę piersiową do miednicy i powróć do pozycji wyjściowej, nie pomagając sobie ruchem bioder. Kuląc się wydychaj powietrze. Wracjąc do pozycji wyjściowej, bierz wdech.</string>
+    <string name="cw_K2_opis">Stopy ustaw na 110cm. Dłonie oprzyj na wysokści 150cm</string>
     <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="cwiczenie">Ćwiczenie</string>

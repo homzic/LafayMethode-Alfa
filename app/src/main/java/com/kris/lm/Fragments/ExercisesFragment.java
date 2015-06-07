@@ -17,9 +17,7 @@ public class ExercisesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_exercises, container, false);
-
-        return rootView;
+        return inflater.inflate(R.layout.fragment_exercises, container, false);
     }
 
 

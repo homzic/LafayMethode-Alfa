@@ -12,14 +12,13 @@ import android.widget.Toast;
 import com.kris.lm.R;
 
 public class HomeFragment extends Fragment {
-    public String Name;
-    public static final String DEFAULT = " ";
-    public SharedPreferences dataSettings;
+    private String Name;
+    private static final String DEFAULT = " ";
 
     public HomeFragment() {
     }
 
-    Context context;
+    private Context context;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,11 +32,11 @@ public class HomeFragment extends Fragment {
     }
 
     private void getSharedPref() {
-        dataSettings = context.getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        SharedPreferences dataSettings = context.getSharedPreferences("MyData", Context.MODE_PRIVATE);
         Name = dataSettings.getString("name", DEFAULT);
     }
 
-    public void FirstStart() {
+    private void FirstStart() {
         if (!Name.equals(""))
             Toast.makeText(context, "Hello " + Name + "!", Toast.LENGTH_LONG).show();
         else {

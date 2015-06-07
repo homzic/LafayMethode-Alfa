@@ -12,15 +12,12 @@ import android.widget.Toast;
 import com.kris.lm.DB.UserDbHelper;
 import com.kris.lm.R;
 
-/**
- * Created by Kris on 2015-04-25.
- */
 public class ActivityDB extends Activity {
 
-    EditText ContactName, ContactMobile, ContactEmail;
-    Context context = this;
-    UserDbHelper userDbHelper;
-    SQLiteDatabase sqLiteDatabase;
+    private EditText ContactName;
+    private EditText ContactMobile;
+    private EditText ContactEmail;
+    private final Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +32,9 @@ public class ActivityDB extends Activity {
         String name = ContactName.getText().toString();
         String mob = ContactMobile.getText().toString();
         String email = ContactEmail.getText().toString();
-        userDbHelper = new UserDbHelper(context);
-        sqLiteDatabase = userDbHelper.getWritableDatabase();
-        userDbHelper.addInformation(name,mob,email,sqLiteDatabase);
+        UserDbHelper userDbHelper = new UserDbHelper(context);
+        SQLiteDatabase sqLiteDatabase = userDbHelper.getWritableDatabase();
+        userDbHelper.addInformation(name, mob, email, sqLiteDatabase);
         Toast.makeText(getBaseContext(),"Data Saved",Toast.LENGTH_LONG).show();
         userDbHelper.close();
         Intent intent = new Intent(this, ActivityLoadData.class);
@@ -46,6 +43,7 @@ public class ActivityDB extends Activity {
     }
 
 
-
+    public void loadDB(View view) {
+    }
 }
 

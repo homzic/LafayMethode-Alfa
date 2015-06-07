@@ -15,10 +15,10 @@ public class NavDrawerItem {
 		this.icon = icon;
 	}
 	
-	public NavDrawerItem(String title, int icon, boolean isCounterVisible, String count){
+	public NavDrawerItem(String title, int icon, String count){
 		this.title = title;
 		this.icon = icon;
-		this.isCounterVisible = isCounterVisible;
+		this.isCounterVisible = true;
 		this.count = count;
 	}
 	

@@ -1,9 +1,7 @@
 package com.kris.lm.DB;
 
-/**
- * Created by Kris on 2015-05-01.
- */
-public class Levels {
+
+class Levels {
         public static final String EXC_LEVEL="level";
         public static final String EXC_SERIA="seria";
         public static final String EXC_A="a";

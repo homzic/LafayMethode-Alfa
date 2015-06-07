@@ -26,18 +26,17 @@ import com.kris.lm.R;
 import java.util.ArrayList;
 
 public class ResultsFragment extends Fragment implements OnChartGestureListener {
-	Context context;
     private Typeface tf;
 	public ResultsFragment(){}
-    private BarChart mChart;
-	@Override
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_results, container, false);
-        context = rootView.getContext();
+        Context context = rootView.getContext();
         // create a new chart object
-        mChart = new BarChart(rootView.getContext());
+        BarChart mChart = new BarChart(rootView.getContext());
         mChart.setDescription("");
         mChart.setOnChartGestureListener(this);
 
@@ -48,7 +47,7 @@ public class ResultsFragment extends Fragment implements OnChartGestureListener 
 
         Typeface tf = Typeface.createFromAsset(context.getAssets(),"OpenSans-Light.ttf");
 
-        mChart.setData(generateBarData(1, 20000, 12));
+        mChart.setData(generateBarData());
 
         Legend l = mChart.getLegend();
         l.setTypeface(tf);
@@ -67,18 +66,18 @@ public class ResultsFragment extends Fragment implements OnChartGestureListener 
 
         return rootView;
     }
-    protected BarData generateBarData(int dataSets, float range, int count) {
+    private BarData generateBarData() {
 
         ArrayList<BarDataSet> sets = new ArrayList<>();
 
-        for(int i = 0; i < dataSets; i++) {
+        for(int i = 0; i < 1; i++) {
 
             ArrayList<BarEntry> entries = new ArrayList<>();
 
 //            entries = FileUtils.loadEntriesFromAssets(getActivity().getAssets(), "stacked_bars.txt");
 
-            for(int j = 0; j < count; j++) {
-                entries.add(new BarEntry((float) (Math.random() * range) + range / 4, j));
+            for(int j = 0; j < 12; j++) {
+                entries.add(new BarEntry((float) (Math.random() * (float) 20000) + (float) 20000 / 4, j));
             }
 
             BarDataSet ds = new BarDataSet(entries, getLabel(i));
@@ -86,11 +85,11 @@ public class ResultsFragment extends Fragment implements OnChartGestureListener 
             sets.add(ds);
         }
 
-        BarData d = new BarData(ChartData.generateXVals(0, count), sets);
+        BarData d = new BarData(ChartData.generateXVals(0, 12), sets);
         d.setValueTypeface(tf);
         return d;
     }
-    private String[] mLabels = new String[] { "Company A", "Company B", "Company C", "Company D", "Company E", "Company F" };
+    private final String[] mLabels = new String[] { "Company A", "Company B", "Company C", "Company D", "Company E", "Company F" };
     //    private String[] mXVals = new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec" };
     private String getLabel(int i) {
         return mLabels[i];

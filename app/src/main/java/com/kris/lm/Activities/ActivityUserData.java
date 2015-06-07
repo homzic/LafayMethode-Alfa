@@ -23,7 +23,7 @@ import static com.kris.lm.R.id.radioMale;
 //Zapisz dane do SharedPreferences
 
 public class ActivityUserData extends Activity implements View.OnClickListener {
-    public static final String DEFAULT = " ";
+    private static final String DEFAULT = " ";
 
 
     private EditText userName;
@@ -33,14 +33,12 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
     private SharedPreferences dataSettings;
 
 
-    //do ustawienia daty urodzenia
-    private Calendar cal;
     private int day;
     private int month;
     private int year;
 
     //ZAPIS DO SHARED PREFERENCES
-    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
+    private final DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int selectedYear,
                               int selectedMonth, int selectedDay) {
             etBirthday.setText(selectedDay + " / " + (selectedMonth + 1) + " / "
@@ -64,7 +62,7 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
 
     }
 
-    public void Load() {
+    private void Load() {
         dataSettings = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         String Name = dataSettings.getString("name", DEFAULT);
         String Email = dataSettings.getString("email", DEFAULT);
@@ -97,10 +95,10 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
         this.startActivity(intent);
     }
 
-    private void savePrefs(String key, boolean value) {
+    private void savePrefs(String key) {
         dataSettings = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = dataSettings.edit();
-        edit.putBoolean(key, value);
+        edit.putBoolean(key, true);
         edit.apply();
     }
 
@@ -112,7 +110,7 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.radioFemale:
                 if (checked) {
-                    savePrefs("Female", true);
+                    savePrefs("Female");
                     Toast.makeText(this, "Jesteś babą", Toast.LENGTH_LONG).show();
                     // Are you Female
                     break;
@@ -121,7 +119,7 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
 
             case radioMale:
                 if (checked) {
-                    savePrefs("Male", true);
+                    savePrefs("Male");
                     Toast.makeText(this, "Masz wacka", Toast.LENGTH_LONG).show();
                     // No I'm Male
                     break;
@@ -130,9 +128,9 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
         }
     }
 
-    void setDate() {
+    private void setDate() {
         //do ustawienia daty urodzenia - wywołanie do onCreate
-        cal = Calendar.getInstance();
+        Calendar cal = Calendar.getInstance();
         day = cal.get(Calendar.DAY_OF_MONTH);
         month = cal.get(Calendar.MONTH);
         year = cal.get(Calendar.YEAR);

@@ -16,8 +16,6 @@ public class BodyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_body, container, false);
-
-        return rootView;
+        return inflater.inflate(R.layout.fragment_body, container, false);
     }
 }

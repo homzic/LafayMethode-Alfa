@@ -65,8 +65,7 @@ public class UserDbHelper extends SQLiteOpenHelper {
         String[] projections = {UserContract.NewUserInfo.USER_MOB, UserContract.NewUserInfo.USER_MAIL};
         String selection = UserContract.NewUserInfo.USER_NAME + " LIKE ?";
         String selection_args[] = {user_name};
-        Cursor cursor = sqLiteDatabase.query(UserContract.NewUserInfo.TABLE_NAME, projections, selection, selection_args, null, null, null);
-        return cursor;
+        return sqLiteDatabase.query(UserContract.NewUserInfo.TABLE_NAME, projections, selection, selection_args, null, null, null);
     }
 
     public Cursor getBody(SQLiteDatabase sqLiteDatabase) {
