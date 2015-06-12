@@ -1,142 +1,184 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primaryColor">
-
-    <TextView
-        android:id="@+id/textViewFill"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:gravity="center_horizontal"
-        android:text="@string/fill_body"
-        android:textColor="@color/textColorPrimary"
-        android:textSize="20sp" />
+    android:background="@color/primaryColor"
+    android:scrollbarStyle="outsideOverlay"
+    tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/imageView12"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textViewFill"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:layout_marginTop="20dp"
-        android:background="@color/primaryColor"
-        android:baselineAligned="false"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-
-        <ImageView
-            android:id="@+id/imageBody"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textViewFill"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingEnd="10dp"
-            android:paddingStart="20dp"
-            android:src="@drawable/body" />
+            android:layout_weight="1"
+
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="@string/fill_body"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/editNeck"
+            <ImageView
+                android:id="@+id/imageBody"
+                android:layout_width="356dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingEnd="10dp"
+                android:paddingStart="20dp"
+                android:src="@drawable/body" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Neck"
-                android:inputType="numberDecimal"
-                android:lines="1"
-                android:paddingTop="60dp"
-                android:numeric="integer"
-                android:textColor="@color/textColorPrimary"
-                android:textStyle="bold"
-                android:autoText="false"
-                android:gravity="center_horizontal"/>
+                android:layout_weight="2"
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/editBiceps"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/Biceps"
-                android:inputType="numberDecimal"
-                android:lines="1"
-                android:paddingTop="30dp"
-                android:numeric="integer"
-                android:textColor="@color/textColorPrimary"
-                android:textStyle="bold"
-                android:autoText="false"
-                android:gravity="center_horizontal" />
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/editNeck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Neck"
+                    android:inputType="numberDecimal"
+                    app:met_minCharacters="2"
+                    android:textCursorDrawable="@drawable/text_cursor_cyan"
+                    android:textSize="14sp"
+                    app:met_baseColor="@color/textColorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_maxCharacters="3"
+                    app:met_primaryColor="?colorAccent"
+                    app:met_textColorHint="@color/hint_foreground_material_light"
+                    android:maxLines="1"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:singleLine="true"
 
-            <EditText
-                android:id="@+id/editChest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/Chest"
-                android:inputType="numberDecimal"
-                android:lines="1"
-                android:paddingTop="10dp"
-                android:numeric="integer"
-                android:textColor="@color/textColorPrimary"
-                android:textStyle="bold"
-                android:autoText="false"
-                android:gravity="center_horizontal" />
+                   />
 
-            <EditText
-                android:id="@+id/editPas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/Hip"
-                android:inputType="numberDecimal"
-                android:lines="1"
-                android:paddingTop="10dp"
-                android:numeric="integer"
-                android:textColor="@color/textColorPrimary"
-                android:textStyle="bold"
-                android:autoText="false"
-                android:gravity="center_horizontal" />
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/editBiceps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Biceps"
+                    android:inputType="numberDecimal"
+                    android:lines="1"
+                    android:textCursorDrawable="@drawable/text_cursor_cyan"
+                    android:textSize="14sp"
+                    app:met_baseColor="@color/textColorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_maxCharacters="3"
+                    app:met_minCharacters="2"
+                    app:met_primaryColor="?colorAccent"
+                    app:met_textColorHint="@color/hint_foreground_material_light"
+                    android:maxLines="1"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:textAlignment="center" />
 
-            <EditText
-                android:id="@+id/editUda"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/Thigh"
-                android:inputType="numberDecimal"
-                android:lines="1"
-                android:paddingTop="30dp"
-                android:numeric="integer"
-                android:textColor="@color/textColorPrimary"
-                android:textStyle="bold"
-                android:autoText="false"
-                android:gravity="center_horizontal" />
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/editChest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Chest"
+                    android:inputType="numberDecimal"
+                    android:lines="1"
+                    app:met_minCharacters="2"
+                    android:textCursorDrawable="@drawable/text_cursor_cyan"
+                    android:textSize="14sp"
+                    app:met_baseColor="@color/textColorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_maxCharacters="3"
+                    app:met_primaryColor="?colorAccent"
+                    app:met_textColorHint="@color/hint_foreground_material_light"
+                    android:maxLines="1"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:textAlignment="center" />
 
-            <EditText
-                android:id="@+id/editLydki"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/Calf"
-                android:inputType="numberDecimal"
-                android:lines="1"
-                android:paddingTop="80dp"
-                android:numeric="integer"
-                android:textColor="@color/textColorPrimary"
-                android:textStyle="bold"
-                android:autoText="false"
-                android:gravity="center_horizontal" />
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/editPas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Hip"
+                    app:met_minCharacters="2"
+                    android:inputType="numberDecimal"
+                    android:lines="1"
+                    android:textCursorDrawable="@drawable/text_cursor_cyan"
+                    android:textSize="14sp"
+                    app:met_baseColor="@color/textColorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_maxCharacters="3"
+                    app:met_primaryColor="?colorAccent"
+                    app:met_textColorHint="@color/hint_foreground_material_light"
+                    android:maxLines="1"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:textAlignment="center" />
 
-            <Button
-                android:id="@+id/btnSaveBody"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/primaryColorDark"
-                android:onClick="saveBody"
-                android:text="@string/save"
-                android:textColor="@color/primaryColor"
-                android:visibility="visible" />
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/editUda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Thigh"
+                    app:met_minCharacters="2"
+                    android:inputType="numberDecimal"
+                    android:lines="1"
+                    android:textCursorDrawable="@drawable/text_cursor_cyan"
+                    android:textSize="14sp"
+                    app:met_baseColor="@color/textColorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_maxCharacters="3"
+                    app:met_primaryColor="?colorAccent"
+                    app:met_textColorHint="@color/hint_foreground_material_light"
+                    android:maxLines="1"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:textAlignment="center" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/editLydki"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Calf"
+                    app:met_minCharacters="2"
+                    android:inputType="numberDecimal"
+                    android:lines="1"
+                    android:textCursorDrawable="@drawable/text_cursor_cyan"
+                    android:textSize="14sp"
+                    app:met_baseColor="@color/textColorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_maxCharacters="3"
+                    app:met_primaryColor="?colorAccent"
+                    app:met_textColorHint="@color/hint_foreground_material_light"
+                    android:maxLines="1"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:textAlignment="center" />
+
+                <com.gc.materialdesign.views.ButtonRectangle
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/textColorPrimary"
+                    android:onClick="saveBody"
+                    android:text="@string/save"
+                    />
+
+            </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
-
-</RelativeLayout>
-<!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/layout/fragment_body.xml -->
+</ScrollView><!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/layout/fragment_body.xml -->

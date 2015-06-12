@@ -6,10 +6,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -22,23 +22,21 @@ import java.util.Calendar;
 import static com.kris.lm.R.id.radioMale;
 //Zapisz dane do SharedPreferences
 
-public class ActivityUserData extends Activity implements View.OnClickListener {
+public class ActivityUserData extends AppCompatActivity implements View.OnClickListener {
     private static final String DEFAULT = " ";
-
-
     private EditText userName;
     private EditText eMail;
     private EditText etBirthday;
     private EditText etWeight;
     private SharedPreferences dataSettings;
-
-
+    //do ustawienia daty urodzenia
+    private Calendar cal;
     private int day;
     private int month;
     private int year;
 
     //ZAPIS DO SHARED PREFERENCES
-    private final DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
+    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int selectedYear,
                               int selectedMonth, int selectedDay) {
             etBirthday.setText(selectedDay + " / " + (selectedMonth + 1) + " / "
@@ -56,13 +54,12 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
         eMail = (EditText) findViewById(R.id.editEmail);
         etWeight = (EditText) findViewById(R.id.editWeight);
         setDate(); // Pobranie daty urodzenia z Date Picker
-        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
         Load(); // załaduj dane jesli dostepne
 
 
     }
 
-    private void Load() {
+    public void Load() {
         dataSettings = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         String Name = dataSettings.getString("name", DEFAULT);
         String Email = dataSettings.getString("email", DEFAULT);
@@ -95,10 +92,10 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
         this.startActivity(intent);
     }
 
-    private void savePrefs(String key) {
+    private void savePrefs(String key, boolean value) {
         dataSettings = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = dataSettings.edit();
-        edit.putBoolean(key, true);
+        edit.putBoolean(key, value);
         edit.apply();
     }
 
@@ -110,7 +107,7 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.radioFemale:
                 if (checked) {
-                    savePrefs("Female");
+                    savePrefs("Female", true);
                     Toast.makeText(this, "Jesteś babą", Toast.LENGTH_LONG).show();
                     // Are you Female
                     break;
@@ -119,7 +116,7 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
 
             case radioMale:
                 if (checked) {
-                    savePrefs("Male");
+                    savePrefs("Male", true);
                     Toast.makeText(this, "Masz wacka", Toast.LENGTH_LONG).show();
                     // No I'm Male
                     break;
@@ -128,9 +125,9 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
         }
     }
 
-    private void setDate() {
+    void setDate() {
         //do ustawienia daty urodzenia - wywołanie do onCreate
-        Calendar cal = Calendar.getInstance();
+        cal = Calendar.getInstance();
         day = cal.get(Calendar.DAY_OF_MONTH);
         month = cal.get(Calendar.MONTH);
         year = cal.get(Calendar.YEAR);
@@ -143,6 +140,7 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
     //do ustawienia daty urodzenia<
     @Override
     public void onClick(View view) {
+        hideKeyboard(view);
         showDialog(0);
 
     }
@@ -150,7 +148,20 @@ public class ActivityUserData extends Activity implements View.OnClickListener {
     @Override
     @Deprecated
     protected Dialog onCreateDialog(int id) {
+
         return new DatePickerDialog(this, datePickerListener, year, month, day);
     }
     //do ustawienia daty urodzenia />
+
+
+    public void hideKeyboard(View view) {
+        try {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus()
+                    .getWindowToken(), 0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

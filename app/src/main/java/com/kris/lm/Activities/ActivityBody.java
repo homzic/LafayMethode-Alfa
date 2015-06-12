@@ -1,50 +1,49 @@
 package com.kris.lm.Activities;
 
-import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kris.lm.DB.UserBody;
 import com.kris.lm.DB.UserDbHelper;
 import com.kris.lm.R;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 import static com.kris.lm.DB.UserBody.addBodyRow;
 
 
-public class ActivityBody extends Activity {
-    private EditText etNeck;
-    private EditText etBiceps;
-    private EditText etChest;
-    private EditText etHip;
-    private EditText etThigh;
-    private EditText etCalf;
+public class ActivityBody extends AppCompatActivity {
+    private MaterialEditText etNeck,etBiceps,etChest, etHip, etThigh, etCalf;
     private final Context context = this;
     private UserDbHelper userDbHelper;
     private SQLiteDatabase sqLiteDatabase;
-
+    private com.gc.materialdesign.views.Button buttonStart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_body);
-        etNeck = (EditText) findViewById(R.id.editNeck);
-        etBiceps = (EditText) findViewById(R.id.editBiceps);
-        etChest = (EditText) findViewById(R.id.editChest);
-        etHip = (EditText) findViewById(R.id.editPas);
-        etThigh = (EditText) findViewById(R.id.editUda);
-        etCalf = (EditText) findViewById(R.id.editLydki);
-        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        etNeck = (MaterialEditText) findViewById(R.id.editNeck);
+        etBiceps = (MaterialEditText) findViewById(R.id.editBiceps);
+        etChest = (MaterialEditText) findViewById(R.id.editChest);
+        etHip = (MaterialEditText) findViewById(R.id.editPas);
+        etThigh = (MaterialEditText) findViewById(R.id.editUda);
+        etCalf = (MaterialEditText) findViewById(R.id.editLydki);
+       // getActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
         loadDB();
 
     }
+
+
+
+
 
 
     public void saveBody(View view) {

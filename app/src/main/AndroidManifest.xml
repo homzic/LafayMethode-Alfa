@@ -3,20 +3,20 @@
     package="com.kris.lm"
     android:versionCode="1"
     android:versionName="1.0">
-    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <uses-permission android:name="android.permission.VIBRATE" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon_lm"
 
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.Base">
         <activity
             android:name=".Activities.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -51,7 +51,8 @@
             android:name=".Activities.ActivityBody"
             android:label="@string/title_activity_activity_body"
             android:parentActivityName=".Activities.MainActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.MainActivity" />

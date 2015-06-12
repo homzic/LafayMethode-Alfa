@@ -3,7 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryColor">
-
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@color/primaryColor"
+       android:scrollbarStyle="outsideOverlay">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -236,17 +240,32 @@
                 </RadioGroup>
             </LinearLayout>
 
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hide"
+                    android:onClick="hideKeyboard"
+                    android:id="@+id/button"
+                    android:layout_column="1" />
+            </TableRow>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_marginTop="50dp"
                 android:orientation="horizontal">
 
-                <Button
+                <com.gc.materialdesign.views.ButtonRectangle
                     android:id="@+id/btnSave"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@color/primaryColorDark"
+                    android:background="@color/textColorPrimary"
                     android:onClick="Save"
                     android:text="@string/save"
                     android:textColor="@color/primaryColor" />
@@ -259,5 +278,6 @@
 
 
     </RelativeLayout>
+   </ScrollView>
 </android.support.v4.widget.DrawerLayout>
 <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/layout/activity_user_data.xml -->

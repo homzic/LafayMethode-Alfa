@@ -1,9 +1,7 @@
 package com.kris.lm.Recycler_Cwiczenia;
 
-import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,7 +16,7 @@ import com.kris.lm.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cwiczenia extends Activity {
+public class Cwiczenia extends AppCompatActivity {
 
     private CardViewAdapter mAdapter;
     private List<CwiczenieItem> cItems;
@@ -28,7 +26,7 @@ public class Cwiczenia extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cwiczenia);
 
-        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+
         ListaCwiczen();
         int L = cItems.size();
         Log.e("mItems ", "Lista cwiczen " + L);

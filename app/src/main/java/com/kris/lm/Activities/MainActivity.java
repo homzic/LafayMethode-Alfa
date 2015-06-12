@@ -1,17 +1,15 @@
 package com.kris.lm.Activities;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,9 +29,7 @@ import com.kris.lm.Recycler_Cwiczenia.Cwiczenia;
 import java.util.ArrayList;
 
 
-
-
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -52,7 +48,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_drawer);
 
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.icon_lm);
+
+       // mDrawerToggle.setHomeAsUpIndicator(R.drawable.drawer);
         // load slide menu items
         navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
 
@@ -93,10 +95,9 @@ public class MainActivity extends Activity {
         mDrawerList.setAdapter(adapter);
 
         // enabling action bar app icon and behaving it as toggle button
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
-        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-
+//        getActionBar().setDisplayHomeAsUpEnabled(true);
+        //       getActionBar().setHomeButtonEnabled(true);
+//        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
 
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
@@ -105,13 +106,13 @@ public class MainActivity extends Activity {
                 R.string.app_name // nav drawer close - description for accessibility
         ) {
             public void onDrawerClosed(View view) {
-                getActionBar().setTitle(mTitle);
+                //          getActionBar().setTitle(mTitle);
                 // calling onPrepareOptionsMenu() to show action bar icons
                 invalidateOptionsMenu();
             }
 
             public void onDrawerOpened(View drawerView) {
-                getActionBar().setTitle(mDrawerTitle);
+                //           getActionBar().setTitle(mDrawerTitle);
                 // calling onPrepareOptionsMenu() to hide action bar icons
                 invalidateOptionsMenu();
             }
@@ -125,7 +126,6 @@ public class MainActivity extends Activity {
             displayView(0);
         }
     }
-
 
 
     @Override
@@ -187,7 +187,7 @@ public class MainActivity extends Activity {
      */
     private void displayView(int position) {
         // update the main content by replacing fragments
-   //     Toast.makeText(this, "The Item Clicked is: " + position, Toast.LENGTH_SHORT).show();
+        //     Toast.makeText(this, "The Item Clicked is: " + position, Toast.LENGTH_SHORT).show();
         Fragment fragment = null;
         switch (position) {
             case 0:
@@ -236,7 +236,7 @@ public class MainActivity extends Activity {
     public void setTitle(CharSequence title) {
 
         mTitle = title;
-        getActionBar().setTitle(mTitle);
+//        getActionBar().setTitle(mTitle);
     }
 
     /**
