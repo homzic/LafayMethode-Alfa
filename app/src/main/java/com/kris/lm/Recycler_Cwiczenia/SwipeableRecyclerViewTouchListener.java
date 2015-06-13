@@ -61,7 +61,7 @@ import java.util.List;
  * <p>This class Requires API level 12 or later due to use of {@link
  * android.view.ViewPropertyAnimator}.</p>
  */
-class SwipeableRecyclerViewTouchListener implements RecyclerView.OnItemTouchListener {
+public class SwipeableRecyclerViewTouchListener implements RecyclerView.OnItemTouchListener {
     // Cached ViewConfiguration and system-wide constant values
     private final int mSlop;
     private final int mMinFlingVelocity;

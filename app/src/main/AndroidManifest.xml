@@ -29,15 +29,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.MainActivity" />
         </activity>
-        <activity
-            android:name=".Activities.ActivityUserData"
-            android:label="@string/title_activity_user_data"
-            android:parentActivityName=".Activities.MainActivity"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.MainActivity" />
-        </activity>
+
         <activity
             android:name=".Activities.ActivityLoadData"
             android:label="@string/db_test"
@@ -47,25 +39,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.MainActivity" />
         </activity>
-        <activity
-            android:name=".Activities.ActivityBody"
-            android:label="@string/title_activity_activity_body"
-            android:parentActivityName=".Activities.MainActivity"
-            android:screenOrientation="portrait"
-            >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.MainActivity" />
-        </activity>
-        <activity
-            android:name=".Recycler_Cwiczenia.Cwiczenia"
-            android:label="@string/title_activity_cwiczenia"
-            android:parentActivityName=".Activities.MainActivity"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.kris.lm.Activities.MainActivity" />
-        </activity>
+
 
     </application>
 

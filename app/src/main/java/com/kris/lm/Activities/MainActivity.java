@@ -20,14 +20,15 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.kris.lm.Fragments.BodyFragment;
+import com.kris.lm.Fragments.ExercisesFragment;
 import com.kris.lm.Fragments.HomeFragment;
 import com.kris.lm.Fragments.LevelsFragment;
+import com.kris.lm.Fragments.Profile_Fragment;
 import com.kris.lm.Fragments.ResultsFragment;
 import com.kris.lm.Fragments.StoperFragment;
 import com.kris.lm.NavDrawer.NavDrawerItem;
 import com.kris.lm.NavDrawer.NavDrawerListAdapter;
 import com.kris.lm.R;
-import com.kris.lm.Recycler_Cwiczenia.Cwiczenia;
 
 import java.util.ArrayList;
 
@@ -180,8 +181,8 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new HomeFragment();
                 break;
             case 1:
-                startActivity(new Intent(this, ActivityUserData.class));
-                return;
+                fragment = new Profile_Fragment();
+                break;
             case 2:
                 fragment = new StoperFragment();
                 break;
@@ -192,8 +193,8 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new ResultsFragment();
                 break;
             case 5:
-                startActivity(new Intent(this, Cwiczenia.class));
-                return;
+                fragment = new ExercisesFragment();
+                break;
             case 6:
                 fragment = new LevelsFragment();
                 break;

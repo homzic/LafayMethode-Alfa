@@ -1,7 +1,7 @@
 package com.kris.lm.Recycler_Cwiczenia;
 
 
-class CwiczenieItem {
+public class CwiczenieItem {
     private String mName;
     private String mDes;
     private int mThumbnail;

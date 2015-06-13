@@ -1,6 +1,7 @@
 package com.kris.lm.Fragments;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gc.materialdesign.views.Button;
+import com.kris.lm.Activities.MainActivity;
 import com.kris.lm.DB.UserBody;
 import com.kris.lm.DB.UserDbHelper;
 import com.kris.lm.R;
@@ -70,12 +72,18 @@ public class BodyFragment extends Fragment {
         sqLiteDatabase = userDbHelper.getWritableDatabase();
         addBodyRow(neck, bic, chest, hip, thigh, calf, sqLiteDatabase);
         userDbHelper.close();
-
+        ((MainActivity) getActivity()).hideKeyboard(getView());
         //Komunikat ile wpisów jest w bazie
         Toast toast = Toast.makeText(context, "Data Saved for body " + getToDoCount() + " row!\n\n" + "At date " + UserDbHelper.getDateTime() + " !", Toast.LENGTH_LONG);
         TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
         if (v != null) v.setGravity(Gravity.CENTER);
         toast.show();
+        Fragment fragment = new HomeFragment();
+        if (fragment != null) {
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.frame_container, fragment).commit();
+        }
     }
 
     private void loadDB() {
