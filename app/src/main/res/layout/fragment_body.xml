@@ -1,11 +1,14 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor">
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryColor"
     android:scrollbarStyle="outsideOverlay"
-    tools:context=".MainActivity">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -172,9 +175,9 @@
 
                 <com.gc.materialdesign.views.ButtonRectangle
                     android:layout_width="match_parent"
+                    android:id="@+id/btnSaveBody"
                     android:layout_height="wrap_content"
                     android:background="@color/textColorPrimary"
-                    android:onClick="saveBody"
                     android:text="@string/save"
                     />
 
@@ -182,3 +185,4 @@
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
+    </android.support.v4.widget.DrawerLayout>

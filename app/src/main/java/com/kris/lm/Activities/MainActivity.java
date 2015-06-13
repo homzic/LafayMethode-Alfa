@@ -1,5 +1,6 @@
 package com.kris.lm.Activities;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
@@ -14,9 +15,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.kris.lm.Fragments.BodyFragment;
 import com.kris.lm.Fragments.HomeFragment;
 import com.kris.lm.Fragments.LevelsFragment;
 import com.kris.lm.Fragments.ResultsFragment;
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setLogo(R.drawable.icon_lm);
 
-       // mDrawerToggle.setHomeAsUpIndicator(R.drawable.drawer);
+        // mDrawerToggle.setHomeAsUpIndicator(R.drawable.drawer);
         // load slide menu items
         navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
 
@@ -94,12 +97,6 @@ public class MainActivity extends AppCompatActivity {
                 navDrawerItems);
         mDrawerList.setAdapter(adapter);
 
-        // enabling action bar app icon and behaving it as toggle button
-//        getActionBar().setDisplayHomeAsUpEnabled(true);
-        //       getActionBar().setHomeButtonEnabled(true);
-//        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-
-
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
                 R.drawable.ic_drawer, //nav menu toggle icon
                 R.string.app_name, // nav drawer open - description for accessibility
@@ -112,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             public void onDrawerOpened(View drawerView) {
+                hideKeyboard(drawerView);
                 //           getActionBar().setTitle(mDrawerTitle);
                 // calling onPrepareOptionsMenu() to hide action bar icons
                 invalidateOptionsMenu();
@@ -146,21 +144,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, ActivityDB.class);
                 this.startActivity(intent);
                 break;
-            case R.id.cwiczenia:
-                intent = new Intent(this, Cwiczenia.class);
-                this.startActivity(intent);
-                break;
-
-            case R.id.user_body:
-                intent = new Intent(this, ActivityBody.class);
-                this.startActivity(intent);
-                break;
             case R.id.load_DB:
                 intent = new Intent(this, ActivityLoadData.class);
-                this.startActivity(intent);
-                break;
-            case R.id.user_data:
-                intent = new Intent(this, ActivityUserData.class);
                 this.startActivity(intent);
                 break;
 
@@ -201,8 +186,8 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new StoperFragment();
                 break;
             case 3:
-                startActivity(new Intent(this, ActivityBody.class));
-                return;
+                fragment = new BodyFragment();
+                break;
             case 4:
                 fragment = new ResultsFragment();
                 break;
@@ -271,5 +256,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void hideKeyboard(View view) {
+        try {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

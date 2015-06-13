@@ -3,8 +3,9 @@ package com.kris.lm.Activities;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.kris.lm.Fragments.BodyFragment;
 import com.kris.lm.R;
 
 import java.util.Calendar;
@@ -29,6 +31,7 @@ public class ActivityUserData extends AppCompatActivity implements View.OnClickL
     private EditText etBirthday;
     private EditText etWeight;
     private SharedPreferences dataSettings;
+
     //do ustawienia daty urodzenia
     private Calendar cal;
     private int day;
@@ -55,8 +58,6 @@ public class ActivityUserData extends AppCompatActivity implements View.OnClickL
         etWeight = (EditText) findViewById(R.id.editWeight);
         setDate(); // Pobranie daty urodzenia z Date Picker
         Load(); // załaduj dane jesli dostepne
-
-
     }
 
     public void Load() {
@@ -88,8 +89,13 @@ public class ActivityUserData extends AppCompatActivity implements View.OnClickL
         editor.putString("weight", etWeight.getText().toString());
         editor.apply();
         Toast.makeText(this, "Saved", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, ActivityBody.class);
-        this.startActivity(intent);
+        Fragment fragment = new BodyFragment();
+        if (fragment != null) {
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.frame_container, fragment).commit();
+
+        }
     }
 
     private void savePrefs(String key, boolean value) {
@@ -121,7 +127,6 @@ public class ActivityUserData extends AppCompatActivity implements View.OnClickL
                     // No I'm Male
                     break;
                 }
-
         }
     }
 
@@ -142,7 +147,6 @@ public class ActivityUserData extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         hideKeyboard(view);
         showDialog(0);
-
     }
 
     @Override
@@ -153,15 +157,12 @@ public class ActivityUserData extends AppCompatActivity implements View.OnClickL
     }
     //do ustawienia daty urodzenia />
 
-
     public void hideKeyboard(View view) {
         try {
             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus()
-                    .getWindowToken(), 0);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 }
