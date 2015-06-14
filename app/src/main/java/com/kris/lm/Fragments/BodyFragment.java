@@ -72,7 +72,10 @@ public class BodyFragment extends Fragment {
         sqLiteDatabase = userDbHelper.getWritableDatabase();
         addBodyRow(neck, bic, chest, hip, thigh, calf, sqLiteDatabase);
         userDbHelper.close();
+
+        //---Ukryj klawiature
         ((MainActivity) getActivity()).hideKeyboard(getView());
+
         //Komunikat ile wpisów jest w bazie
         Toast toast = Toast.makeText(context, "Data Saved for body " + getToDoCount() + " row!\n\n" + "At date " + UserDbHelper.getDateTime() + " !", Toast.LENGTH_LONG);
         TextView v = (TextView) toast.getView().findViewById(android.R.id.message);

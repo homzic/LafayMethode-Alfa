@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryColor"
+    android:soundEffectsEnabled="true"
     android:orientation="vertical">
 
     <LinearLayout
@@ -13,18 +14,29 @@
 
     </LinearLayout>
 
+
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:soundEffectsEnabled="true">
+
+        <ImageButton
+            android:id="@+id/imgSound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:background="@color/primaryColor"
+            android:src="@drawable/ic_sound_off" />
 
         <com.github.rahatarmanahmed.cpv.CircularProgressView
             android:id="@+id/progress_view"
             android:layout_width="240dp"
             android:layout_height="240dp"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:progress="100"
             app:cpv_animAutostart="true"
             app:cpv_color="@color/colorAccent"
@@ -42,6 +54,14 @@
             android:textColor="@color/textColorPrimary"
             android:textSize="23sp"
             android:textStyle="bold" />
+
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/numberPicker"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
@@ -68,20 +88,19 @@
             android:layout_centerHorizontal="true"
             android:background="@color/textColorPrimary"
             android:text="Start"
-            app:paddingStart="20dp"
-            />
+            app:paddingStart="20dp" />
 
         <com.gc.materialdesign.views.ButtonRectangle
             android:id="@+id/stop"
             android:layout_width="150dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/start"
+            android:layout_centerHorizontal="true"
             android:background="@color/redItem"
             android:text="Stop"
             android:visibility="gone"
-            app:paddingStart="20dp"
-            android:layout_alignStart="@+id/start" />
+            app:paddingStart="20dp" />
 
     </RelativeLayout>
 </LinearLayout>

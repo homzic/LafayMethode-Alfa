@@ -77,7 +77,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
                         android:checked="true"
-                        android:onClick="onRadioButtonClicked"
                         android:text="@string/male"
                         android:textColor="@color/textColorInput"
                         android:textSize="14sp" />
@@ -87,7 +86,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
-                        android:onClick="onRadioButtonClicked"
                         android:text="@string/female"
                         android:textColor="@color/textColorInput"
                         android:textSize="14sp" />
@@ -213,7 +211,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
                         android:checked="true"
-                        android:onClick="onRadioButtonClicked"
                         android:text="@string/low"
                         android:textColor="@color/textColorInput"
                         android:textSize="14sp" />
@@ -223,7 +220,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
-                        android:onClick="onRadioButtonClicked"
                         android:text="@string/medium"
                         android:textColor="@color/textColorInput"
                         android:textSize="14sp" />
@@ -233,27 +229,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
-                        android:onClick="onRadioButtonClicked"
                         android:text="@string/high"
                         android:textColor="@color/textColorInput"
                         android:textSize="14sp" />
                 </RadioGroup>
             </LinearLayout>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="hide"
-                    android:onClick="hideKeyboard"
-                    android:id="@+id/button"
-                    android:layout_column="1" />
-            </TableRow>
 
             <LinearLayout
                 android:layout_width="wrap_content"

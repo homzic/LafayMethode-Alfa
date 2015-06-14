@@ -2,6 +2,8 @@ package com.kris.lm.Fragments;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
@@ -9,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.gc.materialdesign.views.Slider;
@@ -19,6 +22,8 @@ public class StoperFragment extends Fragment {
     private com.gc.materialdesign.views.Button buttonStart;
     private com.gc.materialdesign.views.Button buttonStop;
     private Vibrator v;
+    private ImageButton imgSound;
+    private SharedPreferences dataSettings;
     private final long[] pattern = {0, 1000, 1000, 2000};
     private TextView textCounter;
     private long odliczaj = 10000;
@@ -26,6 +31,8 @@ public class StoperFragment extends Fragment {
     private CircularProgressView progressView;
     private MyCountDownTimer myCountDownTimer;
     private Slider slider;
+    MediaPlayer mediaPlayer;
+    private Boolean sound = true;
 
     public StoperFragment() {
     }
@@ -49,6 +56,8 @@ public class StoperFragment extends Fragment {
         progressView.setProgress(100);
         progressView.setMaxProgress(odliczaj / 1000);
         textCounter = (TextView) rootView.findViewById(R.id.counter);
+
+
 
         //ustaw licznik
         textCounter.setText(String.format("%02d", (odliczaj / 1000) / 60)
@@ -77,6 +86,8 @@ public class StoperFragment extends Fragment {
                 buttonStop.setVisibility(View.GONE);
                 buttonStart.setVisibility(View.VISIBLE);
                 v.playSoundEffect(SoundEffectConstants.CLICK);
+
+
             }
         });
         buttonStart.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +111,41 @@ public class StoperFragment extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void onStart() {
+        imgSound = (ImageButton) getView().findViewById(R.id.imgSound);
+        imgSound.setImageResource(R.drawable.ic_sound_on);
+        mediaPlayer = MediaPlayer.create(getActivity(), R.raw.evil_laugh);
+        //ustaw dziwek
+        imgSound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (sound) setSoundOn(false);
+                else setSoundOn(true);
+            }
+        });
+        super.onStart();
+    }
+
+    private void setSoundOn(Boolean set) {
+        if (set) {
+
+            dataSettings = this.getActivity().getSharedPreferences("MyData", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = dataSettings.edit();
+            editor.putBoolean("sound", true);
+            editor.apply();
+            imgSound.setImageResource(R.drawable.ic_sound_on);
+            sound=true;
+        } else {
+            dataSettings = this.getActivity().getSharedPreferences("MyData", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = dataSettings.edit();
+            editor.putBoolean("sound", false);
+            editor.apply();
+            sound = dataSettings.getBoolean("sound", false);
+            imgSound.setImageResource(R.drawable.ic_sound_off);
+            sound=false;
+        }
+    }
 
     public class MyCountDownTimer extends CountDownTimer {
 
@@ -137,7 +183,7 @@ public class StoperFragment extends Fragment {
             progressView.setProgress(0);
             buttonStop.setVisibility(View.GONE);
             buttonStart.setVisibility(View.VISIBLE);
-
+            if (sound) mediaPlayer.start();
 
         }
     }

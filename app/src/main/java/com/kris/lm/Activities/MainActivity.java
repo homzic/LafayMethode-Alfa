@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar actions click
         switch (item.getItemId()) {
             case R.id.action_settings:
-                Intent intent = new Intent(this, ActivityDB.class);
+                Intent intent = new Intent(this, Settings.class);
                 this.startActivity(intent);
                 break;
             case R.id.load_DB:
