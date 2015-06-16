@@ -409,6 +409,7 @@
     <string name="title_activity_body">Body</string>
     <string name="title_activity_card_view">CardViewActivity</string>
     <string name="title_activity_cwiczenia">Cwiczenia</string>
+    <string name="title_activity_data_base__mgt">DataBase_Mgt</string>
     <string name="title_activity_display_contact">DisplayContact</string>
     <string name="title_activity_excersises">Excersises</string>
     <string name="title_activity_levels">Levels</string>

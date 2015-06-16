@@ -47,6 +47,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.kris.lm.Activities.MainActivity" />
         </activity>
+        <activity
+            android:name=".DB.DataBase_Mgt"
+            android:label="@string/title_activity_data_base__mgt"
+            android:parentActivityName=".Activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kris.lm.Activities.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

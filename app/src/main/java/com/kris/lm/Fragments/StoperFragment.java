@@ -1,5 +1,6 @@
 package com.kris.lm.Fragments;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,6 +8,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.SoundEffectConstants;
 import android.view.View;
@@ -38,9 +40,15 @@ public class StoperFragment extends Fragment {
     }
 
     @Override
+    public void onAttach(Activity activity) {
+        Log.d("Fragment LifeCycle: ","onAttach");
+        super.onAttach(activity);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        Log.d("Fragment LifeCycle: ","onCreateView");
         View rootView = inflater.inflate(R.layout.fragment_stoper, container, false);
         Context context = rootView.getContext();
         buttonStart = (com.gc.materialdesign.views.Button) rootView.findViewById(R.id.start);
@@ -113,6 +121,7 @@ public class StoperFragment extends Fragment {
 
     @Override
     public void onStart() {
+        Log.d("Fragment LifeCycle: ","onStart");
         imgSound = (ImageButton) getView().findViewById(R.id.imgSound);
         imgSound.setImageResource(R.drawable.ic_sound_on);
         mediaPlayer = MediaPlayer.create(getActivity(), R.raw.evil_laugh);
@@ -125,6 +134,18 @@ public class StoperFragment extends Fragment {
             }
         });
         super.onStart();
+    }
+
+    @Override
+    public void onPause() {
+        Log.d("Fragment LifeCycle: ","onPause");
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        Log.d("Fragment LifeCycle: ","onResume");
+        super.onResume();
     }
 
     private void setSoundOn(Boolean set) {
@@ -145,6 +166,12 @@ public class StoperFragment extends Fragment {
             imgSound.setImageResource(R.drawable.ic_sound_off);
             sound=false;
         }
+    }
+
+    @Override
+    public void onStop() {
+        Log.d("Fragment LifeCycle: ","onStop");
+        super.onStop();
     }
 
     public class MyCountDownTimer extends CountDownTimer {

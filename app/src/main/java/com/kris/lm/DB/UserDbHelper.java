@@ -20,24 +20,24 @@ public class UserDbHelper extends SQLiteOpenHelper {
 
     //Tables
     private static final String CREATE_TABLE_USER =
-            "CREATE TABLE " + UserContract.NewUserInfo.TABLE_NAME
+            "CREATE TABLE " + User_Data.NewUserInfo.TABLE_NAME
                     + " ("
                     + UID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                    + UserContract.NewUserInfo.USER_NAME + " TEXT,"
-                    + UserContract.NewUserInfo.USER_MOB + " TEXT,"
-                    + UserContract.NewUserInfo.USER_MAIL + " TEXT);";
+                    + User_Data.NewUserInfo.USER_NAME + " TEXT,"
+                    + User_Data.NewUserInfo.USER_MOB + " TEXT,"
+                    + User_Data.NewUserInfo.USER_MAIL + " TEXT);";
 
     private static final String CREATE_TABLE_BODY =
-            "CREATE TABLE " + UserBody.NewBody.TABLE_NAME
+            "CREATE TABLE " + User_Body.newRow.TABLE_NAME
                     + " ("
                     + UID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                    + UserBody.NewBody.BODY_NECK + " TEXT,"
-                    + UserBody.NewBody.BODY_BICEPS + " TEXT,"
-                    + UserBody.NewBody.BODY_CHEST + " TEXT,"
-                    + UserBody.NewBody.BODY_HIP + " TEXT,"
-                    + UserBody.NewBody.BODY_THIGH + " TEXT,"
-                    + UserBody.NewBody.BODY_CALF + " TEXT,"
-                    + UserBody.NewBody.KEY_CREATED_AT + " DATETIME" + ")";
+                    + User_Body.newRow.BODY_NECK + " TEXT,"
+                    + User_Body.newRow.BODY_BICEPS + " TEXT,"
+                    + User_Body.newRow.BODY_CHEST + " TEXT,"
+                    + User_Body.newRow.BODY_HIP + " TEXT,"
+                    + User_Body.newRow.BODY_THIGH + " TEXT,"
+                    + User_Body.newRow.BODY_CALF + " TEXT,"
+                    + User_Body.newRow.KEY_CREATED_AT + " DATETIME" + ")";
 
     public UserDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -54,31 +54,31 @@ public class UserDbHelper extends SQLiteOpenHelper {
 
     public void addInformation(String name, String mob, String email, SQLiteDatabase db) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(UserContract.NewUserInfo.USER_NAME, name);
-        contentValues.put(UserContract.NewUserInfo.USER_MOB, mob);
-        contentValues.put(UserContract.NewUserInfo.USER_MAIL, email);
-        db.insert(UserContract.NewUserInfo.TABLE_NAME, null, contentValues);
+        contentValues.put(User_Data.NewUserInfo.USER_NAME, name);
+        contentValues.put(User_Data.NewUserInfo.USER_MOB, mob);
+        contentValues.put(User_Data.NewUserInfo.USER_MAIL, email);
+        db.insert(User_Data.NewUserInfo.TABLE_NAME, null, contentValues);
         Log.e("DATABASE OPERATIONS: ", "One row inserted ...");
     }
 
     public Cursor getContact(String user_name, SQLiteDatabase sqLiteDatabase) {
-        String[] projections = {UserContract.NewUserInfo.USER_MOB, UserContract.NewUserInfo.USER_MAIL};
-        String selection = UserContract.NewUserInfo.USER_NAME + " LIKE ?";
+        String[] projections = {User_Data.NewUserInfo.USER_MOB, User_Data.NewUserInfo.USER_MAIL};
+        String selection = User_Data.NewUserInfo.USER_NAME + " LIKE ?";
         String selection_args[] = {user_name};
-        return sqLiteDatabase.query(UserContract.NewUserInfo.TABLE_NAME, projections, selection, selection_args, null, null, null);
+        return sqLiteDatabase.query(User_Data.NewUserInfo.TABLE_NAME, projections, selection, selection_args, null, null, null);
     }
 
     public Cursor getBody(SQLiteDatabase sqLiteDatabase) {
         Cursor cursor;
-        String[] Selections = {UserBody.NewBody.BODY_NECK, UserBody.NewBody.BODY_BICEPS, UserBody.NewBody.BODY_CHEST, UserBody.NewBody.BODY_HIP, UserBody.NewBody.BODY_THIGH, UserBody.NewBody.BODY_CALF};
-        cursor = sqLiteDatabase.query(UserBody.NewBody.TABLE_NAME, Selections, null, null, null, null, null);
+        String[] Selections = {User_Body.newRow.BODY_NECK, User_Body.newRow.BODY_BICEPS, User_Body.newRow.BODY_CHEST, User_Body.newRow.BODY_HIP, User_Body.newRow.BODY_THIGH, User_Body.newRow.BODY_CALF};
+        cursor = sqLiteDatabase.query(User_Body.newRow.TABLE_NAME, Selections, null, null, null, null, null);
         return cursor;
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i2) {
-        db.execSQL("DROP TABLE IF EXISTS " + UserBody.NewBody.TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS " + UserContract.NewUserInfo.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + User_Body.newRow.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + User_Data.NewUserInfo.TABLE_NAME);
         onCreate(db);
     }
 
@@ -87,6 +87,7 @@ public class UserDbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         if (db != null && db.isOpen())
             db.close();
+        Log.e("DATABASE OPERATIONS: ", "db.close();");
     }
 
     /**
@@ -96,6 +97,7 @@ public class UserDbHelper extends SQLiteOpenHelper {
         SimpleDateFormat dateFormat = new SimpleDateFormat(
                 "yyyy-MM-dd HH:mm:ss", Locale.getDefault());
         Date date = new Date();
+        Log.e("DATABASE OPERATIONS: ", "date:" + date);
         return dateFormat.format(date);
     }
 }

@@ -1,5 +1,4 @@
 package com.kris.lm.Fragments;
-
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
@@ -12,15 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.gc.materialdesign.views.Button;
 import com.kris.lm.Activities.MainActivity;
-import com.kris.lm.DB.UserBody;
+import com.kris.lm.DB.User_Body;
 import com.kris.lm.DB.UserDbHelper;
 import com.kris.lm.R;
 import com.rengwuxian.materialedittext.MaterialEditText;
-
-import static com.kris.lm.DB.UserBody.addBodyRow;
+import static com.kris.lm.DB.User_Body.addBodyRow;
 
 
 public class BodyFragment extends Fragment {
@@ -68,10 +65,12 @@ public class BodyFragment extends Fragment {
         String hip = etHip.getText().toString();
         String thigh = etThigh.getText().toString();
         String calf = etCalf.getText().toString();
+
+
         userDbHelper = new UserDbHelper(context);
         sqLiteDatabase = userDbHelper.getWritableDatabase();
         addBodyRow(neck, bic, chest, hip, thigh, calf, sqLiteDatabase);
-        userDbHelper.close();
+        userDbHelper.closeDB();
 
         //---Ukryj klawiature
         ((MainActivity) getActivity()).hideKeyboard(getView());
@@ -114,7 +113,7 @@ public class BodyFragment extends Fragment {
  * getting todo count
  */
     private int getToDoCount() {
-        String countQuery = "SELECT  * FROM " + UserBody.NewBody.TABLE_NAME;
+        String countQuery = "SELECT  * FROM " + User_Body.newRow.TABLE_NAME;
         SQLiteDatabase db = userDbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
 

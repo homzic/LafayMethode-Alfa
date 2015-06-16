@@ -19,6 +19,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.kris.lm.DB.DataBase_Mgt;
 import com.kris.lm.Fragments.BodyFragment;
 import com.kris.lm.Fragments.ExercisesFragment;
 import com.kris.lm.Fragments.HomeFragment;
@@ -141,8 +142,8 @@ public class MainActivity extends AppCompatActivity {
         }
         // Handle action bar actions click
         switch (item.getItemId()) {
-            case R.id.action_settings:
-                Intent intent = new Intent(this, Settings.class);
+            case R.id.DB_Mgt:
+                Intent intent = new Intent(this, DataBase_Mgt.class);
                 this.startActivity(intent);
                 break;
             case R.id.load_DB:
@@ -163,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onPrepareOptionsMenu(Menu menu) {
         // if nav drawer is opened, hide the action items
         boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-        menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+        menu.findItem(R.id.DB_Mgt).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
 
     }

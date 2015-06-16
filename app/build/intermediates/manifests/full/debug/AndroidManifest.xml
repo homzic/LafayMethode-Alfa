@@ -52,6 +52,14 @@
                 android:value="com.kris.lm.Activities.MainActivity" />
         </activity>
         <activity
+            android:name="com.kris.lm.DB.DataBase_Mgt"
+            android:label="@string/title_activity_data_base__mgt"
+            android:parentActivityName="com.kris.lm.Activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kris.lm.Activities.MainActivity" />
+        </activity>
+        <activity
             android:name="android.support.v7.widget.TestActivity"
             android:label="RecyclerViewTestActivity" />
     </application>

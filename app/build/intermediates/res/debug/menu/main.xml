@@ -3,10 +3,10 @@
 
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/DB_Mgt"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_settings"
+        android:title="DB Mgt"
         tools:ignore="AppCompatResource" />
     <item
         android:id="@+id/load_DB"
