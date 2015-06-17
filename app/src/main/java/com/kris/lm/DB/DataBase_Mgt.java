@@ -9,7 +9,7 @@ import com.gc.materialdesign.views.ButtonRectangle;
 import com.kris.lm.R;
 
 public class DataBase_Mgt extends AppCompatActivity {
-private TrainingDbHelper trainingDbHelper;
+private DB_Helper DBHelper;
     private SQLiteDatabase sqLiteDatabase;
 private ButtonRectangle btnSave;
     @Override
@@ -20,9 +20,9 @@ private ButtonRectangle btnSave;
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                trainingDbHelper = new TrainingDbHelper(getApplication());
-                sqLiteDatabase = trainingDbHelper.getWritableDatabase();
-                trainingDbHelper.closeDB();
+                DBHelper = new DB_Helper(getApplication());
+                sqLiteDatabase = DBHelper.getWritableDatabase();
+                DBHelper.closeDB(sqLiteDatabase);
             }
         });
     }

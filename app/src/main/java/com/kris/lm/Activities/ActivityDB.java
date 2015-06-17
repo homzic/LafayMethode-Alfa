@@ -9,7 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.kris.lm.DB.UserDbHelper;
+import com.kris.lm.DB.DB_Helper;
+import com.kris.lm.DB.User_Data;
 import com.kris.lm.R;
 
 public class ActivityDB extends AppCompatActivity {
@@ -32,9 +33,9 @@ public class ActivityDB extends AppCompatActivity {
         String name = ContactName.getText().toString();
         String mob = ContactMobile.getText().toString();
         String email = ContactEmail.getText().toString();
-        UserDbHelper userDbHelper = new UserDbHelper(context);
+        DB_Helper userDbHelper = new DB_Helper(context);
         SQLiteDatabase sqLiteDatabase = userDbHelper.getWritableDatabase();
-        userDbHelper.addInformation(name, mob, email, sqLiteDatabase);
+        User_Data.addInformation(name, mob, email, sqLiteDatabase);
         Toast.makeText(getBaseContext(),"Data Saved",Toast.LENGTH_LONG).show();
         userDbHelper.close();
         Intent intent = new Intent(this, ActivityLoadData.class);

@@ -1,4 +1,5 @@
 package com.kris.lm.Fragments;
+
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
@@ -11,13 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.gc.materialdesign.views.Button;
 import com.kris.lm.Activities.MainActivity;
+import com.kris.lm.DB.DB_Helper;
 import com.kris.lm.DB.User_Body;
-import com.kris.lm.DB.UserDbHelper;
 import com.kris.lm.R;
 import com.rengwuxian.materialedittext.MaterialEditText;
-import static com.kris.lm.DB.User_Body.addBodyRow;
 
 
 public class BodyFragment extends Fragment {
@@ -27,7 +28,7 @@ public class BodyFragment extends Fragment {
     private MaterialEditText etNeck, etBiceps, etChest, etHip, etThigh, etCalf;
     com.gc.materialdesign.views.Button btnSave;
     private Context context;
-    private UserDbHelper userDbHelper;
+    private DB_Helper dbHelper;
     private SQLiteDatabase sqLiteDatabase;
 
     @Override
@@ -47,6 +48,7 @@ public class BodyFragment extends Fragment {
         etThigh = (MaterialEditText) getView().findViewById(R.id.editUda);
         etCalf = (MaterialEditText) getView().findViewById(R.id.editLydki);
 
+        dbHelper = new DB_Helper(context);
         btnSave = (Button) getView().findViewById(R.id.btnSaveBody);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,24 +61,21 @@ public class BodyFragment extends Fragment {
     }
 
     public void saveBody() {
+        sqLiteDatabase = dbHelper.getWritableDatabase();
         String bic = etBiceps.getText().toString();
         String neck = etNeck.getText().toString();
         String chest = etChest.getText().toString();
         String hip = etHip.getText().toString();
         String thigh = etThigh.getText().toString();
         String calf = etCalf.getText().toString();
-
-
-        userDbHelper = new UserDbHelper(context);
-        sqLiteDatabase = userDbHelper.getWritableDatabase();
-        addBodyRow(neck, bic, chest, hip, thigh, calf, sqLiteDatabase);
-        userDbHelper.closeDB();
+        User_Body.addBodyRow(neck, bic, chest, hip, thigh, calf, sqLiteDatabase);
+        DB_Helper.closeDB(sqLiteDatabase);
 
         //---Ukryj klawiature
         ((MainActivity) getActivity()).hideKeyboard(getView());
 
         //Komunikat ile wpisów jest w bazie
-        Toast toast = Toast.makeText(context, "Data Saved for body " + getToDoCount() + " row!\n\n" + "At date " + UserDbHelper.getDateTime() + " !", Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(context, "Data Saved for body " + getToDoCount() + " row!\n\n" + "At date " + DB_Helper.getDateTime() + " !", Toast.LENGTH_LONG);
         TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
         if (v != null) v.setGravity(Gravity.CENTER);
         toast.show();
@@ -89,10 +88,8 @@ public class BodyFragment extends Fragment {
     }
 
     private void loadDB() {
-
-        userDbHelper = new UserDbHelper(context);
-        sqLiteDatabase = userDbHelper.getReadableDatabase();
-        Cursor cursor = userDbHelper.getBody(sqLiteDatabase);
+        sqLiteDatabase = dbHelper.getReadableDatabase();
+        Cursor cursor = User_Body.getBody(sqLiteDatabase);
         if (cursor.moveToLast()) {
             String neck = cursor.getString(cursor.getColumnIndex("body_neck"));
             String bic = cursor.getString(cursor.getColumnIndex("body_biceps"));
@@ -113,10 +110,9 @@ public class BodyFragment extends Fragment {
  * getting todo count
  */
     private int getToDoCount() {
-        String countQuery = "SELECT  * FROM " + User_Body.newRow.TABLE_NAME;
-        SQLiteDatabase db = userDbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery(countQuery, null);
-
+        String countQuery = "SELECT  * FROM " + User_Body.TABLE_NAME;
+        sqLiteDatabase = dbHelper.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery(countQuery, null);
         int count = cursor.getCount();
         cursor.close();
 

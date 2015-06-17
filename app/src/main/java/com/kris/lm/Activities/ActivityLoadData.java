@@ -7,7 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
-import com.kris.lm.DB.UserDbHelper;
+import com.kris.lm.DB.DB_Helper;
+import com.kris.lm.DB.User_Data;
 import com.kris.lm.R;
 
 
@@ -35,9 +36,9 @@ public class ActivityLoadData extends AppCompatActivity {
 
     public void loadDB(View view) {
         String search_name = Search_Name.getText().toString();
-        UserDbHelper userDbHelper = new UserDbHelper(getApplicationContext());
+        DB_Helper userDbHelper = new DB_Helper(getApplicationContext());
         SQLiteDatabase sqLiteDatabase = userDbHelper.getReadableDatabase();
-        Cursor cursor = userDbHelper.getContact(search_name, sqLiteDatabase);
+        Cursor cursor = User_Data.getContact(search_name, sqLiteDatabase);
         if (cursor.moveToFirst()) {
             String MOBILE = cursor.getString(0);
             String EMAIL = cursor.getString(1);
