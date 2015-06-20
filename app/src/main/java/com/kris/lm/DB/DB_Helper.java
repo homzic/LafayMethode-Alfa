@@ -11,7 +11,7 @@ import java.util.Locale;
 
 public class DB_Helper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "LAFAY_METHODE.DB";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 5;
     public SQLiteDatabase sqLiteDatabase;
 
     public DB_Helper(Context context) {

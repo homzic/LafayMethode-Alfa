@@ -13,6 +13,8 @@ import java.util.Locale;
  * Tabela wymiarów
  */
 public class User_Body {
+    private static final String BODY_WEIGHT = "body_weight";
+    private static final String BODY_HEIGHT = "body_height";
     private static final String BODY_NECK = "body_neck";
     private static final String BODY_BICEPS = "body_biceps";
     private static final String BODY_CHEST = "body_chest";
@@ -27,6 +29,8 @@ public class User_Body {
             "CREATE TABLE " + User_Body.TABLE_NAME
                     + " ("
                     + UID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + User_Body.BODY_WEIGHT + " TEXT,"
+                    + User_Body.BODY_HEIGHT + " TEXT,"
                     + User_Body.BODY_NECK + " TEXT,"
                     + User_Body.BODY_BICEPS + " TEXT,"
                     + User_Body.BODY_CHEST + " TEXT,"
@@ -54,7 +58,7 @@ public class User_Body {
         cursor = sqLiteDatabase.query(TABLE_NAME, Selections, null, null, null, null, null);
         return cursor;
     }
-    
+
     public static String getDateTime() {
         SimpleDateFormat dateFormat = new SimpleDateFormat(
                 "yyyy-MM-dd HH:mm:ss", Locale.getDefault());
