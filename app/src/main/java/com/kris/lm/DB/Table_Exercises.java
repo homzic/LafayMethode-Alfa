@@ -1,114 +1,107 @@
 package com.kris.lm.DB;
 
 
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Context;
 import android.util.Log;
 
 import com.kris.lm.Recycler_Cwiczenia.CwiczenieItem;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
-class Table_Exercises {
-    private List<CwiczenieItem> cItems;
+public class Table_Exercises {
+
+    private static List<CwiczenieItem> cItems;
     public static final String TABLE_NAME = "table_exercises";
     public static final String EXC_ID = "exc_ID";
     public static final String EXC_NAME = "exc_name";
     public static final String EXC_DESC = "exc_desc";
+    public static final String EXC_THUMB = "exc_thumb";
     public static final String EXC_SKILL = "exc_skill";
-
+    private static JSONArray cwiczenia = null;
     public static final String CREATE_TABLE_EXERCISES =
             "CREATE TABLE " + TABLE_NAME
                     + " (" +
                     EXC_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + EXC_NAME + " TEXT, "
                     + EXC_DESC + " TEXT, "
-                    + EXC_SKILL + " TEXT" + "); ";
+                    + EXC_THUMB + " INTEGER, "
+                    + EXC_SKILL + " INTEGER" + "); ";
 
 
-    public void addExercise(String name, String desc, String skill, SQLiteDatabase db) {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(EXC_NAME, name);
-        contentValues.put(EXC_DESC, desc);
-        contentValues.put(EXC_SKILL, skill);
-        db.insert(TABLE_NAME, null, contentValues);
-        Log.e("DATABASE OPERATIONS: ", "One row inserted ...");
+
+
+    public static JSONObject parseJSONData(Context context) {
+        String JSONString = null;
+        JSONObject jsonObject = null;
+        try {
+
+            //open the inputStream to the file
+            InputStream inputStream = context.getAssets().open("Cwiczenia_JSON");
+
+            int sizeOfJSONFile = inputStream.available();
+
+            //array that will store all the data
+            byte[] bytes = new byte[sizeOfJSONFile];
+
+            //reading data into the array from the file
+            inputStream.read(bytes);
+
+            //close the input stream
+            inputStream.close();
+
+            JSONString = new String(bytes, "UTF-8");
+            jsonObject = new JSONObject(JSONString);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        } catch (JSONException x) {
+            x.printStackTrace();
+            return null;
+        }
+        return jsonObject;
     }
-/*
-    private void ListaCwiczen() {
+
+    public static List cwiczeniaJSONtoArray(JSONObject jsonObject, Context context) {
         cItems = new ArrayList<>();
-        CwiczenieItem cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " A");
-        cwiczenie.setDes(getString(R.string.cw_A_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_a);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
+        CwiczenieItem cwiczenie = null;
+        int thumbID, skillID;
+//THis will store all the values inside "Cwiczenia" in a element string
+        try {
+            if (jsonObject != null) {
+                cwiczenia = jsonObject.getJSONArray("cwiczenia");
 
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " A1");
-        cwiczenie.setDes(getString(R.string.cw_A1_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_a1);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
+            for (int i = 0; i < cwiczenia.length(); i++) {
+                String exc_Name = cwiczenia.getJSONObject(i).getString("name");
+                String exc_Desc = cwiczenia.getJSONObject(i).getString("desc");
+                String exc_Thumb = cwiczenia.getJSONObject(i).getString("icon");
+                String skill_Icon = cwiczenia.getJSONObject(i).getString("skill");
+                cwiczenie = new CwiczenieItem();
+                cwiczenie.setName(exc_Name);
+                cwiczenie.setDes(exc_Desc);
+                thumbID = context.getResources().getIdentifier(exc_Thumb, "drawable",
+                        context.getPackageName());
+                cwiczenie.setThumbnail(thumbID);
+                skillID = context.getResources().getIdentifier(skill_Icon, "drawable", context
+                        .getPackageName());
+                cwiczenie.setmDifficulty(skillID);
+                cItems.add(cwiczenie);
 
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " B");
-        cwiczenie.setDes(getString(R.string.cw_B_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_b);
-        cwiczenie.setmDifficulty(R.drawable.skill2);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " C");
-        cwiczenie.setDes(getString(R.string.cw_C_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_c);
-        cwiczenie.setmDifficulty(R.drawable.skill2);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " C1");
-        cwiczenie.setDes(getString(R.string.cw_C1_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_c1);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " D");
-        cwiczenie.setDes(getString(R.string.cw_D_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_d);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " E");
-        cwiczenie.setDes(getString(R.string.cw_E_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_e);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " F");
-        cwiczenie.setDes(getString(R.string.cw_F_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_f);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " G");
-        cwiczenie.setDes(getString(R.string.cw_G_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_g);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " K2");
-        cwiczenie.setDes(getString(R.string.cw_K2_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_k2);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
+            }}
+        } catch (JSONException e) {
+            Log.e("JSON: ", "Desc nie znalezione");
+        }
+        return cItems;
     }
-*/
+
+
 }
 
 

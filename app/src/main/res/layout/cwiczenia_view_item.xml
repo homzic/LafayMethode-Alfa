@@ -26,8 +26,8 @@
 
             <ImageView
                 android:id="@+id/cwIcon"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
                 android:paddingEnd="10dp"
                 android:paddingStart="10dp"
                 android:src="@drawable/cw_a" />
@@ -89,7 +89,7 @@
                 android:paddingEnd="20dp"
                 android:paddingStart="20dp"
                 android:paddingTop="20dp"
-                android:text="@string/cw_A_opis"
+                android:text="Opis"
                 android:textColor="@color/textColorPrimary"
                 android:visibility="gone" />
         </LinearLayout>

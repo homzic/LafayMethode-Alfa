@@ -1,0 +1,26 @@
+package com.kris.lm;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
+
+/**
+ * Created by Kris on 2015-06-22.
+ */
+public class MyPreferences {
+    private static final String MY_PREFERENCES = "my_preferences";
+
+    public static boolean isFirst(Context context) {
+        final SharedPreferences reader = context.getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+        final boolean first = reader.getBoolean("is_first", true);
+        if (first) {
+            final SharedPreferences.Editor editor = reader.edit();
+            editor.putBoolean("is_first", false);
+            editor.commit();
+            Log.e("Aplication : ", "Pierwszy start ...");
+        }
+        return first;
+    }
+
+
+}

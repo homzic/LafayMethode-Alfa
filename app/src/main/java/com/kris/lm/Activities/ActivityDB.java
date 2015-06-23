@@ -36,7 +36,7 @@ public class ActivityDB extends AppCompatActivity {
         DB_Helper userDbHelper = new DB_Helper(context);
         SQLiteDatabase sqLiteDatabase = userDbHelper.getWritableDatabase();
         User_Data.addInformation(name, mob, email, sqLiteDatabase);
-        Toast.makeText(getBaseContext(),"Data Saved",Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(), "Data Saved", Toast.LENGTH_LONG).show();
         userDbHelper.close();
         Intent intent = new Intent(this, ActivityLoadData.class);
         this.startActivity(intent);

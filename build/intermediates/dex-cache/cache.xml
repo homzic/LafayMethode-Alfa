@@ -2,27 +2,6 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
-        <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\classes-dc5e53755db800778859bc878b2ca30687a5a7f8.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
-        <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\classes-209b9545734df6c093c245bb0738dd9964658306.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\com.wrapp.floatlabelededittext\library\0.0.6\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="0db8e1dc3097c0db8425b339e5e720ef6e918400">
-        <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\classes-ad449cdaefbe6d5b5d2f7858699a885f5810b030.jar" />
-    </item>
-    <item
         jar="C:\Users\Kris\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -37,25 +16,11 @@
         <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\classes-1f919978ebb75dbc6d010f6b92b9be8730584a0e.jar" />
     </item>
     <item
-        jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\com.github.rahatarmanahmed\circularprogressview\2.3.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c151806db47ef6be44fcaceaea9046c3fea52d59">
-        <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\classes-2b646d1bdf676574ecfbc7e453874a0f53a2bcde.jar" />
-    </item>
-    <item
         jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\net.steamcrafted\load-toast\1.0.6\classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="f0b653f07052064570b06767e9b4b0b6a29397af">
         <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\classes-b2176bbaa70c677c855dd55cdfb0724a4a12b6d2.jar" />
-    </item>
-    <item
-        jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\com.github.navasmdc\MaterialDesign\1.4\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="87405405e403de68f4057757b8a2e8de02bd65d0">
-        <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\classes-4ca882c2620155097d2dc30a78ff36eb054de482.jar" />
     </item>
     <item
         jar="C:\Users\Kris\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v2.1.0\ec46f9251e1e0ee60e1b6beae8b16f2e0fdee474\MPAndroidChart-v2.1.0.jar"
@@ -65,18 +30,46 @@
         <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\MPAndroidChart-v2.1.0-fc1421a9cb082134b61fcb0d803c087b4827baf4.jar" />
     </item>
     <item
-        jar="C:\Users\Kris\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-9178801d657e252c67672b65ca2598814c4d64f7.jar" />
-    </item>
-    <item
         jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
         <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-4c34e4033f63aeec51bf7a2a8b1d2cbcced61f71.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\classes-dc5e53755db800778859bc878b2ca30687a5a7f8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
+        <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\classes-209b9545734df6c093c245bb0738dd9964658306.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\com.github.rahatarmanahmed\circularprogressview\2.3.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c151806db47ef6be44fcaceaea9046c3fea52d59">
+        <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\classes-2b646d1bdf676574ecfbc7e453874a0f53a2bcde.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\com.github.navasmdc\MaterialDesign\1.4\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="87405405e403de68f4057757b8a2e8de02bd65d0">
+        <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\classes-4ca882c2620155097d2dc30a78ff36eb054de482.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kris\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-9178801d657e252c67672b65ca2598814c4d64f7.jar" />
     </item>
     <item
         jar="C:\Users\Kris\AndroidStudioProjects\LafayMethode-Alfa\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"

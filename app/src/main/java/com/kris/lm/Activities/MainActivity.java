@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -19,7 +20,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.kris.lm.DB.DB_Helper;
 import com.kris.lm.DB.DataBase_Mgt;
+import com.kris.lm.DB.Table_Exercises;
 import com.kris.lm.Fragments.BodyFragment;
 import com.kris.lm.Fragments.ExercisesFragment;
 import com.kris.lm.Fragments.HomeFragment;
@@ -27,11 +30,18 @@ import com.kris.lm.Fragments.LevelsFragment;
 import com.kris.lm.Fragments.Profile_Fragment;
 import com.kris.lm.Fragments.ResultsFragment;
 import com.kris.lm.Fragments.StoperFragment;
+import com.kris.lm.MyPreferences;
 import com.kris.lm.NavDrawer.NavDrawerItem;
 import com.kris.lm.NavDrawer.NavDrawerListAdapter;
 import com.kris.lm.R;
+import com.kris.lm.Recycler_Cwiczenia.CwiczenieItem;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import static com.kris.lm.DB.Table_Exercises.cwiczeniaJSONtoArray;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -52,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        initializeApplication();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_drawer);
 
@@ -267,4 +277,29 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void initializeApplication() {
+        boolean isFirstTime = MyPreferences.isFirst(this);
+
+        if (isFirstTime) {
+            JSONObject jsonObject = Table_Exercises.parseJSONData(this);
+            List<CwiczenieItem> cItems;
+            cItems = cwiczeniaJSONtoArray(jsonObject, this);
+            int L = cItems.size();
+            DB_Helper dbHelper = new DB_Helper(this);
+            SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+            for (int i = 0; i < L; i++) {
+                CwiczenieItem cwiczenieItem = cItems.get(i);
+
+                String exc_Name = cwiczenieItem.getName();
+                String exc_Desc = cwiczenieItem.getDes();
+                Integer exc_Thumb = cwiczenieItem.getThumbnail();
+                Integer skill_Icon = cwiczenieItem.getmDifficulty();
+                DB_Helper.addExercise(exc_Name, exc_Desc, exc_Thumb, skill_Icon, sqLiteDatabase);
+
+            }
+            DB_Helper.closeDB(sqLiteDatabase);
+
+
+        }
+    }
 }

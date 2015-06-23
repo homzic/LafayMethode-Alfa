@@ -24,9 +24,9 @@ public class Profile_Fragment extends Fragment {
     public Profile_Fragment() {
     }
 
-   private SharedPreferences dataSettings;
+    private SharedPreferences dataSettings;
     private static final String DEFAULT = " ";
-    private EditText userName,eMail, etWeight;
+    private EditText userName, eMail, etWeight;
     public static EditText etBirthday;
     private RadioGroup radioGender, radioActivity;
     Button btnSave;

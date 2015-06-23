@@ -29,7 +29,7 @@ dependencies {
         exclude module: 'support-v4'
     }
 
-    compile ('com.rengwuxian.materialedittext:library:2.1.4')
+    compile('com.rengwuxian.materialedittext:library:2.1.4')
             {
                 exclude module: 'support-v4'
             }

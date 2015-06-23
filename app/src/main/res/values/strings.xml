@@ -79,8 +79,6 @@
     </array>
 
 
-
-
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
     <string name="user_data">Profile</string>
@@ -109,7 +107,7 @@
     <string name="title_activity_list_view">ListView</string>
     <string name="title_activity_cwiczenia">Cwiczenia</string>
     <string name="poziom_trudnosci">Poziom trudności</string>
-      <string name="cwiczenie">Ćwiczenie</string>
+    <string name="cwiczenie">Ćwiczenie</string>
     <string name="przeczytaj_opis">Przeczytaj opis</string>
     <string name="pokaz_opis">Pokaż opis</string>
     <string name="zwin_opis">Zwiń opis</string>
@@ -118,6 +116,7 @@
     <string name="make_body">Make your body!</string>
     <string name="title_activity_data_base__mgt">DataBase_Mgt</string>
     <string name="add_training">Add training</string>
+    <string name="title_activity_initialize">Initialize</string>
 
 
 </resources>

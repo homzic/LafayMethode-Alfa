@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment {
             Toast.makeText(context, "Hello " + Name + "!", Toast.LENGTH_LONG).show();
         else {
             Toast.makeText(context, "Fill in your profile!", Toast.LENGTH_LONG).show();
-           // startActivity(new Intent(context, ActivityUserData.class));
+            // startActivity(new Intent(context, ActivityUserData.class));
         }
     }
 }

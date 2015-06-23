@@ -1,0 +1,64 @@
+{
+  "cwiczenia": [
+    {
+      "name": "A",
+      "desc": "Oprzyj d³onie i stopy na pod³odze. Tu³ów w pozycji wyprostowanej. Odleg³oœæ miêdzy rêkoma wynosi oko³o dwóch szerokoœci barków. Zginaj¹c rêce w ³okciach, opuœæ siê do momentu w którym klatka piersiowa niemal¿e dotknie pod³ogi, nastêpnie powróæ do dotknie pod³ogi, nastêpnie powróæ do pozycji wyjœciowej z wyprostowanymi rêkoma. Opuszczaj¹c siê weŸ g³êboki wdech, a podnosz¹c cia³o zrób wydech.",
+      "icon": "cw_a",
+      "skill": "skill1"
+    },
+    {
+      "name": "A1",
+      "desc": "Oprzyj d³onie i stopy na pod³odze. Tu³ów w pozycji wyprostowanej. Odleg³oœæ miêdzy rêkoma wynosi oko³o dwóch szerokoœci barków. Zginaj¹c rêce w ³okciach, opuœæ siê do momentu w którym klatka piersiowa niemal¿e dotknie pod³ogi, nastêpnie powróæ do dotknie pod³ogi, nastêpnie powróæ do pozycji wyjœciowej z wyprostowanymi rêkoma. Opuszczaj¹c siê weŸ g³êboki wdech, a podnosz¹c cia³o zrób wydech.",
+      "icon": "cw_a1",
+      "skill": "skill1"
+    },
+    {
+      "name": "B",
+      "desc": "Oprzyj siê na dwóch równoleg³ych dr¹¿kach lub podpórkach. Zginaj¹c rêce, opuszczaj siê, nie dotykaj¹c stopami pod³ogi. Jeœli to konieczne, ugnij nogi w kolanach.",
+      "icon": "cw_b",
+      "skill": "skill2"
+    },
+    {
+      "name": "C",
+      "desc": "Chwyæ dr¹¿ek, obejmuj¹c go ca³ymi d³oñmi, rozstawionymi mniej wiêcej na szerokoœæ barków; palce maj¹ byæ skierowane w stronê twarzy. Po przyjêciu pozycji wyjœciowej (zwis na wyprostowanych rêkach) weŸ g³êbszy oddech. Nastêpnie, wdychaj¹c powietrze, poci¹gnij siê do momentu, a¿ broda znajdzie siê powy¿ej dr¹¿ka. Bior¹c oddech, opuœæ siê. Podci¹gaj¹c siê , rób wydech.",
+      "icon": "cw_c",
+      "skill": "skill2"
+    },
+    {
+      "name": "C1",
+      "desc": "Wdychaj¹c powietrze, opuœæ siê do po³owy zakresu ruchu (ramiona równolegle do pod³o¿a). Nastêpnie wydyhcaj¹c powietrze, podci¹gnij siê.",
+      "icon": "cw_c1",
+      "skill": "skill1"
+    },
+    {
+      "name": "D",
+      "desc": "Nogi s¹ lekko ugiête. Bior¹c wdech, zegnij rêce i opuœæ siê tak nisko, jak tylko mo¿esz. Wydychaj¹c powietrze, wyprostuj rêce i powróæ do pozycji wyjœciowej.",
+      "icon": "cw_d",
+      "skill": "skill1"
+    },
+    {
+      "name": "E",
+      "desc": "Stoj¹c na jednej nodze zrób niewielki przysiad. Opuszczaj siê do momentu, a¿ udo bêdzie ustawione prawie równolegle do pod³ogi. Opuszczaj¹c siê bierz wdech, a podnosz¹c wydech.",
+      "icon": "cw_e",
+      "skill": "skill1"
+    },
+    {
+      "name": "F",
+      "desc": "Wyskocz do góry mo¿liwie najbardziej pionowo. Wy;¹duj na palcach (na 1/3 stóp) uginaj¹c nogi aby zamortyzowaæ skok. Nastêpnie p³ynnie przejdŸ do przysiadu, zatrzymuj¹c siê w momencie gdy uda ustawi¹ siê równolegle do pod³ogi. Bez odpoczynku ponownie wyskocz do góry.",
+      "icon": "cw_f",
+      "skill": "skill1"
+    },
+    {
+      "name": "G",
+      "desc": "Kul¹c siê, przybli¿ klatkê piersiow¹ do miednicy i powróæ do pozycji wyjœciowej, nie pomagaj¹c sobie ruchem bioder. Kul¹c siê wydychaj powietrze. Wracj¹c do pozycji wyjœciowej, bierz wdech.",
+      "icon": "cw_g",
+      "skill": "skill1"
+    },
+    {
+      "name": "K2",
+      "desc": "Stopy ustaw na 110cm. D³onie oprzyj na wysokœci 150cm.",
+      "icon": "cw_k2",
+      "skill": "skill1"
+    }
+  ]
+}

@@ -1,144 +1,144 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:background="@color/primaryColor"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.kris.lm.DB.DataBase_Mgt">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/primaryColor"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                tools:context="com.kris.lm.DB.DataBase_Mgt">
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/primaryColor"
-    android:scrollbarStyle="outsideOverlay"
-    >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textViewFill"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-
-            android:gravity="center_horizontal"
-            android:paddingTop="10dp"
-            android:text="@string/add_training"
-            android:textColor="@color/textColorPrimary"
-            android:textSize="20sp" />
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/primaryColor"
+                android:scrollbarStyle="outsideOverlay">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
-            android:layout_weight="2"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewFill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:gravity="center_horizontal"
+                android:paddingTop="10dp"
+                android:text="@string/add_training"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="20sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                 android:orientation="vertical">
+                android:layout_margin="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="2"
+                android:orientation="horizontal">
 
-                <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/editLevel"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Level"
-                    android:inputType="numberDecimal"
-                    app:met_minCharacters="1"
-                    android:textCursorDrawable="@drawable/text_cursor_cyan"
-                    android:textSize="14sp"
-                    app:met_baseColor="@color/textColorPrimary"
-                    app:met_floatingLabel="highlight"
-                    app:met_maxCharacters="3"
-                    app:met_primaryColor="?colorAccent"
-                    app:met_textColorHint="@color/hint_foreground_material_light"
-                    android:maxLines="1"
-                    android:textStyle="bold"
-                    android:typeface="serif"
-                    android:singleLine="true"
+                    android:orientation="vertical">
 
-                    />
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/editLevel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Level"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@drawable/text_cursor_cyan"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        app:met_baseColor="@color/textColorPrimary"
+                        app:met_floatingLabel="highlight"
+                        app:met_maxCharacters="3"
+                        app:met_minCharacters="1"
+                        app:met_primaryColor="?colorAccent"
+                        app:met_textColorHint="@color/hint_foreground_material_light"
 
-                <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/editEXC_Name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Excercise name"
-                    android:inputType="text"
-                    android:lines="1"
-                    android:textCursorDrawable="@drawable/text_cursor_cyan"
-                    android:textSize="14sp"
-                    app:met_baseColor="@color/textColorPrimary"
-                    app:met_floatingLabel="highlight"
-                    app:met_maxCharacters="3"
-                    app:met_minCharacters="1"
-                    app:met_primaryColor="?colorAccent"
-                    app:met_textColorHint="@color/hint_foreground_material_light"
-                    android:maxLines="1"
-                    android:textStyle="bold"
-                    android:typeface="serif"
-                    android:textAlignment="center" />
+                        />
 
-                <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/editSeria"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Seria"
-                    android:inputType="numberDecimal"
-                    android:lines="1"
-                    app:met_minCharacters="1"
-                    android:textCursorDrawable="@drawable/text_cursor_cyan"
-                    android:textSize="14sp"
-                    app:met_baseColor="@color/textColorPrimary"
-                    app:met_floatingLabel="highlight"
-                    app:met_maxCharacters="3"
-                    app:met_primaryColor="?colorAccent"
-                    app:met_textColorHint="@color/hint_foreground_material_light"
-                    android:maxLines="1"
-                    android:textStyle="bold"
-                    android:typeface="serif"
-                    android:textAlignment="center" />
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/editEXC_Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Excercise name"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:textAlignment="center"
+                        android:textCursorDrawable="@drawable/text_cursor_cyan"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        app:met_baseColor="@color/textColorPrimary"
+                        app:met_floatingLabel="highlight"
+                        app:met_maxCharacters="3"
+                        app:met_minCharacters="1"
+                        app:met_primaryColor="?colorAccent"
+                        app:met_textColorHint="@color/hint_foreground_material_light"/>
 
-                <com.rengwuxian.materialedittext.MaterialEditText
-                    android:id="@+id/editRepeats"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Repeats"
-                    app:met_minCharacters="1"
-                    android:inputType="numberDecimal"
-                    android:lines="1"
-                    android:textCursorDrawable="@drawable/text_cursor_cyan"
-                    android:textSize="14sp"
-                    app:met_baseColor="@color/textColorPrimary"
-                    app:met_floatingLabel="highlight"
-                    app:met_maxCharacters="3"
-                    app:met_primaryColor="?colorAccent"
-                    app:met_textColorHint="@color/hint_foreground_material_light"
-                    android:maxLines="1"
-                    android:textStyle="bold"
-                    android:typeface="serif"
-                    android:textAlignment="center" />
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/editSeria"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Seria"
+                        android:inputType="numberDecimal"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:textAlignment="center"
+                        android:textCursorDrawable="@drawable/text_cursor_cyan"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        app:met_baseColor="@color/textColorPrimary"
+                        app:met_floatingLabel="highlight"
+                        app:met_maxCharacters="3"
+                        app:met_minCharacters="1"
+                        app:met_primaryColor="?colorAccent"
+                        app:met_textColorHint="@color/hint_foreground_material_light"/>
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/editRepeats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Repeats"
+                        android:inputType="numberDecimal"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:textAlignment="center"
+                        android:textCursorDrawable="@drawable/text_cursor_cyan"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        app:met_baseColor="@color/textColorPrimary"
+                        app:met_floatingLabel="highlight"
+                        app:met_maxCharacters="3"
+                        app:met_minCharacters="1"
+                        app:met_primaryColor="?colorAccent"
+                        app:met_textColorHint="@color/hint_foreground_material_light"/>
 
 
-                <com.gc.materialdesign.views.ButtonRectangle
-                    android:layout_width="match_parent"
-                    android:id="@+id/btnSaveTestDB"
-                    android:layout_height="wrap_content"
-                    android:background="@color/textColorPrimary"
-                    android:text="@string/save"
-                    />
+                    <com.gc.materialdesign.views.ButtonRectangle
+                        android:id="@+id/btnSaveTestDB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/textColorPrimary"
+                        android:text="@string/save"/>
 
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
 </RelativeLayout>

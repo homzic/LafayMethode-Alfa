@@ -30,12 +30,13 @@ class Table_Training {
                     + EXC_ID + " INT, "
                     + EXC_NAME + " TEXT,"
                     + SERIA + " INT, "
-                    + REPEATS + " INT, "+
+                    + REPEATS + " INT, " +
                     "FOREIGN KEY(" + Table_Exercises.EXC_ID + " ) REFERENCES "
                     + Table_Exercises.TABLE_NAME + " (" + EXC_ID + ") ON DELETE CASCADE" +
                     ");";
 
-    public static void addTrainingRow(String level, String exc_name, Integer seria, Integer repeats, SQLiteDatabase db) {
+    public static void addTrainingRow(String level, String exc_name, Integer seria, Integer
+            repeats, SQLiteDatabase db) {
         ContentValues values = new ContentValues();
         values.put(ID_TRAINING, getLastTrainingId());
         values.put(LEVEL, level);
@@ -48,10 +49,12 @@ class Table_Training {
         Log.e("DATABASE OPERATIONS: ", "One row Training inserted..." + values);
     }
 
-   public static int getLastTrainingId(){
-       return 0;
-   };
-    public static int getExcID(){
+    public static int getLastTrainingId() {
+        return 0;
+    }
+
+
+    public static int getExcID() {
         return 0;
 
     }

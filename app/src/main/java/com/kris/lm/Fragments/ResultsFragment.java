@@ -27,11 +27,13 @@ import java.util.ArrayList;
 
 public class ResultsFragment extends Fragment implements OnChartGestureListener {
     private Typeface tf;
-	public ResultsFragment(){}
+
+    public ResultsFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_results, container, false);
         Context context = rootView.getContext();
@@ -45,7 +47,7 @@ public class ResultsFragment extends Fragment implements OnChartGestureListener 
         mChart.setDrawGridBackground(false);
         mChart.setDrawBarShadow(false);
 
-        Typeface tf = Typeface.createFromAsset(context.getAssets(),"OpenSans-Light.ttf");
+        Typeface tf = Typeface.createFromAsset(context.getAssets(), "OpenSans-Light.ttf");
 
         mChart.setData(generateBarData());
 
@@ -66,17 +68,18 @@ public class ResultsFragment extends Fragment implements OnChartGestureListener 
 
         return rootView;
     }
+
     private BarData generateBarData() {
 
         ArrayList<BarDataSet> sets = new ArrayList<>();
 
-        for(int i = 0; i < 1; i++) {
+        for (int i = 0; i < 1; i++) {
 
             ArrayList<BarEntry> entries = new ArrayList<>();
 
 //            entries = FileUtils.loadEntriesFromAssets(getActivity().getAssets(), "stacked_bars.txt");
 
-            for(int j = 0; j < 12; j++) {
+            for (int j = 0; j < 12; j++) {
                 entries.add(new BarEntry((float) (Math.random() * (float) 20000) + (float) 20000 / 4, j));
             }
 
@@ -89,11 +92,14 @@ public class ResultsFragment extends Fragment implements OnChartGestureListener 
         d.setValueTypeface(tf);
         return d;
     }
-    private final String[] mLabels = new String[] { "Company A", "Company B", "Company C", "Company D", "Company E", "Company F" };
+
+    private final String[] mLabels = new String[]{"Company A", "Company B", "Company C", "Company D", "Company E", "Company F"};
+
     //    private String[] mXVals = new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec" };
     private String getLabel(int i) {
         return mLabels[i];
     }
+
     @Override
     public void onChartLongPressed(MotionEvent me) {
         Log.i("LongPress", "Chart longpressed.");

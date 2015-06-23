@@ -1,5 +1,6 @@
 package com.kris.lm.DB;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -11,12 +12,14 @@ import java.util.Locale;
 
 public class DB_Helper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "LAFAY_METHODE.DB";
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 1;
     public SQLiteDatabase sqLiteDatabase;
 
     public DB_Helper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -28,6 +31,7 @@ public class DB_Helper extends SQLiteOpenHelper {
         Log.e("DATABASE OPERATIONS: ", "Table created ..." + Table_Exercises.CREATE_TABLE_EXERCISES);
         db.execSQL(Table_Training.CREATE_TABLE_TRAINING);
         Log.e("DATABASE OPERATIONS: ", "Table created ..." + Table_Training.CREATE_TABLE_TRAINING);
+
     }
 
     @Override
@@ -39,6 +43,16 @@ public class DB_Helper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + Table_Training.TABLE_NAME);
         onCreate(db);
 
+    }
+    public static void addExercise(String name, String desc, Integer thumb, Integer skill,                                  SQLiteDatabase
+            db) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(Table_Exercises.EXC_NAME, name);
+        contentValues.put(Table_Exercises.EXC_DESC, desc);
+        contentValues.put(Table_Exercises.EXC_THUMB, thumb);
+        contentValues.put(Table_Exercises.EXC_SKILL, skill);
+        db.insert(Table_Exercises.TABLE_NAME, null, contentValues);
+        Log.e("DATABASE OPERATIONS: ", "One excersise inserted ...");
     }
 
     // closing database

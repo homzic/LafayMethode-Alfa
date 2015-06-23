@@ -41,14 +41,14 @@ public class StoperFragment extends Fragment {
 
     @Override
     public void onAttach(Activity activity) {
-        Log.d("Fragment LifeCycle: ","onAttach");
+        Log.d("Fragment LifeCycle: ", "onAttach");
         super.onAttach(activity);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d("Fragment LifeCycle: ","onCreateView");
+        Log.d("Fragment LifeCycle: ", "onCreateView");
         View rootView = inflater.inflate(R.layout.fragment_stoper, container, false);
         Context context = rootView.getContext();
         buttonStart = (com.gc.materialdesign.views.Button) rootView.findViewById(R.id.start);
@@ -64,7 +64,6 @@ public class StoperFragment extends Fragment {
         progressView.setProgress(100);
         progressView.setMaxProgress(odliczaj / 1000);
         textCounter = (TextView) rootView.findViewById(R.id.counter);
-
 
 
         //ustaw licznik
@@ -121,7 +120,7 @@ public class StoperFragment extends Fragment {
 
     @Override
     public void onStart() {
-        Log.d("Fragment LifeCycle: ","onStart");
+        Log.d("Fragment LifeCycle: ", "onStart");
         imgSound = (ImageButton) getView().findViewById(R.id.imgSound);
         imgSound.setImageResource(R.drawable.ic_sound_on);
         mediaPlayer = MediaPlayer.create(getActivity(), R.raw.evil_laugh);
@@ -138,13 +137,13 @@ public class StoperFragment extends Fragment {
 
     @Override
     public void onPause() {
-        Log.d("Fragment LifeCycle: ","onPause");
+        Log.d("Fragment LifeCycle: ", "onPause");
         super.onPause();
     }
 
     @Override
     public void onResume() {
-        Log.d("Fragment LifeCycle: ","onResume");
+        Log.d("Fragment LifeCycle: ", "onResume");
         super.onResume();
     }
 
@@ -156,7 +155,7 @@ public class StoperFragment extends Fragment {
             editor.putBoolean("sound", true);
             editor.apply();
             imgSound.setImageResource(R.drawable.ic_sound_on);
-            sound=true;
+            sound = true;
         } else {
             dataSettings = this.getActivity().getSharedPreferences("MyData", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = dataSettings.edit();
@@ -164,13 +163,13 @@ public class StoperFragment extends Fragment {
             editor.apply();
             sound = dataSettings.getBoolean("sound", false);
             imgSound.setImageResource(R.drawable.ic_sound_off);
-            sound=false;
+            sound = false;
         }
     }
 
     @Override
     public void onStop() {
-        Log.d("Fragment LifeCycle: ","onStop");
+        Log.d("Fragment LifeCycle: ", "onStop");
         super.onStop();
     }
 

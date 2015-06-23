@@ -55,6 +55,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.kris.lm.Activities.MainActivity" />
         </activity>
+        <activity
+            android:name=".Activities.Initialize"
+            android:label="@string/title_activity_initialize" >
+        </activity>
     </application>
 
 </manifest>

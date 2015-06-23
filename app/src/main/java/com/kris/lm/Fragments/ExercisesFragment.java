@@ -1,6 +1,7 @@
 package com.kris.lm.Fragments;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,16 +12,23 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.kris.lm.DB.Table_Exercises;
 import com.kris.lm.R;
 import com.kris.lm.Recycler_Cwiczenia.CwiczenieItem;
 import com.kris.lm.Recycler_Cwiczenia.SwipeableRecyclerViewTouchListener;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.kris.lm.DB.Table_Exercises.cwiczeniaJSONtoArray;
 
 public class ExercisesFragment extends Fragment {
     private CardViewAdapter mAdapter;
     private List<CwiczenieItem> cItems;
+    private Context context;
+
 
     public ExercisesFragment() {
     }
@@ -30,13 +38,16 @@ public class ExercisesFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         return inflater.inflate(R.layout.fragment_exercises, container, false);
+
     }
 
     @Override
     public void onStart() {
+        context = getActivity();
+        JSONObject jsonObject = Table_Exercises.parseJSONData(context);
+        cItems = cwiczeniaJSONtoArray(jsonObject, context);
 
-
-    ListaCwiczen();
+        // ListaCwiczen();
         int L = cItems.size();
         Log.e("mItems ", "Lista cwiczen " + L);
         ArrayList<String> mItems = new ArrayList<>(L);
@@ -93,6 +104,7 @@ public class ExercisesFragment extends Fragment {
         super.onStart();
 
     }
+
     /**
      * Interface for the touch events in each item
      */
@@ -181,78 +193,5 @@ public class ExercisesFragment extends Fragment {
         }
     }
 
-    private void ListaCwiczen() {
-        cItems = new ArrayList<>();
-        CwiczenieItem cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " A");
-        cwiczenie.setDes(getString(R.string.cw_A_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_a);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " A1");
-        cwiczenie.setDes(getString(R.string.cw_A1_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_a1);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " B");
-        cwiczenie.setDes(getString(R.string.cw_B_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_b);
-        cwiczenie.setmDifficulty(R.drawable.skill2);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " C");
-        cwiczenie.setDes(getString(R.string.cw_C_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_c);
-        cwiczenie.setmDifficulty(R.drawable.skill2);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " C1");
-        cwiczenie.setDes(getString(R.string.cw_C1_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_c1);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " D");
-        cwiczenie.setDes(getString(R.string.cw_D_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_d);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " E");
-        cwiczenie.setDes(getString(R.string.cw_E_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_e);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " F");
-        cwiczenie.setDes(getString(R.string.cw_F_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_f);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " G");
-        cwiczenie.setDes(getString(R.string.cw_G_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_g);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
-        cwiczenie = new CwiczenieItem();
-        cwiczenie.setName(getString(R.string.cwiczenie) + " K2");
-        cwiczenie.setDes(getString(R.string.cw_K2_opis));
-        cwiczenie.setThumbnail(R.drawable.cw_k2);
-        cwiczenie.setmDifficulty(R.drawable.skill1);
-        cItems.add(cwiczenie);
-
-    }
 
 }
