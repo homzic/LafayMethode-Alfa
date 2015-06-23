@@ -119,7 +119,7 @@ public class StoperFragment extends Fragment {
     }
 
     @Override
-    public void onStart() {
+    public void onActivityCreated(Bundle savedInstanceState) {
         Log.d("Fragment LifeCycle: ", "onStart");
         imgSound = (ImageButton) getView().findViewById(R.id.imgSound);
         imgSound.setImageResource(R.drawable.ic_sound_on);
@@ -132,6 +132,12 @@ public class StoperFragment extends Fragment {
                 else setSoundOn(true);
             }
         });
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onStart() {
+
         super.onStart();
     }
 

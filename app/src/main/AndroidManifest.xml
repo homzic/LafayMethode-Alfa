@@ -59,6 +59,14 @@
             android:name=".Activities.Initialize"
             android:label="@string/title_activity_initialize" >
         </activity>
+        <activity
+            android:name=".Activities.Training"
+            android:label="@string/title_activity_training"
+            android:parentActivityName=".Activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kris.lm.Activities.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

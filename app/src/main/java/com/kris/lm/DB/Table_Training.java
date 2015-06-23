@@ -1,10 +1,7 @@
 package com.kris.lm.DB;
-
-
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -53,10 +50,8 @@ class Table_Training {
         return 0;
     }
 
-
     public static int getExcID() {
         return 0;
-
     }
 
     public static String getDateTime() {

@@ -26,7 +26,6 @@ import com.kris.lm.DB.Table_Exercises;
 import com.kris.lm.Fragments.BodyFragment;
 import com.kris.lm.Fragments.ExercisesFragment;
 import com.kris.lm.Fragments.HomeFragment;
-import com.kris.lm.Fragments.LevelsFragment;
 import com.kris.lm.Fragments.Profile_Fragment;
 import com.kris.lm.Fragments.ResultsFragment;
 import com.kris.lm.Fragments.StoperFragment;
@@ -207,8 +206,8 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new ExercisesFragment();
                 break;
             case 6:
-                fragment = new LevelsFragment();
-                break;
+                startActivity(new Intent(this, Training.class));
+                return;
             default:
                 break;
         }
@@ -280,7 +279,9 @@ public class MainActivity extends AppCompatActivity {
     private void initializeApplication() {
         boolean isFirstTime = MyPreferences.isFirst(this);
 
+        // Load excercise data to DB ------------------------------------------------------------
         if (isFirstTime) {
+            // Toast.makeText(this, "This is first start", Toast.LENGTH_LONG).show();
             JSONObject jsonObject = Table_Exercises.parseJSONData(this);
             List<CwiczenieItem> cItems;
             cItems = cwiczeniaJSONtoArray(jsonObject, this);
@@ -289,17 +290,14 @@ public class MainActivity extends AppCompatActivity {
             SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
             for (int i = 0; i < L; i++) {
                 CwiczenieItem cwiczenieItem = cItems.get(i);
-
                 String exc_Name = cwiczenieItem.getName();
                 String exc_Desc = cwiczenieItem.getDes();
                 Integer exc_Thumb = cwiczenieItem.getThumbnail();
                 Integer skill_Icon = cwiczenieItem.getmDifficulty();
                 DB_Helper.addExercise(exc_Name, exc_Desc, exc_Thumb, skill_Icon, sqLiteDatabase);
-
             }
             DB_Helper.closeDB(sqLiteDatabase);
-
-
-        }
+        }//else //Toast.makeText(this, "This is NOT first start", Toast.LENGTH_LONG).show();
+        // ---------------------------------------------------------------------------------------
     }
 }
