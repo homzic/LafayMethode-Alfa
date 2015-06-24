@@ -2303,7 +2303,7 @@ containing a value of this type.
         public static final int alertTitle=0x7f0a0031;
         public static final int always=0x7f0a0017;
         public static final int beginning=0x7f0a0013;
-        public static final int blue=0x7f0a006a;
+        public static final int blue=0x7f0a006c;
         public static final int btnLoaDB=0x7f0a0060;
         public static final int btnSave=0x7f0a0094;
         public static final int btnSaveBody=0x7f0a0082;
@@ -2320,7 +2320,7 @@ containing a value of this type.
         public static final int collapseActionView=0x7f0a0018;
         public static final int contentDialog=0x7f0a0075;
         public static final int contentPanel=0x7f0a0032;
-        public static final int contentSelector=0x7f0a0066;
+        public static final int contentSelector=0x7f0a0068;
         public static final int counter=0x7f0a007a;
         public static final int custom=0x7f0a0036;
         public static final int customPanel=0x7f0a0035;
@@ -2357,8 +2357,10 @@ containing a value of this type.
         public static final int end_padder=0x7f0a00a8;
         public static final int expand_activities_button=0x7f0a0028;
         public static final int expanded_menu=0x7f0a0038;
+        public static final int fram_excercise=0x7f0a0066;
         public static final int frame_container=0x7f0a0063;
-        public static final int green=0x7f0a0069;
+        public static final int frame_stoper=0x7f0a0065;
+        public static final int green=0x7f0a006b;
         public static final int header=0x7f0a006d;
         public static final int highlight=0x7f0a0016;
         public static final int home=0x7f0a0004;
@@ -2371,9 +2373,7 @@ containing a value of this type.
         public static final int info=0x7f0a00a7;
         public static final int line1=0x7f0a00a1;
         public static final int line3=0x7f0a00a5;
-        public static final int listIcon=0x7f0a006b;
         public static final int listMode=0x7f0a0009;
-        public static final int listText=0x7f0a006c;
         public static final int list_item=0x7f0a002b;
         public static final int list_slidermenu=0x7f0a0064;
         public static final int load_DB=0x7f0a00af;
@@ -2402,8 +2402,8 @@ containing a value of this type.
         public static final int radioMale=0x7f0a008a;
         public static final int radioMedium=0x7f0a0092;
         public static final int recycler_view=0x7f0a0083;
-        public static final int red=0x7f0a0068;
-        public static final int rootSelector=0x7f0a0065;
+        public static final int red=0x7f0a006a;
+        public static final int rootSelector=0x7f0a0067;
         public static final int screen=0x7f0a0020;
         public static final int scrollView=0x7f0a0033;
         public static final int search_badge=0x7f0a0045;
@@ -2456,7 +2456,7 @@ containing a value of this type.
         public static final int txtTopHome=0x7f0a0084;
         public static final int up=0x7f0a0008;
         public static final int useLogo=0x7f0a0012;
-        public static final int viewColor=0x7f0a0067;
+        public static final int viewColor=0x7f0a0069;
         public static final int withText=0x7f0a001b;
         public static final int wrap_content=0x7f0a001e;
     }
@@ -2505,11 +2505,11 @@ containing a value of this type.
         public static final int activity_settings=0x7f03001c;
         public static final int activity_training=0x7f03001d;
         public static final int color_selector=0x7f03001e;
-        public static final int custom_row=0x7f03001f;
-        public static final int cwiczenia_view_item=0x7f030020;
-        public static final int dialog=0x7f030021;
-        public static final int drawer_list_item=0x7f030022;
-        public static final int fragment_body=0x7f030023;
+        public static final int cwiczenia_view_item=0x7f03001f;
+        public static final int dialog=0x7f030020;
+        public static final int drawer_list_item=0x7f030021;
+        public static final int fragment_body=0x7f030022;
+        public static final int fragment_excersise=0x7f030023;
         public static final int fragment_exercises=0x7f030024;
         public static final int fragment_home=0x7f030025;
         public static final int fragment_profile=0x7f030026;

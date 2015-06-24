@@ -22,12 +22,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.kris.lm.DB.Table_Exercises.cwiczeniaJSONtoArray;
-
 public class ExercisesFragment extends Fragment {
     private CardViewAdapter mAdapter;
     private List<CwiczenieItem> cItems;
-    private Context context;
 
 
     public ExercisesFragment() {
@@ -43,11 +40,9 @@ public class ExercisesFragment extends Fragment {
 
     @Override
     public void onStart() {
-        context = getActivity();
+        Context context = getActivity();
         JSONObject jsonObject = Table_Exercises.parseJSONData(context);
-        cItems = cwiczeniaJSONtoArray(jsonObject, context);
-
-        // ListaCwiczen();
+        cItems = Table_Exercises.cwiczeniaJSONtoArray(jsonObject, context);
         int L = cItems.size();
         Log.e("mItems ", "Lista cwiczen " + L);
         ArrayList<String> mItems = new ArrayList<>(L);
@@ -76,7 +71,7 @@ public class ExercisesFragment extends Fragment {
                         new SwipeableRecyclerViewTouchListener.SwipeListener() {
                             @Override
                             public boolean canSwipe(int position) {
-                                return true;
+                                return false;
                             }
 
                             @Override

@@ -1,12 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:materialdesign="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/primaryColor"
-    android:soundEffectsEnabled="true"
-    android:orientation="vertical">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/primaryColor"
+            android:scrollbarStyle="outsideOverlay">
+
+<LinearLayout
+              xmlns:materialdesign="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/primaryColor"
+              android:orientation="vertical"
+              android:soundEffectsEnabled="true">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -29,7 +34,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="20dp"
             android:background="@color/primaryColor"
-            android:src="@drawable/ic_sound_off" />
+            android:src="@drawable/ic_sound_off"/>
 
         <com.github.rahatarmanahmed.cpv.CircularProgressView
             android:id="@+id/progress_view"
@@ -42,7 +47,7 @@
             app:cpv_color="@color/colorAccent"
             app:cpv_indeterminate="false"
             app:cpv_progress="100"
-            app:cpv_thickness="24dp" />
+            app:cpv_thickness="24dp"/>
 
         <TextView
             android:id="@+id/counter"
@@ -53,21 +58,21 @@
             android:text="Licznik"
             android:textColor="@color/textColorPrimary"
             android:textSize="23sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <NumberPicker
+            android:id="@+id/numberPicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:id="@+id/numberPicker"
+            android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:visibility="gone"/>
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:paddingTop="60dp">
 
         <com.gc.materialdesign.views.Slider
@@ -78,29 +83,31 @@
             android:visibility="visible"
             materialdesign:max="200"
             materialdesign:min="10"
-            materialdesign:showNumberIndicator="true" />
+            materialdesign:showNumberIndicator="true"/>
 
         <com.gc.materialdesign.views.ButtonRectangle
             android:id="@+id/start"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/slider"
             android:layout_centerHorizontal="true"
             android:background="@color/textColorPrimary"
             android:text="Start"
-            app:paddingStart="20dp" />
+            app:paddingStart="20dp"/>
 
         <com.gc.materialdesign.views.ButtonRectangle
             android:id="@+id/stop"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+
             android:layout_alignStart="@+id/start"
+            android:layout_below="@+id/slider"
             android:layout_centerHorizontal="true"
             android:background="@color/redItem"
             android:text="Stop"
             android:visibility="gone"
-            app:paddingStart="20dp" />
+            app:paddingStart="20dp"/>
 
     </RelativeLayout>
 </LinearLayout>
+    </ScrollView>

@@ -670,7 +670,7 @@ int id activity_chooser_view_content 0x7f0a0027
 int id alertTitle 0x7f0a0031
 int id always 0x7f0a0017
 int id beginning 0x7f0a0013
-int id blue 0x7f0a006a
+int id blue 0x7f0a006c
 int id btnLoaDB 0x7f0a0060
 int id btnSave 0x7f0a0094
 int id btnSaveBody 0x7f0a0082
@@ -687,7 +687,7 @@ int id chronometer 0x7f0a00a3
 int id collapseActionView 0x7f0a0018
 int id contentDialog 0x7f0a0075
 int id contentPanel 0x7f0a0032
-int id contentSelector 0x7f0a0066
+int id contentSelector 0x7f0a0068
 int id counter 0x7f0a007a
 int id custom 0x7f0a0036
 int id customPanel 0x7f0a0035
@@ -724,8 +724,10 @@ int id end 0x7f0a0014
 int id end_padder 0x7f0a00a8
 int id expand_activities_button 0x7f0a0028
 int id expanded_menu 0x7f0a0038
+int id fram_excercise 0x7f0a0066
 int id frame_container 0x7f0a0063
-int id green 0x7f0a0069
+int id frame_stoper 0x7f0a0065
+int id green 0x7f0a006b
 int id header 0x7f0a006d
 int id highlight 0x7f0a0016
 int id home 0x7f0a0004
@@ -738,9 +740,7 @@ int id imgSound 0x7f0a0096
 int id info 0x7f0a00a7
 int id line1 0x7f0a00a1
 int id line3 0x7f0a00a5
-int id listIcon 0x7f0a006b
 int id listMode 0x7f0a0009
-int id listText 0x7f0a006c
 int id list_item 0x7f0a002b
 int id list_slidermenu 0x7f0a0064
 int id load_DB 0x7f0a00af
@@ -769,8 +769,8 @@ int id radioLow 0x7f0a0091
 int id radioMale 0x7f0a008a
 int id radioMedium 0x7f0a0092
 int id recycler_view 0x7f0a0083
-int id red 0x7f0a0068
-int id rootSelector 0x7f0a0065
+int id red 0x7f0a006a
+int id rootSelector 0x7f0a0067
 int id screen 0x7f0a0020
 int id scrollView 0x7f0a0033
 int id search_badge 0x7f0a0045
@@ -823,7 +823,7 @@ int id trudnoscIcon 0x7f0a0071
 int id txtTopHome 0x7f0a0084
 int id up 0x7f0a0008
 int id useLogo 0x7f0a0012
-int id viewColor 0x7f0a0067
+int id viewColor 0x7f0a0069
 int id withText 0x7f0a001b
 int id wrap_content 0x7f0a001e
 int integer abc_config_activityDefaultDur 0x7f0b0000
@@ -868,11 +868,11 @@ int layout activity_main 0x7f03001b
 int layout activity_settings 0x7f03001c
 int layout activity_training 0x7f03001d
 int layout color_selector 0x7f03001e
-int layout custom_row 0x7f03001f
-int layout cwiczenia_view_item 0x7f030020
-int layout dialog 0x7f030021
-int layout drawer_list_item 0x7f030022
-int layout fragment_body 0x7f030023
+int layout cwiczenia_view_item 0x7f03001f
+int layout dialog 0x7f030020
+int layout drawer_list_item 0x7f030021
+int layout fragment_body 0x7f030022
+int layout fragment_excersise 0x7f030023
 int layout fragment_exercises 0x7f030024
 int layout fragment_home 0x7f030025
 int layout fragment_profile 0x7f030026
