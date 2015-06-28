@@ -117,6 +117,7 @@
     <string name="title_activity_data_base__mgt">DataBase_Mgt</string>
     <string name="add_training">Add training</string>
     <string name="title_activity_initialize">Initialize</string>
+    <string name="go">Go</string>
 
 
 </resources>

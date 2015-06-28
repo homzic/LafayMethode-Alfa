@@ -60,13 +60,10 @@
                 android:value="com.kris.lm.Activities.MainActivity" />
         </activity>
         <activity
-            android:name="com.kris.lm.Activities.Initialize"
-            android:label="@string/title_activity_initialize" >
-        </activity>
-        <activity
             android:name="com.kris.lm.Activities.Training"
             android:label="@string/title_activity_training"
-            android:parentActivityName="com.kris.lm.Activities.MainActivity" >
+            android:parentActivityName="com.kris.lm.Activities.MainActivity"
+            android:screenOrientation="landscape" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.kris.lm.Activities.MainActivity" />

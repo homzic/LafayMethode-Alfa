@@ -1,0 +1,18 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:orientation="vertical"
+             android:background="@color/primaryColor"
+             tools:context="com.kris.lm.Fragments.OneExcercise">
+
+    <ImageView
+        android:paddingTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:id="@+id/ivExcercise"
+        android:layout_gravity="center_horizontal|top"
+        android:src="@drawable/rope"/>
+
+
+</LinearLayout>

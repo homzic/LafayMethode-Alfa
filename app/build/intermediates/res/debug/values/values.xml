@@ -45,8 +45,18 @@
     <color name="abc_search_url_text_selected">@android:color/black</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="background_dark">#ffb8860b</color>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <eat-comment/>
     <color name="background_floating_material_dark">#ff424242</color>
     <color name="background_floating_material_light">#ffeeeeee</color>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="background_light">#ffd2b48c</color>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <eat-comment/>
     <color name="background_material_dark">#ff303030</color>
     <color name="background_material_light">#ffeeeeee</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
@@ -148,6 +158,9 @@
     <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/build/intermediates/exploded-aar/com.github.navasmdc/MaterialDesign/1.4/res/values/values.xml -->
     <eat-comment/>
     <color name="thumbColor">#66aaaaaa</color>
+    <!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="transparent">#00b8860b</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode"><enum name="normal" value="0"/><enum name="listMode" value="1"/><enum name="tabMode" value="2"/></attr><attr name="displayOptions"><flag name="none" value="0"/><flag name="useLogo" value="0x1"/><flag name="showHome" value="0x2"/><flag name="homeAsUp" value="0x4"/><flag name="showTitle" value="0x8"/><flag name="showCustom" value="0x10"/><flag name="disableHome" value="0x20"/></attr><attr name="title"/><attr format="string" name="subtitle"/><attr format="reference" name="titleTextStyle"/><attr format="reference" name="subtitleTextStyle"/><attr format="reference" name="icon"/><attr format="reference" name="logo"/><attr format="reference" name="divider"/><attr format="reference" name="background"/><attr format="reference|color" name="backgroundStacked"/><attr format="reference|color" name="backgroundSplit"/><attr format="reference" name="customNavigationLayout"/><attr name="height"/><attr format="reference" name="homeLayout"/><attr format="reference" name="progressBarStyle"/><attr format="reference" name="indeterminateProgressStyle"/><attr format="dimension" name="progressBarPadding"/><attr name="homeAsUpIndicator"/><attr format="dimension" name="itemPadding"/><attr format="boolean" name="hideOnContentScroll"/><attr format="dimension" name="contentInsetStart"/><attr format="dimension" name="contentInsetEnd"/><attr format="dimension" name="contentInsetLeft"/><attr format="dimension" name="contentInsetRight"/><attr format="dimension" name="elevation"/><attr format="reference" name="popupTheme"/></declare-styleable>
     <declare-styleable name="ActionBarLayout"><attr name="android:layout_gravity"/></declare-styleable>
     <declare-styleable name="ActionMenuItemView"><attr name="android:minWidth"/></declare-styleable>
@@ -358,6 +371,7 @@
     <string name="female">Female</string>
     <string name="fill_body">Your body data</string>
     <string name="gender">Gender</string>
+    <string name="go">Go</string>
     <string name="hello">Hello</string>
     <string name="hello_blank_fragment">Hello</string>
     <string name="hello_world">Hello world!</string>

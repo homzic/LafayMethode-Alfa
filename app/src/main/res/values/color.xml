@@ -13,4 +13,7 @@
     <color name="textColorPrimaryLight">#8EC7FF</color>
     <color name="textColorInput">#6B6666</color>
     <color name="redItem">#FF0101</color>
+    <color name="background_dark">#ffb8860b</color>
+    <color name="background_light">#ffd2b48c</color>
+    <color name="transparent">#00b8860b</color>
 </resources>

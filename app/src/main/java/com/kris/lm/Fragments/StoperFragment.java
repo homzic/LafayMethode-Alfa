@@ -41,14 +41,14 @@ public class StoperFragment extends Fragment {
 
     @Override
     public void onAttach(Activity activity) {
-        Log.d("Fragment LifeCycle: ", "onAttach");
+        Log.d("Stoper LifeCycle: ", "onAttach");
         super.onAttach(activity);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d("Fragment LifeCycle: ", "onCreateView");
+        Log.d("Stoper LifeCycle: ", "onCreateView");
         View rootView = inflater.inflate(R.layout.fragment_stoper, container, false);
         Context context = rootView.getContext();
         buttonStart = (com.gc.materialdesign.views.Button) rootView.findViewById(R.id.start);
@@ -120,7 +120,7 @@ public class StoperFragment extends Fragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        Log.d("Fragment LifeCycle: ", "onStart");
+        Log.d("Stoper LifeCycle: ", "onStart");
         imgSound = (ImageButton) getView().findViewById(R.id.imgSound);
         imgSound.setImageResource(R.drawable.ic_sound_on);
         mediaPlayer = MediaPlayer.create(getActivity(), R.raw.evil_laugh);
@@ -137,19 +137,19 @@ public class StoperFragment extends Fragment {
 
     @Override
     public void onStart() {
-
+        Log.d("Stoper LifeCycle: ", "onCreateView");
         super.onStart();
     }
 
     @Override
     public void onPause() {
-        Log.d("Fragment LifeCycle: ", "onPause");
+        Log.d("Stoper LifeCycle: ", "onPause");
         super.onPause();
     }
 
     @Override
     public void onResume() {
-        Log.d("Fragment LifeCycle: ", "onResume");
+        Log.d("Stoper LifeCycle: ", "onResume");
         super.onResume();
     }
 
@@ -175,7 +175,7 @@ public class StoperFragment extends Fragment {
 
     @Override
     public void onStop() {
-        Log.d("Fragment LifeCycle: ", "onStop");
+        Log.d("Stoper LifeCycle: ", "onStop");
         super.onStop();
     }
 
@@ -210,7 +210,7 @@ public class StoperFragment extends Fragment {
 
         @Override
         public void onFinish() {
-
+            Log.d("Stoper LifeCycle: ", "onFinish");
             textCounter.setText("Finished");
             progressView.setProgress(0);
             buttonStop.setVisibility(View.GONE);
@@ -218,5 +218,31 @@ public class StoperFragment extends Fragment {
             if (sound) mediaPlayer.start();
 
         }
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        Log.d("Stoper LifeCycle: ", "onCreate");
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.d("Stoper LifeCycle: ", "onDestroy");
+        super.onDestroy();
+    }
+
+    @Override
+    public void onDetach() {
+        Log.d("Stoper LifeCycle: ", "onDetach");
+        super.onDetach();
+    }
+
+
+
+    @Override
+    public void onDestroyView() {
+        Log.d("Stoper LifeCycle: ", "onDestroyView");
+        super.onDestroyView();
     }
 }
