@@ -9,7 +9,7 @@
     <ImageView
         android:paddingTop="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="280dp"
+        android:layout_height="match_parent"
         android:id="@+id/ivExcercise"
         android:layout_gravity="center_horizontal|top"
         android:src="@drawable/rope"/>

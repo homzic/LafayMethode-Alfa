@@ -3,11 +3,13 @@ package com.kris.lm.Fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.kris.lm.R;
 
@@ -16,6 +18,7 @@ import com.kris.lm.R;
  */
 public class OneExcercise extends Fragment {
 
+    private ImageView excImg;
 
     public OneExcercise() {
         // Required empty public constructor
@@ -25,13 +28,22 @@ public class OneExcercise extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_one_excercise, container, false);
         // Inflate the layout for this fragment
         Log.d("OneExce LifeCycle: ", "onCreateView");
-        return inflater.inflate(R.layout.fragment_one_excercise, container, false);
+
+        return rootView;
     }
 
     @Override
     public void onStart() {
+
+        excImg = (ImageView) getView().findViewById(R.id.ivExcercise);
+        Context context = excImg.getContext();
+        int id = context.getResources().getIdentifier("black_medal", "drawable",
+                context.getPackageName());
+        excImg.setImageResource(id);
+
         Log.d("OneExce LifeCycle: ", "onStart");
         super.onStart();
     }

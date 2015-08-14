@@ -1,39 +1,83 @@
-<RelativeLayout
+<LinearLayout
     android:id="@+id/mainLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@color/primaryColor"
     android:onClick="showBar"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context="com.kris.lm.Activities.Training">
 
-    <TextView
-        android:id="@+id/txtTopExc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="10dp"
-        android:text="Jump on a rope"
-        android:visibility="invisible"
-        android:textSize="26sp"
-        android:textColor="@color/textColorPrimary"/>
-
-    <FrameLayout
-        android:id="@+id/frame_left"
-        android:layout_width="250dp"
+    <RelativeLayout
+        android:id="@+id/introLayout"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/txtTopExc"
-        />
+        android:orientation="vertical"
+        android:visibility="visible">
 
-    <FrameLayout
-        android:id="@+id/frame_right"
-        android:layout_width="250dp"
-        android:layout_alignParentEnd="true"
+        <TextView
+            android:id="@+id/textIntro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnGo"
+            android:layout_centerVertical="true"
+            android:text="Warm up"
+            android:textColor="@color/colorAccent"
+            android:textSize="40sp"
+           />
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btnGo"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:onClick="btnGO"
+            android:soundEffectsEnabled="true"
+            android:text="@string/go">
+        </com.gc.materialdesign.views.ButtonRectangle>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/txtTopExc"
-        />
+        android:paddingTop="20dp"
+        android:orientation="vertical"
+        android:id="@+id/trainingLayout"
+        android:visibility="gone">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/txtTopExc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Jump on a rope"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="20sp"
+            />
+
+        <FrameLayout
+            android:id="@+id/framTop"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5"
+
+            />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <FrameLayout
+            android:id="@+id/frameBottom"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            >
+        </FrameLayout>
+
+    </LinearLayout>
+</LinearLayout>

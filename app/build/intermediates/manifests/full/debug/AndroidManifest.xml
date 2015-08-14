@@ -10,6 +10,14 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon_lm"
@@ -63,7 +71,7 @@
             android:name="com.kris.lm.Activities.Training"
             android:label="@string/title_activity_training"
             android:parentActivityName="com.kris.lm.Activities.MainActivity"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.kris.lm.Activities.MainActivity" />

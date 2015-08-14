@@ -19,6 +19,7 @@ android {
 }
 
 dependencies {
+    compile 'com.akexorcist:RoundCornerProgressBar:1.2.0'
     compile('com.android.support:appcompat-v7:21.0.+') {
         exclude module: 'support-v4'
     }

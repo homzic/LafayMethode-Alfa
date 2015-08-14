@@ -1,14 +1,14 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/primaryColor">
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/primaryColor">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/primaryColor"
-        android:scrollbarStyle="outsideOverlay">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/primaryColor"
+                android:scrollbarStyle="outsideOverlay">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 android:paddingTop="10dp"
                 android:text="@string/fill_body"
                 android:textColor="@color/textColorPrimary"
-                android:textSize="20sp" />
+                android:textSize="20sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -44,7 +44,7 @@
                     android:layout_weight="1"
                     android:paddingEnd="10dp"
                     android:paddingStart="20dp"
-                    android:src="@drawable/body" />
+                    android:src="@drawable/body"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -58,18 +58,18 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/Neck"
                         android:inputType="numberDecimal"
-                        app:met_minCharacters="2"
+                        android:maxLines="1"
+                        android:singleLine="true"
                         android:textCursorDrawable="@drawable/text_cursor_cyan"
                         android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:typeface="serif"
                         app:met_baseColor="@color/textColorPrimary"
                         app:met_floatingLabel="highlight"
                         app:met_maxCharacters="3"
+                        app:met_minCharacters="2"
                         app:met_primaryColor="?colorAccent"
                         app:met_textColorHint="@color/hint_foreground_material_light"
-                        android:maxLines="1"
-                        android:textStyle="bold"
-                        android:typeface="serif"
-                        android:singleLine="true"
 
                         />
 
@@ -80,18 +80,18 @@
                         android:hint="@string/Biceps"
                         android:inputType="numberDecimal"
                         android:lines="1"
+                        android:maxLines="1"
+                        android:textAlignment="center"
                         android:textCursorDrawable="@drawable/text_cursor_cyan"
                         android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:typeface="serif"
                         app:met_baseColor="@color/textColorPrimary"
                         app:met_floatingLabel="highlight"
                         app:met_maxCharacters="3"
                         app:met_minCharacters="2"
                         app:met_primaryColor="?colorAccent"
-                        app:met_textColorHint="@color/hint_foreground_material_light"
-                        android:maxLines="1"
-                        android:textStyle="bold"
-                        android:typeface="serif"
-                        android:textAlignment="center" />
+                        app:met_textColorHint="@color/hint_foreground_material_light"/>
 
                     <com.rengwuxian.materialedittext.MaterialEditText
                         android:id="@+id/editChest"
@@ -100,88 +100,88 @@
                         android:hint="@string/Chest"
                         android:inputType="numberDecimal"
                         android:lines="1"
-                        app:met_minCharacters="2"
+                        android:maxLines="1"
+                        android:textAlignment="center"
                         android:textCursorDrawable="@drawable/text_cursor_cyan"
                         android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:typeface="serif"
                         app:met_baseColor="@color/textColorPrimary"
                         app:met_floatingLabel="highlight"
                         app:met_maxCharacters="3"
+                        app:met_minCharacters="2"
                         app:met_primaryColor="?colorAccent"
-                        app:met_textColorHint="@color/hint_foreground_material_light"
-                        android:maxLines="1"
-                        android:textStyle="bold"
-                        android:typeface="serif"
-                        android:textAlignment="center" />
+                        app:met_textColorHint="@color/hint_foreground_material_light"/>
 
                     <com.rengwuxian.materialedittext.MaterialEditText
                         android:id="@+id/editPas"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/Hip"
-                        app:met_minCharacters="2"
                         android:inputType="numberDecimal"
                         android:lines="1"
+                        android:maxLines="1"
+                        android:textAlignment="center"
                         android:textCursorDrawable="@drawable/text_cursor_cyan"
                         android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:typeface="serif"
                         app:met_baseColor="@color/textColorPrimary"
                         app:met_floatingLabel="highlight"
                         app:met_maxCharacters="3"
+                        app:met_minCharacters="2"
                         app:met_primaryColor="?colorAccent"
-                        app:met_textColorHint="@color/hint_foreground_material_light"
-                        android:maxLines="1"
-                        android:textStyle="bold"
-                        android:typeface="serif"
-                        android:textAlignment="center" />
+                        app:met_textColorHint="@color/hint_foreground_material_light"/>
 
                     <com.rengwuxian.materialedittext.MaterialEditText
                         android:id="@+id/editUda"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/Thigh"
-                        app:met_minCharacters="2"
                         android:inputType="numberDecimal"
                         android:lines="1"
+                        android:maxLines="1"
+                        android:textAlignment="center"
                         android:textCursorDrawable="@drawable/text_cursor_cyan"
                         android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:typeface="serif"
                         app:met_baseColor="@color/textColorPrimary"
                         app:met_floatingLabel="highlight"
                         app:met_maxCharacters="3"
+                        app:met_minCharacters="2"
                         app:met_primaryColor="?colorAccent"
-                        app:met_textColorHint="@color/hint_foreground_material_light"
-                        android:maxLines="1"
-                        android:textStyle="bold"
-                        android:typeface="serif"
-                        android:textAlignment="center" />
+                        app:met_textColorHint="@color/hint_foreground_material_light"/>
 
                     <com.rengwuxian.materialedittext.MaterialEditText
                         android:id="@+id/editLydki"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/Calf"
-                        app:met_minCharacters="2"
                         android:inputType="numberDecimal"
                         android:lines="1"
+                        android:maxLines="1"
+                        android:textAlignment="center"
                         android:textCursorDrawable="@drawable/text_cursor_cyan"
                         android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:typeface="serif"
                         app:met_baseColor="@color/textColorPrimary"
                         app:met_floatingLabel="highlight"
                         app:met_maxCharacters="3"
+                        app:met_minCharacters="2"
                         app:met_primaryColor="?colorAccent"
-                        app:met_textColorHint="@color/hint_foreground_material_light"
-                        android:maxLines="1"
-                        android:textStyle="bold"
-                        android:typeface="serif"
-                        android:textAlignment="center" />
+                        app:met_textColorHint="@color/hint_foreground_material_light"/>
 
                     <com.gc.materialdesign.views.ButtonRectangle
-                        android:layout_width="match_parent"
                         android:id="@+id/btnSaveBody"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/textColorPrimary"
-                        android:text="@string/save" />
+                        android:text="@string/save"/>
 
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-</android.support.v4.widget.DrawerLayout><!-- From: file:/C:/Users/Kris/AndroidStudioProjects/LafayMethode-Alfa/app/src/main/res/layout/fragment_body.xml -->
+</android.support.v4.widget.DrawerLayout><!-- From: file:/D:/Android%20Dev/LafayMethode-Alfa/app/src/main/res/layout/fragment_body.xml -->

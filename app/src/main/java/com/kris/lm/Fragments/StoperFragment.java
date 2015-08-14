@@ -25,7 +25,6 @@ public class StoperFragment extends Fragment {
     private com.gc.materialdesign.views.Button buttonStop;
     private Vibrator v;
     private ImageButton imgSound;
-    private SharedPreferences dataSettings;
     private final long[] pattern = {0, 1000, 1000, 2000};
     private TextView textCounter;
     private long odliczaj = 10000;
@@ -154,6 +153,7 @@ public class StoperFragment extends Fragment {
     }
 
     private void setSoundOn(Boolean set) {
+        SharedPreferences dataSettings;
         if (set) {
 
             dataSettings = this.getActivity().getSharedPreferences("MyData", Context.MODE_PRIVATE);
