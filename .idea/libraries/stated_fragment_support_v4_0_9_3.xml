@@ -5,6 +5,8 @@
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.inthecheesefactory.thecheeselibrary/stated-fragment-support-v4/0.9.3/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.inthecheesefactory.thecheeselibrary/stated-fragment-support-v4/0.9.3/5704fba2d983ce470ad7ce2b480bcb5d020bc092/stated-fragment-support-v4-0.9.3-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

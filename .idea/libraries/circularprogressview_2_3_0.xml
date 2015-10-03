@@ -5,6 +5,8 @@
       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.rahatarmanahmed/circularprogressview/2.3.0/res" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.rahatarmanahmed/circularprogressview/2.3.0/d8baf014cdca29151e4dd48c4a049c9db2ccedbd/circularprogressview-2.3.0-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

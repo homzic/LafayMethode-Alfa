@@ -37,10 +37,11 @@ public class OneExcercise extends Fragment {
 
     @Override
     public void onStart() {
-
+        Bundle bundle = getArguments();
+        String imgName = bundle.getString("image");
         excImg = (ImageView) getView().findViewById(R.id.ivExcercise);
         Context context = excImg.getContext();
-        int id = context.getResources().getIdentifier("black_medal", "drawable",
+        int id = context.getResources().getIdentifier(imgName, "drawable",
                 context.getPackageName());
         excImg.setImageResource(id);
 

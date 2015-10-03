@@ -119,7 +119,7 @@ public class StoperFragment extends Fragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        Log.d("Stoper LifeCycle: ", "onStart");
+        Log.d("Stoper LifeCycle: ", "onActivityCreated");
         imgSound = (ImageButton) getView().findViewById(R.id.imgSound);
         imgSound.setImageResource(R.drawable.ic_sound_on);
         mediaPlayer = MediaPlayer.create(getActivity(), R.raw.evil_laugh);

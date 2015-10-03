@@ -1,6 +1,7 @@
 package com.kris.lm.Fragments;
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -10,14 +11,20 @@ import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
+import com.kris.lm.Common.OnSwipeTouchListener;
+import com.kris.lm.DB.DB_Helper;
 import com.kris.lm.R;
+
+import static com.kris.lm.DB.DB_Helper.closeDB;
 
 
 public class StoperMini extends Fragment {
@@ -33,10 +40,13 @@ public class StoperMini extends Fragment {
     private MyCountDownTimer myCountDownTimer;
     MediaPlayer mediaPlayer;
     private Boolean sound = true;
+    stoperStatus mCallback;
+    boolean isStoperRunning = false;
 
     public StoperMini() {
         // Required empty public constructor
     }
+
 
 
     @Override
@@ -48,6 +58,7 @@ public class StoperMini extends Fragment {
 
         Bundle bundle = getArguments();
         odliczaj = bundle.getLong("time");
+        boolean autoStartChrono = bundle.getBoolean("autostart");
 
         progressView = (CircularProgressView) rootView.findViewById(R.id.progress_view);
 
@@ -58,6 +69,9 @@ public class StoperMini extends Fragment {
         progressView.setMaxProgress(odliczaj / 1000);
         textCounter = (TextView) rootView.findViewById(R.id.counter);
         textCounter.setText("Start");
+        if (autoStartChrono)
+            autoStartChrono();
+
         return rootView;
     }
 
@@ -80,36 +94,47 @@ public class StoperMini extends Fragment {
             @Override
             public void onClick(View v) {
                 //ustaw licznik
-               if (textCounter.getText() == "Start") {
-                    textCounter.setText(String.format("%02d", (odliczaj / 1000) / 60)
-                            + ":" + String.format("%02d", (odliczaj / 1000) % 60));
-                    myCountDownTimer = new MyCountDownTimer(odliczaj, interval);
+                if (textCounter.getText() == "Start") {
+                    autoStartChrono();
+                } else {
                     myCountDownTimer.cancel();
-                 //   odliczaj = 15 * 1000;
-                    progressView.setProgress(100);
-                    progressView.setMaxProgress(odliczaj / 1000);
-                    if (progressView.getProgress() == 100) {
-                        myCountDownTimer = new MyCountDownTimer(odliczaj, interval);
-                        myCountDownTimer.start();
-                    }
-            } else {
-                myCountDownTimer.cancel();
-                textCounter.setText("Start");
-            }
+                    textCounter.setText("Start");
+                }
             }
         });
+
 
         super.onActivityCreated(savedInstanceState);
     }
 
+    void autoStartChrono() {
+        isStoperRunning = true;
+        textCounter.setText(String.format("%02d", (odliczaj / 1000) / 60)
+                + ":" + String.format("%02d", (odliczaj / 1000) % 60));
+        myCountDownTimer = new MyCountDownTimer(odliczaj, interval);
+        myCountDownTimer.cancel();
+        //   odliczaj = 15 * 1000;
+        progressView.setProgress(100);
+        progressView.setMaxProgress(odliczaj / 1000);
+        if (progressView.getProgress() == 100) {
+            myCountDownTimer = new MyCountDownTimer(odliczaj, interval);
+            myCountDownTimer.start();
+
+        }
+
+    }
+
     @Override
     public void onStart() {
+
+        // autoStartChrono();
         Log.d("Stoper LifeCycle: ", "onCreateView");
         super.onStart();
     }
 
     @Override
     public void onPause() {
+     if(isStoperRunning)   myCountDownTimer.cancel();
         Log.d("Stoper LifeCycle: ", "onPause");
         super.onPause();
     }
@@ -119,6 +144,7 @@ public class StoperMini extends Fragment {
         Log.d("Stoper LifeCycle: ", "onResume");
         super.onResume();
     }
+
 
     private void setSoundOn(Boolean set) {
         if (set) {
@@ -180,34 +206,22 @@ public class StoperMini extends Fragment {
         public void onFinish() {
             Log.d("Stoper LifeCycle: ", "onFinish");
             textCounter.setText("Finished");
+            isStoperRunning = false;
+            mCallback.provideStoperStatus(isStoperRunning);
             progressView.setProgress(0);
-            if (sound) mediaPlayer.start();
+          //  if (sound) mediaPlayer.start();
 
         }
     }
 
+    public interface stoperStatus {
+        void provideStoperStatus(boolean s);
+
+    }
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        Log.d("Stoper LifeCycle: ", "onCreate");
-        super.onCreate(savedInstanceState);
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mCallback = (stoperStatus) activity;
     }
 
-    @Override
-    public void onDestroy() {
-        Log.d("Stoper LifeCycle: ", "onDestroy");
-        super.onDestroy();
-    }
-
-    @Override
-    public void onDetach() {
-        Log.d("Stoper LifeCycle: ", "onDetach");
-        super.onDetach();
-    }
-
-
-    @Override
-    public void onDestroyView() {
-        Log.d("Stoper LifeCycle: ", "onDestroyView");
-        super.onDestroyView();
-    }
 }

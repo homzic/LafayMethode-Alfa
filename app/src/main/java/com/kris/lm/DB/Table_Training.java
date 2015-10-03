@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-class Table_Training {
+public class Table_Training {
     private static final String UID = "_id";
     public static final String TABLE_NAME = "table_training";
     private static final String ID_TRAINING = "ID_training";

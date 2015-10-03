@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircleProgressView="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/primaryColor"
+    android:scrollbarStyle="outsideOverlay">
+
+    <LinearLayout
+        android:id="@+id/resultGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primaryColor"
+        android:orientation="vertical"
+        android:soundEffectsEnabled="true">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_margin="20dp">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/circleView"
+                android:text="Round"
+                android:textColor="@color/primaryColorDark"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnTarget"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/txtTarget"
+                android:background="@drawable/round_button"
+                android:textColor="@color/primaryColor"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/txtTarget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/circleView"
+                android:text="Target"
+                android:textColor="@color/primaryColorDark"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <at.grabner.circleprogress.CircleProgressView
+                android:id="@+id/circleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                CircleProgressView:barColor="@color/colorAccent"
+                CircleProgressView:barWidth="25dp"
+                CircleProgressView:contourColor="@color/primaryColorDark"
+                CircleProgressView:contourSize="2dp"
+                CircleProgressView:rimColor="@color/primaryColor"
+                CircleProgressView:rimWidth="35dp"
+                CircleProgressView:textColor="@color/textColorPrimary" />
+
+            <TextView
+                android:id="@+id/txtRound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primaryColorDark" />
+
+            <Button
+                android:id="@+id/btnRound"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/txtRound"
+                android:background="@drawable/round_button"
+
+                android:textColor="@color/primaryColor"
+                android:textSize="30sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

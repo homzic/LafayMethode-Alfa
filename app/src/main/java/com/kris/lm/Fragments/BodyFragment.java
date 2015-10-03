@@ -74,7 +74,7 @@ public class BodyFragment extends Fragment {
         //---Ukryj klawiature
         ((MainActivity) getActivity()).hideKeyboard(getView());
 
-        //Komunikat ile wpisów jest w bazie
+        //Komunikat ile wpisï¿½w jest w bazie
         Toast toast = Toast.makeText(context, "Data Saved for body " + getToDoCount() + " row!\n\n" + "At date " + DB_Helper.getDateTime() + " !", Toast.LENGTH_LONG);
         TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
         if (v != null) v.setGravity(Gravity.CENTER);
